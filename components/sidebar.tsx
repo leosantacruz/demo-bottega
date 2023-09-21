@@ -62,6 +62,8 @@ const Sidebar = (props: Props) => {
       <aside className="flex flex-col text-left p-10 ">
         <h1 className="text-4xl mt-10">Sardine</h1>
 
+        <h2 className="text-2xl mt-3">3500 €</h2>
+
         <p className="my-10 text-xl">
           Bag made from supple lambskin leather using Intrecciato Craftsmanship
           featuring sculptural Read more

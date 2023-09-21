@@ -2,20 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
-html, body {
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+html,
+body {
   margin: 0;
   color: rgb(223, 223, 223);
-  font-family: 'Verdana Pro Semi Bold', sans-serif;
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
 }
 
-
-div, p {
+div,
+p {
   line-height: 22px;
   font-size: 13px;
-  font-weight: 500;
 }
 
-textarea:focus, input:focus, select:focus {
+textarea:focus,
+input:focus,
+select:focus {
   outline: none;
 }

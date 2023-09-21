@@ -7,7 +7,7 @@ const initService = (apiRef: any, materialList: any[], nodeList: any[]) => {
   api = apiRef;
   materials = materialList;
   nodes = nodeList;
-  console.log(materialList);
+  changeColor("Leather_001", { r: 235, g: 241, b: 237 });
 };
 
 const getMaterials = () => {
