@@ -1,222 +1,6973 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/index";
-exports.ids = ["pages/index"];
+exports.id = 405;
+exports.ids = [405];
 exports.modules = {
 
-/***/ "./components/debug.tsx":
-/*!******************************!*\
-  !*** ./components/debug.tsx ***!
-  \******************************/
+/***/ 3250:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/store */ \"./store/store.ts\");\n/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/utils/sketchfab */ \"./utils/sketchfab.ts\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_store_store__WEBPACK_IMPORTED_MODULE_2__]);\n_store_store__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n\n\nconst Debug = ()=>{\n    const ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();\n    const [mainColor, setMainColor] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({\n        r: 0,\n        g: 0,\n        b: 0\n    });\n    const store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__.useCarStore)((state)=>state);\n    const nodes = (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__.getNodeList)().filter((r)=>{\n        if (r.name) {\n            const regex = /^(?!.*livery.*$)(?!(.*number_a.*)).*((stripe|lip|number|tail)).*$/;\n            return regex.test(r.name.toLowerCase());\n        }\n    });\n    const nodesNoDuplicates = [\n        ...new Set(nodes.map((node)=>node.name))\n    ];\n    const updateColor = async ({ id , r , g , b , name  })=>{\n        let updatedCar = store.car;\n        await (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__.changeColor)(\"Interior\", id);\n        updatedCar.mainColor = {\n            name: name,\n            category: \"\",\n            r,\n            g,\n            b\n        };\n        store.updateCar(updatedCar);\n    };\n    const selectPart = (newPart)=>{\n        let updatedCar = store.car;\n        if (!store.car.parts.includes(newPart)) {\n            updatedCar.parts.push(newPart);\n            (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__.toggleNode)(newPart, \"show\");\n        } else {\n            updatedCar.parts = updatedCar.parts.filter((part)=>part !== newPart);\n            (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__.toggleNode)(newPart, \"hide\");\n        }\n        store.updateCar(updatedCar);\n    };\n    const newColor = (ev)=>{\n        const c = ev.target.value;\n        const r = parseInt(c.substr(1, 2), 16);\n        const g = parseInt(c.substr(3, 2), 16);\n        const b = parseInt(c.substr(5, 2), 16);\n        setMainColor({\n            r,\n            g,\n            b\n        });\n        const color = {\n            r,\n            g,\n            b\n        };\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__.fastChangeMainColor)(color);\n    };\n    const copyToClipboard = ()=>{\n        navigator.clipboard.writeText(JSON.stringify(store.car));\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            id: \"debug\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h4\", {\n                    children: \"Main Color\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                    lineNumber: 56,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h3\", {\n                    children: [\n                        \"[\",\n                        mainColor[\"r\"],\n                        \",\",\n                        mainColor[\"g\"],\n                        \",\",\n                        mainColor[\"b\"],\n                        \"]\"\n                    ]\n                }, void 0, true, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                    lineNumber: 57,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"input\", {\n                    className: \"inputColor\",\n                    type: \"color\",\n                    onChange: newColor\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                    lineNumber: 60,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h4\", {\n                    children: \"Car options\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                    lineNumber: 61,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"data\",\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                            children: [\n                                \" \",\n                                store.car.model.name\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                            lineNumber: 63,\n                            columnNumber: 11\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"pre\", {\n                            children: [\n                                \" \",\n                                JSON.stringify(store, null, 2)\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                            lineNumber: 64,\n                            columnNumber: 11\n                        }, undefined)\n                    ]\n                }, void 0, true, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                    lineNumber: 62,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"debugMenuBox\",\n                    children: nodesNoDuplicates && nodesNoDuplicates.map((n)=>{\n                        return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                className: store.car.parts.includes(n) ? \"active\" : \"nada\",\n                                onClick: ()=>{\n                                    selectPart(n);\n                                },\n                                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h4\", {\n                                    children: n\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                                    lineNumber: 96,\n                                    columnNumber: 21\n                                }, undefined)\n                            }, void 0, false, {\n                                fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                                lineNumber: 90,\n                                columnNumber: 19\n                            }, undefined)\n                        }, void 0, false);\n                    })\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n                    lineNumber: 85,\n                    columnNumber: 9\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\debug.tsx\",\n            lineNumber: 55,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Debug);\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QUNHOztnQ0FBRztnQ0FBRTdDLE1BQU1lLEdBQUcsQ0FBQytCLEtBQUssQ0FBQzFDLElBQUk7Ozs7Ozs7c0NBQzFCLDhEQUFDMkM7O2dDQUFJO2dDQUFFWCxLQUFLQyxTQUFTLENBQUNyQyxPQUFPLElBQUksRUFBRTs7Ozs7Ozs7Ozs7Ozs4QkFxQnJDLDhEQUFDc0M7b0JBQUlJLFdBQVU7OEJBQ1psQyxxQkFDQ0Esa0JBQWtCRSxHQUFHLENBQUMsQ0FBQ3NDLElBQVc7d0JBQ2hDLHFCQUNFO3NDQUNFLDRFQUFDVjtnQ0FDQ0ksV0FBVzFDLE1BQU1lLEdBQUcsQ0FBQ0ssS0FBSyxDQUFDQyxRQUFRLENBQUMyQixLQUFLLFdBQVcsTUFBTTtnQ0FDMURDLFNBQVMsSUFBTTtvQ0FDYi9CLFdBQVc4QjtnQ0FDYjswQ0FFQSw0RUFBQ1Q7OENBQUlTOzs7Ozs7Ozs7Ozs7b0JBSWI7Ozs7Ozs7Ozs7Ozs7QUFLWjtBQUVBLGlFQUFldkQsS0FBS0EsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi9jb21wb25lbnRzL2RlYnVnLnRzeD83NjBmIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVJlZiwgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcclxuaW1wb3J0IHsgdXNlQ2FyU3RvcmUgfSBmcm9tICcuLi9zdG9yZS9zdG9yZSc7XHJcbmltcG9ydCB7IGNoYW5nZUNvbG9yLCBnZXROb2RlTGlzdCwgdG9nZ2xlTm9kZSwgZmFzdENoYW5nZU1haW5Db2xvciB9IGZyb20gJ0AvdXRpbHMvc2tldGNoZmFiJztcclxuaW1wb3J0IHsgQ29sb3IgfSBmcm9tICcuLi9pbnRlcmZhY2VzL2dlbmVyYWwnO1xyXG5jb25zdCBEZWJ1ZyA9ICgpID0+IHtcclxuICBjb25zdCByZWYgPSB1c2VSZWYoKTtcclxuICBjb25zdCBbbWFpbkNvbG9yLCBzZXRNYWluQ29sb3JdID0gdXNlU3RhdGUoeyByOiAwLCBnOiAwLCBiOiAwIH0pO1xyXG4gIGNvbnN0IHN0b3JlID0gdXNlQ2FyU3RvcmUoKHN0YXRlOiBhbnkpID0+IHN0YXRlKTtcclxuICBjb25zdCBub2RlczogYW55ID0gZ2V0Tm9kZUxpc3QoKS5maWx0ZXIoKHIpID0+IHtcclxuICAgIGlmIChyLm5hbWUpIHtcclxuICAgICAgY29uc3QgcmVnZXggPSAvXig/IS4qbGl2ZXJ5LiokKSg/ISguKm51bWJlcl9hLiopKS4qKChzdHJpcGV8bGlwfG51bWJlcnx0YWlsKSkuKiQvO1xyXG4gICAgICByZXR1cm4gcmVnZXgudGVzdChyLm5hbWUudG9Mb3dlckNhc2UoKSk7XHJcbiAgICB9XHJcbiAgfSk7XHJcbiAgY29uc3Qgbm9kZXNOb0R1cGxpY2F0ZXMgPSBbLi4ubmV3IFNldChub2Rlcy5tYXAoKG5vZGU6IGFueSkgPT4gbm9kZS5uYW1lKSldO1xyXG5cclxuICBjb25zdCB1cGRhdGVDb2xvciA9IGFzeW5jICh7IGlkLCByLCBnLCBiLCBuYW1lIH06IENvbG9yKSA9PiB7XHJcbiAgICBsZXQgdXBkYXRlZENhciA9IHN0b3JlLmNhcjtcclxuICAgIGF3YWl0IGNoYW5nZUNvbG9yKCdJbnRlcmlvcicsIGlkKTtcclxuICAgIHVwZGF0ZWRDYXIubWFpbkNvbG9yID0geyBuYW1lOiBuYW1lLCBjYXRlZ29yeTogJycsIHIsIGcsIGIgfTtcclxuICAgIHN0b3JlLnVwZGF0ZUNhcih1cGRhdGVkQ2FyKTtcclxuICB9O1xyXG5cclxuICBjb25zdCBzZWxlY3RQYXJ0ID0gKG5ld1BhcnQ6IHN0cmluZykgPT4ge1xyXG4gICAgbGV0IHVwZGF0ZWRDYXIgPSBzdG9yZS5jYXI7XHJcbiAgICBpZiAoIXN0b3JlLmNhci5wYXJ0cy5pbmNsdWRlcyhuZXdQYXJ0KSkge1xyXG4gICAgICB1cGRhdGVkQ2FyLnBhcnRzLnB1c2gobmV3UGFydCk7XHJcbiAgICAgIHRvZ2dsZU5vZGUobmV3UGFydCwgJ3Nob3cnKTtcclxuICAgIH0gZWxzZSB7XHJcbiAgICAgIHVwZGF0ZWRDYXIucGFydHMgPSB1cGRhdGVkQ2FyLnBhcnRzLmZpbHRlcigocGFydDogc3RyaW5nKSA9PiBwYXJ0ICE9PSBuZXdQYXJ0KTtcclxuICAgICAgdG9nZ2xlTm9kZShuZXdQYXJ0LCAnaGlkZScpO1xyXG4gICAgfVxyXG4gICAgc3RvcmUudXBkYXRlQ2FyKHVwZGF0ZWRDYXIpO1xyXG4gIH07XHJcbiAgY29uc3QgbmV3Q29sb3IgPSAoZXY6IGFueSkgPT4ge1xyXG4gICAgY29uc3QgYyA9IGV2LnRhcmdldC52YWx1ZTtcclxuICAgIGNvbnN0IHIgPSBwYXJzZUludChjLnN1YnN0cigxLCAyKSwgMTYpO1xyXG4gICAgY29uc3QgZyA9IHBhcnNlSW50KGMuc3Vic3RyKDMsIDIpLCAxNik7XHJcbiAgICBjb25zdCBiID0gcGFyc2VJbnQoYy5zdWJzdHIoNSwgMiksIDE2KTtcclxuICAgIHNldE1haW5Db2xvcih7IHIsIGcsIGIgfSk7XHJcbiAgICBjb25zdCBjb2xvciA9IHtcclxuICAgICAgcixcclxuICAgICAgZyxcclxuICAgICAgYlxyXG4gICAgfTtcclxuICAgIGZhc3RDaGFuZ2VNYWluQ29sb3IoY29sb3IpO1xyXG4gIH07XHJcblxyXG4gIGNvbnN0IGNvcHlUb0NsaXBib2FyZCA9ICgpID0+IHtcclxuICAgIG5hdmlnYXRvci5jbGlwYm9hcmQud3JpdGVUZXh0KEpTT04uc3RyaW5naWZ5KHN0b3JlLmNhcikpO1xyXG4gIH07XHJcblxyXG4gIHJldHVybiAoXHJcbiAgICA8PlxyXG4gICAgICA8ZGl2IGlkPVwiZGVidWdcIj5cclxuICAgICAgICA8aDQ+TWFpbiBDb2xvcjwvaDQ+XHJcbiAgICAgICAgPGgzPlxyXG4gICAgICAgICAgW3ttYWluQ29sb3JbJ3InXX0se21haW5Db2xvclsnZyddfSx7bWFpbkNvbG9yWydiJ119XVxyXG4gICAgICAgIDwvaDM+XHJcbiAgICAgICAgPGlucHV0IGNsYXNzTmFtZT1cImlucHV0Q29sb3JcIiB0eXBlPVwiY29sb3JcIiBvbkNoYW5nZT17bmV3Q29sb3J9IC8+XHJcbiAgICAgICAgPGg0PkNhciBvcHRpb25zPC9oND5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImRhdGFcIj5cclxuICAgICAgICAgIDxoMT4ge3N0b3JlLmNhci5tb2RlbC5uYW1lfTwvaDE+XHJcbiAgICAgICAgICA8cHJlPiB7SlNPTi5zdHJpbmdpZnkoc3RvcmUsIG51bGwsIDIpfTwvcHJlPlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICAgIHsvKlxyXG4gICAgICAgIDxoND5Db2xvciBvcHRpb25zPC9oND5cclxuICAgICAgICB7Y29sb3JzICYmXHJcbiAgICAgICAgICBjb2xvcnMubWFwKChjOiBDb2xvciwgaW5kZXg6IG51bWJlcikgPT4gKFxyXG4gICAgICAgICAgICA8YnV0dG9uXHJcbiAgICAgICAgICAgICAga2V5PXtpbmRleH1cclxuICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7XHJcbiAgICAgICAgICAgICAgICB1cGRhdGVDb2xvcihjKTtcclxuICAgICAgICAgICAgICB9fVxyXG4gICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAge2MubmFtZX1cclxuICAgICAgICAgICAgPC9idXR0b24+XHJcbiAgICAgICAgICApKX0gXHJcblxyXG4gICAgICAgIDxoND5DYW1lcmEgb3B0aW9uPC9oND5cclxuICAgICAgICA8YnV0dG9uPkNoYW5nZSBjYW1lcmEgMTwvYnV0dG9uPlxyXG4gICAgICAgIDxidXR0b24+Q2hhbmdlIGNhbWVyYSAyPC9idXR0b24+XHJcbiAgICAgICAgPGJ1dHRvbj5DaGFuZ2UgY2FtZXJhIDM8L2J1dHRvbj5cclxuICAgICAgKi99XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJkZWJ1Z01lbnVCb3hcIj5cclxuICAgICAgICAgIHtub2Rlc05vRHVwbGljYXRlcyAmJlxyXG4gICAgICAgICAgICBub2Rlc05vRHVwbGljYXRlcy5tYXAoKG46IGFueSkgPT4ge1xyXG4gICAgICAgICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgICAgICA8PlxyXG4gICAgICAgICAgICAgICAgICA8ZGl2XHJcbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtzdG9yZS5jYXIucGFydHMuaW5jbHVkZXMobikgPyAnYWN0aXZlJyA6ICduYWRhJ31cclxuICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICBzZWxlY3RQYXJ0KG4pO1xyXG4gICAgICAgICAgICAgICAgICAgIH19XHJcbiAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICA8aDQ+e259PC9oND5cclxuICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8Lz5cclxuICAgICAgICAgICAgICApO1xyXG4gICAgICAgICAgICB9KX1cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgPC9kaXY+XHJcbiAgICA8Lz5cclxuICApO1xyXG59O1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgRGVidWc7XHJcbiJdLCJuYW1lcyI6WyJ1c2VSZWYiLCJ1c2VTdGF0ZSIsInVzZUNhclN0b3JlIiwiY2hhbmdlQ29sb3IiLCJnZXROb2RlTGlzdCIsInRvZ2dsZU5vZGUiLCJmYXN0Q2hhbmdlTWFpbkNvbG9yIiwiRGVidWciLCJyZWYiLCJtYWluQ29sb3IiLCJzZXRNYWluQ29sb3IiLCJyIiwiZyIsImIiLCJzdG9yZSIsInN0YXRlIiwibm9kZXMiLCJmaWx0ZXIiLCJuYW1lIiwicmVnZXgiLCJ0ZXN0IiwidG9Mb3dlckNhc2UiLCJub2Rlc05vRHVwbGljYXRlcyIsIlNldCIsIm1hcCIsIm5vZGUiLCJ1cGRhdGVDb2xvciIsImlkIiwidXBkYXRlZENhciIsImNhciIsImNhdGVnb3J5IiwidXBkYXRlQ2FyIiwic2VsZWN0UGFydCIsIm5ld1BhcnQiLCJwYXJ0cyIsImluY2x1ZGVzIiwicHVzaCIsInBhcnQiLCJuZXdDb2xvciIsImV2IiwiYyIsInRhcmdldCIsInZhbHVlIiwicGFyc2VJbnQiLCJzdWJzdHIiLCJjb2xvciIsImNvcHlUb0NsaXBib2FyZCIsIm5hdmlnYXRvciIsImNsaXBib2FyZCIsIndyaXRlVGV4dCIsIkpTT04iLCJzdHJpbmdpZnkiLCJkaXYiLCJoNCIsImgzIiwiaW5wdXQiLCJjbGFzc05hbWUiLCJ0eXBlIiwib25DaGFuZ2UiLCJoMSIsIm1vZGVsIiwicHJlIiwibiIsIm9uQ2xpY2siXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/debug.tsx\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8407);
+/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4573);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_store_store__WEBPACK_IMPORTED_MODULE_2__]);
+_store_store__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+
+
+const Debug = ()=>{
+    const ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
+    const [mainColor, setMainColor] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+        r: 0,
+        g: 0,
+        b: 0
+    });
+    const store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__/* .useCarStore */ .r)((state)=>state);
+    const nodes = (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__/* .getNodeList */ .bS)().filter((r)=>{
+        if (r.name) {
+            const regex = /^(?!.*livery.*$)(?!(.*number_a.*)).*((stripe|lip|number|tail)).*$/;
+            return regex.test(r.name.toLowerCase());
+        }
+    });
+    const nodesNoDuplicates = [
+        ...new Set(nodes.map((node)=>node.name))
+    ];
+    const updateColor = async ({ id , r , g , b , name  })=>{
+        let updatedCar = store.car;
+        await (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__/* .changeColor */ .zX)("Interior", id);
+        updatedCar.mainColor = {
+            name: name,
+            category: "",
+            r,
+            g,
+            b
+        };
+        store.updateCar(updatedCar);
+    };
+    const selectPart = (newPart)=>{
+        let updatedCar = store.car;
+        if (!store.car.parts.includes(newPart)) {
+            updatedCar.parts.push(newPart);
+            (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__/* .toggleNode */ .bh)(newPart, "show");
+        } else {
+            updatedCar.parts = updatedCar.parts.filter((part)=>part !== newPart);
+            (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__/* .toggleNode */ .bh)(newPart, "hide");
+        }
+        store.updateCar(updatedCar);
+    };
+    const newColor = (ev)=>{
+        const c = ev.target.value;
+        const r = parseInt(c.substr(1, 2), 16);
+        const g = parseInt(c.substr(3, 2), 16);
+        const b = parseInt(c.substr(5, 2), 16);
+        setMainColor({
+            r,
+            g,
+            b
+        });
+        const color = {
+            r,
+            g,
+            b
+        };
+        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_3__/* .fastChangeMainColor */ .fN)(color);
+    };
+    const copyToClipboard = ()=>{
+        navigator.clipboard.writeText(JSON.stringify(store.car));
+    };
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            id: "debug",
+            children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
+                    children: "Main Color"
+                }),
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
+                    children: [
+                        "[",
+                        mainColor["r"],
+                        ",",
+                        mainColor["g"],
+                        ",",
+                        mainColor["b"],
+                        "]"
+                    ]
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("input", {
+                    className: "inputColor",
+                    type: "color",
+                    onChange: newColor
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
+                    children: "Car options"
+                }),
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                    className: "data",
+                    children: [
+                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
+                            children: [
+                                " ",
+                                store.car.model.name
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("pre", {
+                            children: [
+                                " ",
+                                JSON.stringify(store, null, 2)
+                            ]
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: "debugMenuBox",
+                    children: nodesNoDuplicates && nodesNoDuplicates.map((n)=>{
+                        return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: store.car.parts.includes(n) ? "active" : "nada",
+                                onClick: ()=>{
+                                    selectPart(n);
+                                },
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
+                                    children: n
+                                })
+                            })
+                        });
+                    })
+                })
+            ]
+        })
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Debug);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ "./components/elements/preloader.tsx":
-/*!*******************************************!*\
-  !*** ./components/elements/preloader.tsx ***!
-  \*******************************************/
+/***/ 4320:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nconst Preloader = ({ width , height  })=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n            xmlns: \"http://www.w3.org/2000/svg\",\n            className: \"loading\",\n            width: width,\n            height: height,\n            viewBox: \"0 0 100 100\",\n            preserveAspectRatio: \"xMidYMid\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(0 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.9166666666666666s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 18,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 17,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 16,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(30 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.8333333333333334s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 30,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 29,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 28,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(60 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.75s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 42,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 41,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 40,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(90 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.6666666666666666s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 54,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 53,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 52,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(120 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.5833333333333334s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 66,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 65,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 64,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(150 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.5s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 78,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 77,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 76,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(180 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.4166666666666667s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 90,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 89,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 88,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(210 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.3333333333333333s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 102,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 101,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 100,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(240 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.25s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 114,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 113,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 112,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(270 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.16666666666666666s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 126,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 125,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 124,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(300 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"-0.08333333333333333s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 138,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 137,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 136,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                    transform: \"rotate(330 50 50)\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"rect\", {\n                        x: \"47\",\n                        y: \"24\",\n                        rx: \"3\",\n                        ry: \"6\",\n                        width: \"6\",\n                        height: \"12\",\n                        fill: \"#000\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"animate\", {\n                            attributeName: \"opacity\",\n                            values: \"1;0\",\n                            keyTimes: \"0;1\",\n                            dur: \"1s\",\n                            begin: \"0s\",\n                            repeatCount: \"indefinite\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                            lineNumber: 150,\n                            columnNumber: 13\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                        lineNumber: 149,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n                    lineNumber: 148,\n                    columnNumber: 9\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\elements\\\\preloader.tsx\",\n            lineNumber: 8,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Preloader);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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OERBQUNkO29CQUFFQyxXQUFVOzhCQUNYLDRFQUFDQzt3QkFBS0MsR0FBRTt3QkFBS0MsR0FBRTt3QkFBS0MsSUFBRzt3QkFBSUMsSUFBRzt3QkFBSWIsT0FBTTt3QkFBSUMsUUFBTzt3QkFBS2EsTUFBSztrQ0FDM0QsNEVBQUNDOzRCQUNDQyxlQUFjOzRCQUNkQyxRQUFPOzRCQUNQQyxVQUFTOzRCQUNUQyxLQUFJOzRCQUNKQyxPQUFNOzRCQUNOQyxhQUFZOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQU8xQjtBQUNBLGlFQUFldEIsU0FBU0EsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi9jb21wb25lbnRzL2VsZW1lbnRzL3ByZWxvYWRlci50c3g/NDNlMyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbnRlcmZhY2UgU2l6ZSB7XHJcbiAgd2lkdGg6IHN0cmluZztcclxuICBoZWlnaHQ6IHN0cmluZztcclxufVxyXG5jb25zdCBQcmVsb2FkZXIgPSAoeyB3aWR0aCwgaGVpZ2h0IH06IFNpemUpID0+IHtcclxuICByZXR1cm4gKFxyXG4gICAgPD5cclxuICAgICAgPHN2Z1xyXG4gICAgICAgIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxyXG4gICAgICAgIGNsYXNzTmFtZT1cImxvYWRpbmdcIlxyXG4gICAgICAgIHdpZHRoPXt3aWR0aH1cclxuICAgICAgICBoZWlnaHQ9e2hlaWdodH1cclxuICAgICAgICB2aWV3Qm94PVwiMCAwIDEwMCAxMDBcIlxyXG4gICAgICAgIHByZXNlcnZlQXNwZWN0UmF0aW89XCJ4TWlkWU1pZFwiXHJcbiAgICAgID5cclxuICAgICAgICA8ZyB0cmFuc2Zvcm09XCJyb3RhdGUoMCA1MCA1MClcIj5cclxuICAgICAgICAgIDxyZWN0IHg9XCI0N1wiIHk9XCIyNFwiIHJ4PVwiM1wiIHJ5PVwiNlwiIHdpZHRoPVwiNlwiIGhlaWdodD1cIjEyXCIgZmlsbD1cIiMwMDBcIj5cclxuICAgICAgICAgICAgPGFuaW1hdGVcclxuICAgICAgICAgICAgICBhdHRyaWJ1dGVOYW1lPVwib3BhY2l0eVwiXHJcbiAgICAgICAgICAgICAgdmFsdWVzPVwiMTswXCJcclxuICAgICAgICAgICAgICBrZXlUaW1lcz1cIjA7MVwiXHJcbiAgICAgICAgICAgICAgZHVyPVwiMXNcIlxyXG4gICAgICAgICAgICAgIGJlZ2luPVwiLTAuOTE2NjY2NjY2NjY2NjY2NnNcIlxyXG4gICAgICAgICAgICAgIHJlcGVhdENvdW50PVwiaW5kZWZpbml0ZVwiXHJcbiAgICAgICAgICAgID48L2FuaW1hdGU+XHJcbiAgICAgICAgICA8L3JlY3Q+XHJcbiAgICAgICAgPC9nPlxyXG4gICAgICAgIDxnIHRyYW5zZm9ybT1cInJvdGF0ZSgzMCA1MCA1MClcIj5cclxuICAgICAgICAgIDxyZWN0IHg9XCI0N1wiIHk9XCIyNFwiIHJ4PVwiM1wiIHJ5PVwiNlwiIHdpZHRoPVwiNlwiIGhlaWdodD1cIjEyXCIgZmlsbD1cIiMwMDBcIj5cclxuICAgICAgICAgICAgPGFuaW1hdGVcclxuICAgICAgICAgICAgICBhdHRyaWJ1dGVOYW1lPVwib3BhY2l0eVwiXHJcbiAgICAgICAgICAgICAgdmFsdWVzPVwiMTswXCJcclxuICAgICAgICAgICAgICBrZXlUaW1lcz1cIjA7MVwiXHJcbiAgICAgICAgICAgICAgZHVyPVwiMXNcIlxyXG4gICAgICAgICAgICAgIGJlZ2luPVwiLTAuODMzMzMzMzMzMzMzMzMzNHNcIlxyXG4gICAgICAgICAgICAgIHJlcGVhdENvdW50PVwiaW5kZWZpbml0ZVwiXHJcbiAgICAgICAgICAgID48L2FuaW1hdGU+XHJcbiAgICAgICAgICA8L3JlY3Q+XHJcbiAgICAgICAgPC9nPlxyXG4gICAgICAgIDxnIHRyYW5zZm9ybT1cInJvdGF0ZSg2MCA1MCA1MClcIj5cclxuICAgICAgICAgIDxyZWN0IHg9XCI0N1wiIHk9XCIyNFwiIHJ4PVwiM1wiIHJ5PVwiNlwiIHdpZHRoPVwiNlwiIGhlaWdodD1cIjEyXCIgZmlsbD1cIiMwMDBcIj5cclxuICAgICAgICAgICAgPGFuaW1hdGVcclxuICAgICAgICAgICAgICBhdHRyaWJ1dGVOYW1lPVwib3BhY2l0eVwiXHJcbiAgICAgICAgICAgICAgdmFsdWVzPVwiMTswXCJcclxuICAgICAgICAgICAgICBrZXlUaW1lcz1cIjA7MVwiXHJcbiAgICAgICAgICAgICAgZHVyPVwiMXNcIlxyXG4gICAgICAgICAgICAgIGJlZ2luPVwiLTAuNzVzXCJcclxuICAgICAgICAgICAgICByZXBlYXRDb3VudD1cImluZGVmaW5pdGVcIlxyXG4gICAgICAgICAgICA+PC9hbmltYXRlPlxyXG4gICAgICAgICAgPC9yZWN0PlxyXG4gICAgICAgIDwvZz5cclxuICAgICAgICA8ZyB0cmFuc2Zvcm09XCJyb3RhdGUoOTAgNTAgNTApXCI+XHJcbiAgICAgICAgICA8cmVjdCB4PVwiNDdcIiB5PVwiMjRcIiByeD1cIjNcIiByeT1cIjZcIiB3aWR0aD1cIjZcIiBoZWlnaHQ9XCIxMlwiIGZpbGw9XCIjMDAwXCI+XHJcbiAgICAgICAgICAgIDxhbmltYXRlXHJcbiAgICAgICAgICAgICAgYXR0cmlidXRlTmFtZT1cIm9wYWNpdHlcIlxyXG4gICAgICAgICAgICAgIHZhbHVlcz1cIjE7MFwiXHJcbiAgICAgICAgICAgICAga2V5VGltZXM9XCIwOzFcIlxyXG4gICAgICAgICAgICAgIGR1cj1cIjFzXCJcclxuICAgICAgICAgICAgICBiZWdpbj1cIi0wLjY2NjY2NjY2NjY2NjY2NjZzXCJcclxuICAgICAgICAgICAgICByZXBlYXRDb3VudD1cImluZGVmaW5pdGVcIlxyXG4gICAgICAgICAgICA+PC9hbmltYXRlPlxyXG4gICAgICAgICAgPC9yZWN0PlxyXG4gICAgICAgIDwvZz5cclxuICAgICAgICA8ZyB0cmFuc2Zvcm09XCJyb3RhdGUoMTIwIDUwIDUwKVwiPlxyXG4gICAgICAgICAgPHJlY3QgeD1cIjQ3XCIgeT1cIjI0XCIgcng9XCIzXCIgcnk9XCI2XCIgd2lkdGg9XCI2XCIgaGVpZ2h0PVwiMTJcIiBmaWxsPVwiIzAwMFwiPlxyXG4gICAgICAgICAgICA8YW5pbWF0ZVxyXG4gICAgICAgICAgICAgIGF0dHJpYnV0ZU5hbWU9XCJvcGFjaXR5XCJcclxuICAgICAgICAgICAgICB2YWx1ZXM9XCIxOzBcIlxyXG4gICAgICAgICAgICAgIGtleVRpbWVzPVwiMDsxXCJcclxuICAgICAgICAgICAgICBkdXI9XCIxc1wiXHJcbiAgICAgICAgICAgICAgYmVnaW49XCItMC41ODMzMzMzMzMzMzMzMzM0c1wiXHJcbiAgICAgICAgICAgICAgcmVwZWF0Q291bnQ9XCJpbmRlZmluaXRlXCJcclxuICAgICAgICAgICAgPjwvYW5pbWF0ZT5cclxuICAgICAgICAgIDwvcmVjdD5cclxuICAgICAgICA8L2c+XHJcbiAgICAgICAgPGcgdHJhbnNmb3JtPVwicm90YXRlKDE1MCA1MCA1MClcIj5cclxuICAgICAgICAgIDxyZWN0IHg9XCI0N1wiIHk9XCIyNFwiIHJ4PVwiM1wiIHJ5PVwiNlwiIHdpZHRoPVwiNlwiIGhlaWdodD1cIjEyXCIgZmlsbD1cIiMwMDBcIj5cclxuICAgICAgICAgICAgPGFuaW1hdGVcclxuICAgICAgICAgICAgICBhdHRyaWJ1dGVOYW1lPVwib3BhY2l0eVwiXHJcbiAgICAgICAgICAgICAgdmFsdWVzPVwiMTswXCJcclxuICAgICAgICAgICAgICBrZXlUaW1lcz1cIjA7MVwiXHJcbiAgICAgICAgICAgICAgZHVyPVwiMXNcIlxyXG4gICAgICAgICAgICAgIGJlZ2luPVwiLTAuNXNcIlxyXG4gICAgICAgICAgICAgIHJlcGVhdENvdW50PVwiaW5kZWZpbml0ZVwiXHJcbiAgICAgICAgICAgID48L2FuaW1hdGU+XHJcbiAgICAgICAgICA8L3JlY3Q+XHJcbiAgICAgICAgPC9nPlxyXG4gICAgICAgIDxnIHRyYW5zZm9ybT1cInJvdGF0ZSgxODAgNTAgNTApXCI+XHJcbiAgICAgICAgICA8cmVjdCB4PVwiNDdcIiB5PVwiMjRcIiByeD1cIjNcIiByeT1cIjZcIiB3aWR0aD1cIjZcIiBoZWlnaHQ9XCIxMlwiIGZpbGw9XCIjMDAwXCI+XHJcbiAgICAgICAgICAgIDxhbmltYXRlXHJcbiAgICAgICAgICAgICAgYXR0cmlidXRlTmFtZT1cIm9wYWNpdHlcIlxyXG4gICAgICAgICAgICAgIHZhbHVlcz1cIjE7MFwiXHJcbiAgICAgICAgICAgICAga2V5VGltZXM9XCIwOzFcIlxyXG4gICAgICAgICAgICAgIGR1cj1cIjFzXCJcclxuICAgICAgICAgICAgICBiZWdpbj1cIi0wLjQxNjY2NjY2NjY2NjY2NjdzXCJcclxuICAgICAgICAgICAgICByZXBlYXRDb3VudD1cImluZGVmaW5pdGVcIlxyXG4gICAgICAgICAgICA+PC9hbmltYXRlPlxyXG4gICAgICAgICAgPC9yZWN0PlxyXG4gICAgICAgIDwvZz5cclxuICAgICAgICA8ZyB0cmFuc2Zvcm09XCJyb3RhdGUoMjEwIDUwIDUwKVwiPlxyXG4gICAgICAgICAgPHJlY3QgeD1cIjQ3XCIgeT1cIjI0XCIgcng9XCIzXCIgcnk9XCI2XCIgd2lkdGg9XCI2XCIgaGVpZ2h0PVwiMTJcIiBmaWxsPVwiIzAwMFwiPlxyXG4gICAgICAgICAgICA8YW5pbWF0ZVxyXG4gICAgICAgICAgICAgIGF0dHJpYnV0ZU5hbWU9XCJvcGFjaXR5XCJcclxuICAgICAgICAgICAgICB2YWx1ZXM9XCIxOzBcIlxyXG4gICAgICAgICAgICAgIGtleVRpbWVzPVwiMDsxXCJcclxuICAgICAgICAgICAgICBkdXI9XCIxc1wiXHJcbiAgICAgICAgICAgICAgYmVnaW49XCItMC4zMzMzMzMzMzMzMzMzMzMzc1wiXHJcbiAgICAgICAgICAgICAgcmVwZWF0Q291bnQ9XCJpbmRlZmluaXRlXCJcclxuICAgICAgICAgICAgPjwvYW5pbWF0ZT5cclxuICAgICAgICAgIDwvcmVjdD5cclxuICAgICAgICA8L2c+XHJcbiAgICAgICAgPGcgdHJhbnNmb3JtPVwicm90YXRlKDI0MCA1MCA1MClcIj5cclxuICAgICAgICAgIDxyZWN0IHg9XCI0N1wiIHk9XCIyNFwiIHJ4PVwiM1wiIHJ5PVwiNlwiIHdpZHRoPVwiNlwiIGhlaWdodD1cIjEyXCIgZmlsbD1cIiMwMDBcIj5cclxuICAgICAgICAgICAgPGFuaW1hdGVcclxuICAgICAgICAgICAgICBhdHRyaWJ1dGVOYW1lPVwib3BhY2l0eVwiXHJcbiAgICAgICAgICAgICAgdmFsdWVzPVwiMTswXCJcclxuICAgICAgICAgICAgICBrZXlUaW1lcz1cIjA7MVwiXHJcbiAgICAgICAgICAgICAgZHVyPVwiMXNcIlxyXG4gICAgICAgICAgICAgIGJlZ2luPVwiLTAuMjVzXCJcclxuICAgICAgICAgICAgICByZXBlYXRDb3VudD1cImluZGVmaW5pdGVcIlxyXG4gICAgICAgICAgICA+PC9hbmltYXRlPlxyXG4gICAgICAgICAgPC9yZWN0PlxyXG4gICAgICAgIDwvZz5cclxuICAgICAgICA8ZyB0cmFuc2Zvcm09XCJyb3RhdGUoMjcwIDUwIDUwKVwiPlxyXG4gICAgICAgICAgPHJlY3QgeD1cIjQ3XCIgeT1cIjI0XCIgcng9XCIzXCIgcnk9XCI2XCIgd2lkdGg9XCI2XCIgaGVpZ2h0PVwiMTJcIiBmaWxsPVwiIzAwMFwiPlxyXG4gICAgICAgICAgICA8YW5pbWF0ZVxyXG4gICAgICAgICAgICAgIGF0dHJpYnV0ZU5hbWU9XCJvcGFjaXR5XCJcclxuICAgICAgICAgICAgICB2YWx1ZXM9XCIxOzBcIlxyXG4gICAgICAgICAgICAgIGtleVRpbWVzPVwiMDsxXCJcclxuICAgICAgICAgICAgICBkdXI9XCIxc1wiXHJcbiAgICAgICAgICAgICAgYmVnaW49XCItMC4xNjY2NjY2NjY2NjY2NjY2NnNcIlxyXG4gICAgICAgICAgICAgIHJlcGVhdENvdW50PVwiaW5kZWZpbml0ZVwiXHJcbiAgICAgICAgICAgID48L2FuaW1hdGU+XHJcbiAgICAgICAgICA8L3JlY3Q+XHJcbiAgICAgICAgPC9nPlxyXG4gICAgICAgIDxnIHRyYW5zZm9ybT1cInJvdGF0ZSgzMDAgNTAgNTApXCI+XHJcbiAgICAgICAgICA8cmVjdCB4PVwiNDdcIiB5PVwiMjRcIiByeD1cIjNcIiByeT1cIjZcIiB3aWR0aD1cIjZcIiBoZWlnaHQ9XCIxMlwiIGZpbGw9XCIjMDAwXCI+XHJcbiAgICAgICAgICAgIDxhbmltYXRlXHJcbiAgICAgICAgICAgICAgYXR0cmlidXRlTmFtZT1cIm9wYWNpdHlcIlxyXG4gICAgICAgICAgICAgIHZhbHVlcz1cIjE7MFwiXHJcbiAgICAgICAgICAgICAga2V5VGltZXM9XCIwOzFcIlxyXG4gICAgICAgICAgICAgIGR1cj1cIjFzXCJcclxuICAgICAgICAgICAgICBiZWdpbj1cIi0wLjA4MzMzMzMzMzMzMzMzMzMzc1wiXHJcbiAgICAgICAgICAgICAgcmVwZWF0Q291bnQ9XCJpbmRlZmluaXRlXCJcclxuICAgICAgICAgICAgPjwvYW5pbWF0ZT5cclxuICAgICAgICAgIDwvcmVjdD5cclxuICAgICAgICA8L2c+XHJcbiAgICAgICAgPGcgdHJhbnNmb3JtPVwicm90YXRlKDMzMCA1MCA1MClcIj5cclxuICAgICAgICAgIDxyZWN0IHg9XCI0N1wiIHk9XCIyNFwiIHJ4PVwiM1wiIHJ5PVwiNlwiIHdpZHRoPVwiNlwiIGhlaWdodD1cIjEyXCIgZmlsbD1cIiMwMDBcIj5cclxuICAgICAgICAgICAgPGFuaW1hdGVcclxuICAgICAgICAgICAgICBhdHRyaWJ1dGVOYW1lPVwib3BhY2l0eVwiXHJcbiAgICAgICAgICAgICAgdmFsdWVzPVwiMTswXCJcclxuICAgICAgICAgICAgICBrZXlUaW1lcz1cIjA7MVwiXHJcbiAgICAgICAgICAgICAgZHVyPVwiMXNcIlxyXG4gICAgICAgICAgICAgIGJlZ2luPVwiMHNcIlxyXG4gICAgICAgICAgICAgIHJlcGVhdENvdW50PVwiaW5kZWZpbml0ZVwiXHJcbiAgICAgICAgICAgID48L2FuaW1hdGU+XHJcbiAgICAgICAgICA8L3JlY3Q+XHJcbiAgICAgICAgPC9nPlxyXG4gICAgICA8L3N2Zz5cclxuICAgIDwvPlxyXG4gICk7XHJcbn07XHJcbmV4cG9ydCBkZWZhdWx0IFByZWxvYWRlcjtcclxuIl0sIm5hbWVzIjpbIlByZWxvYWRlciIsIndpZHRoIiwiaGVpZ2h0Iiwic3ZnIiwieG1sbnMiLCJjbGFzc05hbWUiLCJ2aWV3Qm94IiwicHJlc2VydmVBc3BlY3RSYXRpbyIsImciLCJ0cmFuc2Zvcm0iLCJyZWN0IiwieCIsInkiLCJyeCIsInJ5IiwiZmlsbCIsImFuaW1hdGUiLCJhdHRyaWJ1dGVOYW1lIiwidmFsdWVzIiwia2V5VGltZXMiLCJkdXIiLCJiZWdpbiIsInJlcGVhdENvdW50Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./components/elements/preloader.tsx\n");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+
+const logo = ()=>{
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("header", {
+        className: "header",
+        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+            src: "/images/bottega.svg",
+            width: "240px"
+        })
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (logo);
+
 
 /***/ }),
 
-/***/ "./components/header.tsx":
-/*!*******************************!*\
-  !*** ./components/header.tsx ***!
-  \*******************************/
+/***/ 8919:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nconst logo = ()=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"header\", {\n        className: \"header\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n            src: \"/images/bottega.svg\",\n            width: \"240px\"\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\header.tsx\",\n            lineNumber: 4,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\header.tsx\",\n        lineNumber: 3,\n        columnNumber: 5\n    }, undefined);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (logo);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2hlYWRlci50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBLE1BQU1BLE9BQU8sSUFBTTtJQUNqQixxQkFDRSw4REFBQ0M7UUFBT0MsV0FBVTtrQkFDaEIsNEVBQUNDO1lBQUlDLEtBQUk7WUFBc0JDLE9BQU07Ozs7Ozs7Ozs7O0FBRzNDO0FBRUEsaUVBQWVMLElBQUlBLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9ib3R0ZWdhLy4vY29tcG9uZW50cy9oZWFkZXIudHN4Pzg3MGMiXSwic291cmNlc0NvbnRlbnQiOlsiY29uc3QgbG9nbyA9ICgpID0+IHtcclxuICByZXR1cm4gKFxyXG4gICAgPGhlYWRlciBjbGFzc05hbWU9XCJoZWFkZXJcIj5cclxuICAgICAgPGltZyBzcmM9XCIvaW1hZ2VzL2JvdHRlZ2Euc3ZnXCIgd2lkdGg9XCIyNDBweFwiIC8+XHJcbiAgICA8L2hlYWRlcj5cclxuICApO1xyXG59O1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgbG9nbztcclxuIl0sIm5hbWVzIjpbImxvZ28iLCJoZWFkZXIiLCJjbGFzc05hbWUiLCJpbWciLCJzcmMiLCJ3aWR0aCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/header.tsx\n");
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ components_loadingScreen)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+;// CONCATENATED MODULE: ./components/elements/preloader.tsx
+
+const Preloader = ({ width , height  })=>{
+    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            className: "loading",
+            width: width,
+            height: height,
+            viewBox: "0 0 100 100",
+            preserveAspectRatio: "xMidYMid",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(0 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.9166666666666666s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(30 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.8333333333333334s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(60 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.75s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(90 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.6666666666666666s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(120 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.5833333333333334s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(150 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.5s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(180 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.4166666666666667s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(210 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.3333333333333333s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(240 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.25s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(270 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.16666666666666666s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(300 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "-0.08333333333333333s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("g", {
+                    transform: "rotate(330 50 50)",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("rect", {
+                        x: "47",
+                        y: "24",
+                        rx: "3",
+                        ry: "6",
+                        width: "6",
+                        height: "12",
+                        fill: "#000",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("animate", {
+                            attributeName: "opacity",
+                            values: "1;0",
+                            keyTimes: "0;1",
+                            dur: "1s",
+                            begin: "0s",
+                            repeatCount: "indefinite"
+                        })
+                    })
+                })
+            ]
+        })
+    });
+};
+/* harmony default export */ const preloader = (Preloader);
+
+;// CONCATENATED MODULE: ./components/loadingScreen.tsx
+
+
+const loadingScreen = ()=>{
+    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+            id: "loadingScreen",
+            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                        src: "/images/bottega.svg",
+                        width: "300px"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
+                    /*#__PURE__*/ jsx_runtime_.jsx("br", {}),
+                    /*#__PURE__*/ jsx_runtime_.jsx(preloader, {
+                        width: "50px",
+                        height: "50px"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        children: "Chargement de la sc\xe8ne..."
+                    })
+                ]
+            })
+        })
+    });
+};
+/* harmony default export */ const components_loadingScreen = (loadingScreen);
+
 
 /***/ }),
 
-/***/ "./components/loadingScreen.tsx":
-/*!**************************************!*\
-  !*** ./components/loadingScreen.tsx ***!
-  \**************************************/
+/***/ 2368:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_elements_preloader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/elements/preloader */ \"./components/elements/preloader.tsx\");\n\n\nconst loadingScreen = ()=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            id: \"loadingScreen\",\n            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                        src: \"/images/bottega.svg\",\n                        width: \"300px\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n                        lineNumber: 7,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"br\", {}, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n                        lineNumber: 8,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"br\", {}, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n                        lineNumber: 9,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_elements_preloader__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                        width: \"50px\",\n                        height: \"50px\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n                        lineNumber: 10,\n                        columnNumber: 11\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        children: \"Chargement de la sc\\xe8ne...\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n                        lineNumber: 11,\n                        columnNumber: 11\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n                lineNumber: 6,\n                columnNumber: 9\n            }, undefined)\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\loadingScreen.tsx\",\n            lineNumber: 5,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (loadingScreen);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2xvYWRpbmdTY3JlZW4udHN4LmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQXdEO0FBQ3hELE1BQU1DLGdCQUFnQixJQUFNO0lBQzFCLHFCQUNFO2tCQUNFLDRFQUFDQztZQUFJQyxJQUFHO3NCQUNOLDRFQUFDRDs7a0NBQ0MsOERBQUNFO3dCQUFJQyxLQUFJO3dCQUFzQkMsT0FBTTs7Ozs7O2tDQUNyQyw4REFBQ0M7Ozs7O2tDQUNELDhEQUFDQTs7Ozs7a0NBQ0QsOERBQUNQLHNFQUFTQTt3QkFBQ00sT0FBTzt3QkFBUUUsUUFBUTs7Ozs7O2tDQUNsQyw4REFBQ047a0NBQUk7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUtmO0FBRUEsaUVBQWVELGFBQWFBLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9ib3R0ZWdhLy4vY29tcG9uZW50cy9sb2FkaW5nU2NyZWVuLnRzeD83OTc0Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBQcmVsb2FkZXIgZnJvbSBcIkAvY29tcG9uZW50cy9lbGVtZW50cy9wcmVsb2FkZXJcIjtcclxuY29uc3QgbG9hZGluZ1NjcmVlbiA9ICgpID0+IHtcclxuICByZXR1cm4gKFxyXG4gICAgPD5cclxuICAgICAgPGRpdiBpZD1cImxvYWRpbmdTY3JlZW5cIj5cclxuICAgICAgICA8ZGl2PlxyXG4gICAgICAgICAgPGltZyBzcmM9XCIvaW1hZ2VzL2JvdHRlZ2Euc3ZnXCIgd2lkdGg9XCIzMDBweFwiIC8+XHJcbiAgICAgICAgICA8YnIgLz5cclxuICAgICAgICAgIDxiciAvPlxyXG4gICAgICAgICAgPFByZWxvYWRlciB3aWR0aD17XCI1MHB4XCJ9IGhlaWdodD17XCI1MHB4XCJ9IC8+XHJcbiAgICAgICAgICA8ZGl2PkNoYXJnZW1lbnQgZGUgbGEgc2PDqG5lLi4uPC9kaXY+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC8+XHJcbiAgKTtcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGxvYWRpbmdTY3JlZW47XHJcbiJdLCJuYW1lcyI6WyJQcmVsb2FkZXIiLCJsb2FkaW5nU2NyZWVuIiwiZGl2IiwiaWQiLCJpbWciLCJzcmMiLCJ3aWR0aCIsImJyIiwiaGVpZ2h0Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./components/loadingScreen.tsx\n");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const PleaseRotate = ()=>{
+    const [rotate, setRotate] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+        setRotate(window.innerHeight > window.innerWidth ? true : false);
+        window.addEventListener("resize", function(event) {
+            setRotate(window.innerHeight > window.innerWidth ? true : false);
+        }, true);
+    }, []);
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: rotate && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+            id: "pleaseRotate",
+            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                className: "rotateContainer",
+                children: [
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("svg", {
+                        width: "150",
+                        version: "1.1",
+                        id: "Layer_1",
+                        xmlns: "http://www.w3.org/2000/svg",
+                        x: "0px",
+                        y: "0px",
+                        viewBox: "0 0 400 400",
+                        enableBackground: "new 0 0 400 400",
+                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("g", {
+                            children: [
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("path", {
+                                    fill: "#020202",
+                                    d: "M227.9,5.8c5.7,1.8,11.8,2,17.6,3.7c32.9,9.7,56,30.2,69.5,61.7c4.7,11.1,7.2,22.7,7.6,34.8 c0.1,2.2,0.9,2.8,3,2.7c5-0.1,9.9,0,14.9,0c1.8,0,3.3,0.4,4.1,2.2c0.7,1.7-0.3,3-1.4,4.1c-10.3,10.4-20.7,20.7-31,31 c-2,2-3.9,2.1-5.9,0.1c-10.3-10.3-20.7-20.7-31-31c-1.2-1.2-2-2.7-1.2-4.5c0.7-1.7,2.3-1.9,3.9-1.9c4.8,0,9.7-0.1,14.5,0.1 c2.4,0.1,2.9-0.7,2.8-3c-1.4-29.1-22-57-49.3-67.1c-8.7-3.2-17.6-4.7-26.8-5.2c-8.1-0.4-13.3-4.8-14.5-11.9 c-0.8-5.1,2.1-13,10.1-15.1c0.2,0,0.3-0.4,0.4-0.6C219.3,5.8,223.6,5.8,227.9,5.8z"
+                                }),
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("path", {
+                                    fill: "#020202",
+                                    d: "M14,241.5c0-41.7,0.1-83.5,0-125.2c0-12.2,4.7-21.3,15.6-27.1c4.4-2.3,9.2-2.9,14-2.9c43.5,0,87,0,130.5,0 c14.9,0,25.2,7.6,28.9,21.1c0.8,3.1,1,6.3,1,9.4c0,83.1,0,166.1,0,249.2c0,19.1-11.6,30.6-30.7,30.6c-43.3,0-86.5,0-129.8,0 c-14.8,0-25.4-8-28.9-21.7c-0.8-3-0.7-6.1-0.7-9.1C14,324.4,14,282.9,14,241.5z"
+                                }),
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("path", {
+                                    fill: "#020202",
+                                    d: "M223.8,396.6c4.8-8.3,7.2-16.8,7.7-25.8c0.1-1.5,0.7-2,2.1-1.9c0.9,0.1,1.8,0,2.7,0 c40.2,0,80.4,0,120.6,0.1c3.1,0,4-0.6,4-3.9c-0.1-42.4-0.1-84.7,0-127.1c0-3.1-0.7-4-3.9-4c-40.4,0.1-80.9,0-121.3,0.1 c-3.5,0-4.2-1-4-4.2c0.3-6.9,0.2-13.7,0-20.6c0-2.2,0.4-3,2.9-3c41.8,0.1,83.7,0,125.5,0.1c16.8,0.1,28.3,12,28.4,29.2 c0.1,24.2,0,48.3,0,72.5c0,19.3-0.3,38.7,0.1,58c0.4,18.2-13,30.6-30.5,30.4c-43.4-0.4-86.7-0.1-130.1-0.1 C226.8,396.6,225.6,396.6,223.8,396.6z"
+                                }),
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("path", {
+                                    fill: "#FEFEFE",
+                                    d: "M176.2,227.6c0,36.5-0.1,73,0.1,109.5c0,3.5-0.9,4.1-4.2,4.1c-42.2-0.1-84.5-0.1-126.7,0 c-3.3,0-3.9-0.9-3.9-4c0.1-73.1,0.1-146.3,0-219.4c0-3.2,0.7-3.9,3.9-3.9c42.4,0.2,84.7,0.2,127.1,0.1c2.9,0,3.8,0.7,3.7,3.7 C176.2,154.4,176.2,191,176.2,227.6C176.2,227.6,176.2,227.6,176.2,227.6z"
+                                }),
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("path", {
+                                    fill: "#FEFEFE",
+                                    d: "M123.5,368.2c0,8-6.6,14.6-14.5,14.6c-8.1,0-14.7-6.7-14.6-14.9c0.1-8,6.7-14.4,14.8-14.3 C117.2,353.7,123.5,360.1,123.5,368.2z"
+                                })
+                            ]
+                        })
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                        children: "Please rotate your screen"
+                    })
+                ]
+            })
+        })
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PleaseRotate);
+
 
 /***/ }),
 
-/***/ "./components/pleaseRotate.tsx":
-/*!*************************************!*\
-  !*** ./components/pleaseRotate.tsx ***!
-  \*************************************/
+/***/ 3859:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst PleaseRotate = ()=>{\n    const [rotate, setRotate] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        setRotate(window.innerHeight > window.innerWidth ? true : false);\n        window.addEventListener(\"resize\", function(event) {\n            setRotate(window.innerHeight > window.innerWidth ? true : false);\n        }, true);\n    }, []);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: rotate && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            id: \"pleaseRotate\",\n            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"rotateContainer\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                        width: \"150\",\n                        version: \"1.1\",\n                        id: \"Layer_1\",\n                        xmlns: \"http://www.w3.org/2000/svg\",\n                        x: \"0px\",\n                        y: \"0px\",\n                        viewBox: \"0 0 400 400\",\n                        enableBackground: \"new 0 0 400 400\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"g\", {\n                            children: [\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                    fill: \"#020202\",\n                                    d: \"M227.9,5.8c5.7,1.8,11.8,2,17.6,3.7c32.9,9.7,56,30.2,69.5,61.7c4.7,11.1,7.2,22.7,7.6,34.8 c0.1,2.2,0.9,2.8,3,2.7c5-0.1,9.9,0,14.9,0c1.8,0,3.3,0.4,4.1,2.2c0.7,1.7-0.3,3-1.4,4.1c-10.3,10.4-20.7,20.7-31,31 c-2,2-3.9,2.1-5.9,0.1c-10.3-10.3-20.7-20.7-31-31c-1.2-1.2-2-2.7-1.2-4.5c0.7-1.7,2.3-1.9,3.9-1.9c4.8,0,9.7-0.1,14.5,0.1 c2.4,0.1,2.9-0.7,2.8-3c-1.4-29.1-22-57-49.3-67.1c-8.7-3.2-17.6-4.7-26.8-5.2c-8.1-0.4-13.3-4.8-14.5-11.9 c-0.8-5.1,2.1-13,10.1-15.1c0.2,0,0.3-0.4,0.4-0.6C219.3,5.8,223.6,5.8,227.9,5.8z\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                                    lineNumber: 34,\n                                    columnNumber: 17\n                                }, undefined),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                    fill: \"#020202\",\n                                    d: \"M14,241.5c0-41.7,0.1-83.5,0-125.2c0-12.2,4.7-21.3,15.6-27.1c4.4-2.3,9.2-2.9,14-2.9c43.5,0,87,0,130.5,0 c14.9,0,25.2,7.6,28.9,21.1c0.8,3.1,1,6.3,1,9.4c0,83.1,0,166.1,0,249.2c0,19.1-11.6,30.6-30.7,30.6c-43.3,0-86.5,0-129.8,0 c-14.8,0-25.4-8-28.9-21.7c-0.8-3-0.7-6.1-0.7-9.1C14,324.4,14,282.9,14,241.5z\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                                    lineNumber: 42,\n                                    columnNumber: 17\n                                }, undefined),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                    fill: \"#020202\",\n                                    d: \"M223.8,396.6c4.8-8.3,7.2-16.8,7.7-25.8c0.1-1.5,0.7-2,2.1-1.9c0.9,0.1,1.8,0,2.7,0 c40.2,0,80.4,0,120.6,0.1c3.1,0,4-0.6,4-3.9c-0.1-42.4-0.1-84.7,0-127.1c0-3.1-0.7-4-3.9-4c-40.4,0.1-80.9,0-121.3,0.1 c-3.5,0-4.2-1-4-4.2c0.3-6.9,0.2-13.7,0-20.6c0-2.2,0.4-3,2.9-3c41.8,0.1,83.7,0,125.5,0.1c16.8,0.1,28.3,12,28.4,29.2 c0.1,24.2,0,48.3,0,72.5c0,19.3-0.3,38.7,0.1,58c0.4,18.2-13,30.6-30.5,30.4c-43.4-0.4-86.7-0.1-130.1-0.1 C226.8,396.6,225.6,396.6,223.8,396.6z\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                                    lineNumber: 48,\n                                    columnNumber: 17\n                                }, undefined),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                    fill: \"#FEFEFE\",\n                                    d: \"M176.2,227.6c0,36.5-0.1,73,0.1,109.5c0,3.5-0.9,4.1-4.2,4.1c-42.2-0.1-84.5-0.1-126.7,0 c-3.3,0-3.9-0.9-3.9-4c0.1-73.1,0.1-146.3,0-219.4c0-3.2,0.7-3.9,3.9-3.9c42.4,0.2,84.7,0.2,127.1,0.1c2.9,0,3.8,0.7,3.7,3.7 C176.2,154.4,176.2,191,176.2,227.6C176.2,227.6,176.2,227.6,176.2,227.6z\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                                    lineNumber: 56,\n                                    columnNumber: 17\n                                }, undefined),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                    fill: \"#FEFEFE\",\n                                    d: \"M123.5,368.2c0,8-6.6,14.6-14.5,14.6c-8.1,0-14.7-6.7-14.6-14.9c0.1-8,6.7-14.4,14.8-14.3 C117.2,353.7,123.5,360.1,123.5,368.2z\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                                    lineNumber: 62,\n                                    columnNumber: 17\n                                }, undefined)\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                            lineNumber: 33,\n                            columnNumber: 15\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                        lineNumber: 23,\n                        columnNumber: 13\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                        children: \"Please rotate your screen\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                        lineNumber: 69,\n                        columnNumber: 13\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n                lineNumber: 22,\n                columnNumber: 11\n            }, undefined)\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\pleaseRotate.tsx\",\n            lineNumber: 21,\n            columnNumber: 9\n        }, undefined)\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PleaseRotate);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL3BsZWFzZVJvdGF0ZS50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQTRDO0FBRTVDLE1BQU1FLGVBQWUsSUFBTTtJQUN6QixNQUFNLENBQUNDLFFBQVFDLFVBQVUsR0FBR0osK0NBQVFBLENBQUMsS0FBSztJQUUxQ0MsZ0RBQVNBLENBQUMsSUFBTTtRQUNkRyxVQUFVQyxPQUFPQyxXQUFXLEdBQUdELE9BQU9FLFVBQVUsR0FBRyxJQUFJLEdBQUcsS0FBSztRQUUvREYsT0FBT0csZ0JBQWdCLENBQ3JCLFVBQ0EsU0FBVUMsS0FBSyxFQUFFO1lBQ2ZMLFVBQVVDLE9BQU9DLFdBQVcsR0FBR0QsT0FBT0UsVUFBVSxHQUFHLElBQUksR0FBRyxLQUFLO1FBQ2pFLEdBQ0EsSUFBSTtJQUVSLEdBQUcsRUFBRTtJQUVMLHFCQUNFO2tCQUNHSix3QkFDQyw4REFBQ087WUFBSUMsSUFBRztzQkFDTiw0RUFBQ0Q7Z0JBQUlFLFdBQVU7O2tDQUNiLDhEQUFDQzt3QkFDQ0MsT0FBTTt3QkFDTkMsU0FBUTt3QkFDUkosSUFBRzt3QkFDSEssT0FBTTt3QkFDTkMsR0FBRTt3QkFDRkMsR0FBRTt3QkFDRkMsU0FBUTt3QkFDUkMsa0JBQWlCO2tDQUVqQiw0RUFBQ0M7OzhDQUNDLDhEQUFDQztvQ0FDQ0MsTUFBSztvQ0FDTEMsR0FBRTs7Ozs7OzhDQU1KLDhEQUFDRjtvQ0FDQ0MsTUFBSztvQ0FDTEMsR0FBRTs7Ozs7OzhDQUlKLDhEQUFDRjtvQ0FDQ0MsTUFBSztvQ0FDTEMsR0FBRTs7Ozs7OzhDQU1KLDhEQUFDRjtvQ0FDQ0MsTUFBSztvQ0FDTEMsR0FBRTs7Ozs7OzhDQUlKLDhEQUFDRjtvQ0FDQ0MsTUFBSztvQ0FDTEMsR0FBRTs7Ozs7Ozs7Ozs7Ozs7Ozs7a0NBS1IsOERBQUNDO2tDQUFHOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFNaEI7QUFFQSxpRUFBZXZCLFlBQVlBLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9ib3R0ZWdhLy4vY29tcG9uZW50cy9wbGVhc2VSb3RhdGUudHN4PzhhOWYiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JztcclxuXHJcbmNvbnN0IFBsZWFzZVJvdGF0ZSA9ICgpID0+IHtcclxuICBjb25zdCBbcm90YXRlLCBzZXRSb3RhdGVdID0gdXNlU3RhdGUoZmFsc2UpO1xyXG5cclxuICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgc2V0Um90YXRlKHdpbmRvdy5pbm5lckhlaWdodCA+IHdpbmRvdy5pbm5lcldpZHRoID8gdHJ1ZSA6IGZhbHNlKTtcclxuXHJcbiAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcihcclxuICAgICAgJ3Jlc2l6ZScsXHJcbiAgICAgIGZ1bmN0aW9uIChldmVudCkge1xyXG4gICAgICAgIHNldFJvdGF0ZSh3aW5kb3cuaW5uZXJIZWlnaHQgPiB3aW5kb3cuaW5uZXJXaWR0aCA/IHRydWUgOiBmYWxzZSk7XHJcbiAgICAgIH0sXHJcbiAgICAgIHRydWVcclxuICAgICk7XHJcbiAgfSwgW10pO1xyXG5cclxuICByZXR1cm4gKFxyXG4gICAgPD5cclxuICAgICAge3JvdGF0ZSAmJiAoXHJcbiAgICAgICAgPGRpdiBpZD1cInBsZWFzZVJvdGF0ZVwiPlxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyb3RhdGVDb250YWluZXJcIj5cclxuICAgICAgICAgICAgPHN2Z1xyXG4gICAgICAgICAgICAgIHdpZHRoPVwiMTUwXCJcclxuICAgICAgICAgICAgICB2ZXJzaW9uPVwiMS4xXCJcclxuICAgICAgICAgICAgICBpZD1cIkxheWVyXzFcIlxyXG4gICAgICAgICAgICAgIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxyXG4gICAgICAgICAgICAgIHg9XCIwcHhcIlxyXG4gICAgICAgICAgICAgIHk9XCIwcHhcIlxyXG4gICAgICAgICAgICAgIHZpZXdCb3g9XCIwIDAgNDAwIDQwMFwiXHJcbiAgICAgICAgICAgICAgZW5hYmxlQmFja2dyb3VuZD1cIm5ldyAwIDAgNDAwIDQwMFwiXHJcbiAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICA8Zz5cclxuICAgICAgICAgICAgICAgIDxwYXRoXHJcbiAgICAgICAgICAgICAgICAgIGZpbGw9XCIjMDIwMjAyXCJcclxuICAgICAgICAgICAgICAgICAgZD1cIk0yMjcuOSw1LjhjNS43LDEuOCwxMS44LDIsMTcuNiwzLjdjMzIuOSw5LjcsNTYsMzAuMiw2OS41LDYxLjdjNC43LDExLjEsNy4yLDIyLjcsNy42LDM0LjhcclxuXHRcdGMwLjEsMi4yLDAuOSwyLjgsMywyLjdjNS0wLjEsOS45LDAsMTQuOSwwYzEuOCwwLDMuMywwLjQsNC4xLDIuMmMwLjcsMS43LTAuMywzLTEuNCw0LjFjLTEwLjMsMTAuNC0yMC43LDIwLjctMzEsMzFcclxuXHRcdGMtMiwyLTMuOSwyLjEtNS45LDAuMWMtMTAuMy0xMC4zLTIwLjctMjAuNy0zMS0zMWMtMS4yLTEuMi0yLTIuNy0xLjItNC41YzAuNy0xLjcsMi4zLTEuOSwzLjktMS45YzQuOCwwLDkuNy0wLjEsMTQuNSwwLjFcclxuXHRcdGMyLjQsMC4xLDIuOS0wLjcsMi44LTNjLTEuNC0yOS4xLTIyLTU3LTQ5LjMtNjcuMWMtOC43LTMuMi0xNy42LTQuNy0yNi44LTUuMmMtOC4xLTAuNC0xMy4zLTQuOC0xNC41LTExLjlcclxuXHRcdGMtMC44LTUuMSwyLjEtMTMsMTAuMS0xNS4xYzAuMiwwLDAuMy0wLjQsMC40LTAuNkMyMTkuMyw1LjgsMjIzLjYsNS44LDIyNy45LDUuOHpcIlxyXG4gICAgICAgICAgICAgICAgLz5cclxuICAgICAgICAgICAgICAgIDxwYXRoXHJcbiAgICAgICAgICAgICAgICAgIGZpbGw9XCIjMDIwMjAyXCJcclxuICAgICAgICAgICAgICAgICAgZD1cIk0xNCwyNDEuNWMwLTQxLjcsMC4xLTgzLjUsMC0xMjUuMmMwLTEyLjIsNC43LTIxLjMsMTUuNi0yNy4xYzQuNC0yLjMsOS4yLTIuOSwxNC0yLjljNDMuNSwwLDg3LDAsMTMwLjUsMFxyXG5cdFx0YzE0LjksMCwyNS4yLDcuNiwyOC45LDIxLjFjMC44LDMuMSwxLDYuMywxLDkuNGMwLDgzLjEsMCwxNjYuMSwwLDI0OS4yYzAsMTkuMS0xMS42LDMwLjYtMzAuNywzMC42Yy00My4zLDAtODYuNSwwLTEyOS44LDBcclxuXHRcdGMtMTQuOCwwLTI1LjQtOC0yOC45LTIxLjdjLTAuOC0zLTAuNy02LjEtMC43LTkuMUMxNCwzMjQuNCwxNCwyODIuOSwxNCwyNDEuNXpcIlxyXG4gICAgICAgICAgICAgICAgLz5cclxuICAgICAgICAgICAgICAgIDxwYXRoXHJcbiAgICAgICAgICAgICAgICAgIGZpbGw9XCIjMDIwMjAyXCJcclxuICAgICAgICAgICAgICAgICAgZD1cIk0yMjMuOCwzOTYuNmM0LjgtOC4zLDcuMi0xNi44LDcuNy0yNS44YzAuMS0xLjUsMC43LTIsMi4xLTEuOWMwLjksMC4xLDEuOCwwLDIuNywwXHJcblx0XHRjNDAuMiwwLDgwLjQsMCwxMjAuNiwwLjFjMy4xLDAsNC0wLjYsNC0zLjljLTAuMS00Mi40LTAuMS04NC43LDAtMTI3LjFjMC0zLjEtMC43LTQtMy45LTRjLTQwLjQsMC4xLTgwLjksMC0xMjEuMywwLjFcclxuXHRcdGMtMy41LDAtNC4yLTEtNC00LjJjMC4zLTYuOSwwLjItMTMuNywwLTIwLjZjMC0yLjIsMC40LTMsMi45LTNjNDEuOCwwLjEsODMuNywwLDEyNS41LDAuMWMxNi44LDAuMSwyOC4zLDEyLDI4LjQsMjkuMlxyXG5cdFx0YzAuMSwyNC4yLDAsNDguMywwLDcyLjVjMCwxOS4zLTAuMywzOC43LDAuMSw1OGMwLjQsMTguMi0xMywzMC42LTMwLjUsMzAuNGMtNDMuNC0wLjQtODYuNy0wLjEtMTMwLjEtMC4xXHJcblx0XHRDMjI2LjgsMzk2LjYsMjI1LjYsMzk2LjYsMjIzLjgsMzk2LjZ6XCJcclxuICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICA8cGF0aFxyXG4gICAgICAgICAgICAgICAgICBmaWxsPVwiI0ZFRkVGRVwiXHJcbiAgICAgICAgICAgICAgICAgIGQ9XCJNMTc2LjIsMjI3LjZjMCwzNi41LTAuMSw3MywwLjEsMTA5LjVjMCwzLjUtMC45LDQuMS00LjIsNC4xYy00Mi4yLTAuMS04NC41LTAuMS0xMjYuNywwXHJcblx0XHRjLTMuMywwLTMuOS0wLjktMy45LTRjMC4xLTczLjEsMC4xLTE0Ni4zLDAtMjE5LjRjMC0zLjIsMC43LTMuOSwzLjktMy45YzQyLjQsMC4yLDg0LjcsMC4yLDEyNy4xLDAuMWMyLjksMCwzLjgsMC43LDMuNywzLjdcclxuXHRcdEMxNzYuMiwxNTQuNCwxNzYuMiwxOTEsMTc2LjIsMjI3LjZDMTc2LjIsMjI3LjYsMTc2LjIsMjI3LjYsMTc2LjIsMjI3LjZ6XCJcclxuICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICA8cGF0aFxyXG4gICAgICAgICAgICAgICAgICBmaWxsPVwiI0ZFRkVGRVwiXHJcbiAgICAgICAgICAgICAgICAgIGQ9XCJNMTIzLjUsMzY4LjJjMCw4LTYuNiwxNC42LTE0LjUsMTQuNmMtOC4xLDAtMTQuNy02LjctMTQuNi0xNC45YzAuMS04LDYuNy0xNC40LDE0LjgtMTQuM1xyXG5cdFx0QzExNy4yLDM1My43LDEyMy41LDM2MC4xLDEyMy41LDM2OC4yelwiXHJcbiAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgIDwvZz5cclxuICAgICAgICAgICAgPC9zdmc+XHJcbiAgICAgICAgICAgIDxoMj5QbGVhc2Ugcm90YXRlIHlvdXIgc2NyZWVuPC9oMj5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICApfVxyXG4gICAgPC8+XHJcbiAgKTtcclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IFBsZWFzZVJvdGF0ZTtcclxuIl0sIm5hbWVzIjpbInVzZVN0YXRlIiwidXNlRWZmZWN0IiwiUGxlYXNlUm90YXRlIiwicm90YXRlIiwic2V0Um90YXRlIiwid2luZG93IiwiaW5uZXJIZWlnaHQiLCJpbm5lcldpZHRoIiwiYWRkRXZlbnRMaXN0ZW5lciIsImV2ZW50IiwiZGl2IiwiaWQiLCJjbGFzc05hbWUiLCJzdmciLCJ3aWR0aCIsInZlcnNpb24iLCJ4bWxucyIsIngiLCJ5Iiwidmlld0JveCIsImVuYWJsZUJhY2tncm91bmQiLCJnIiwicGF0aCIsImZpbGwiLCJkIiwiaDIiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/pleaseRotate.tsx\n");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4573);
+
+
+const Sidebar = (props)=>{
+    const emissionHoveranimation = (part)=>{
+        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__/* .emissionAnimation */ .$K)(part);
+    };
+    const colors = [
+        {
+            name: "white",
+            r: 255,
+            g: 247,
+            b: 232
+        },
+        {
+            name: "black",
+            r: 0,
+            g: 0,
+            b: 0
+        },
+        {
+            name: "green",
+            r: 25,
+            g: 61,
+            b: 50
+        },
+        {
+            name: "red",
+            r: 83,
+            g: 32,
+            b: 44
+        }
+    ];
+    const defaultTextureUid = (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__/* .getMaterials */ .aS)().filter((r)=>{
+        return r.name == "Leather_001";
+    })[0]?.channels.NormalMap.texture.uid || "";
+    const updateColor = async (name, r, g, b)=>{
+        //let textureUID = "";
+        let bumpMapUID = defaultTextureUid;
+        if (name == "green") {
+            bumpMapUID = await (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__/* .addTexture */ .iF)("https://i.imgur.com/Tn2UYDu.jpg");
+        //textureUID = await addTexture("https://i.imgur.com/wHFrCPy.jpg");
+        }
+        //setTexture("Leather_001", textureUID);
+        console.log(bumpMapUID);
+        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__/* .setBumpMap */ .Tx)("Leather_001", bumpMapUID);
+        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__/* .changeColor */ .zX)("Leather_001", {
+            r,
+            g,
+            b
+        });
+        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__/* .changeColor */ .zX)("Leather_002", {
+            r,
+            g,
+            b
+        });
+    };
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("aside", {
+            className: "flex flex-col text-left p-10 ",
+            children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
+                    className: "text-4xl mt-10",
+                    children: "Sardine"
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                    className: "text-2xl mt-3",
+                    children: "3500 €"
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                    className: "my-10 text-xl",
+                    children: "Bag made from supple lambskin leather using Intrecciato Craftsmanship featuring sculptural Read more"
+                }),
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                    className: "font-bold text-xl",
+                    children: [
+                        "Colors:",
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            className: "flex flex-wrap gap-5 my-4",
+                            children: colors.map(({ name , r , g , b  })=>{
+                                return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                    onClick: ()=>{
+                                        updateColor(name, r, g, b);
+                                    },
+                                    className: "w-[40px] h-[40px] rounded-full cursor-pointer hover:opacity-70",
+                                    style: {
+                                        backgroundColor: `rgb(${r},${g},${b})`
+                                    }
+                                });
+                            })
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                    className: "w-[300px] flex flex-col mt-10",
+                    children: [
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                            className: "p-3 border border-2 border-solid border-black",
+                            children: "Add to bag"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
+                            className: "p-3 mt-5 bg-black text-white border border-2 border-solid border-black",
+                            children: "Check in-store availability"
+                        })
+                    ]
+                })
+            ]
+        })
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
+
 
 /***/ }),
 
-/***/ "./components/sidebar.tsx":
-/*!********************************!*\
-  !*** ./components/sidebar.tsx ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/utils/sketchfab */ \"./utils/sketchfab.ts\");\n\n\nconst Sidebar = (props)=>{\n    const emissionHoveranimation = (part)=>{\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.emissionAnimation)(part);\n    };\n    const colors = [\n        {\n            name: \"white\",\n            r: 255,\n            g: 247,\n            b: 232\n        },\n        {\n            name: \"black\",\n            r: 0,\n            g: 0,\n            b: 0\n        },\n        {\n            name: \"green\",\n            r: 25,\n            g: 61,\n            b: 50\n        },\n        {\n            name: \"red\",\n            r: 83,\n            g: 32,\n            b: 44\n        }\n    ];\n    const updateColor = async (name, r, g, b)=>{\n        let textureUID = \"\";\n        let bumpMapUID = \"35a4a84d4a504f9eb94d2b89ce4e7e8f\";\n        if (name == \"green\") {\n            bumpMapUID = await (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.addTexture)(\"https://i.imgur.com/Tn2UYDu.jpg\");\n        //textureUID = await addTexture(\"https://i.imgur.com/wHFrCPy.jpg\");\n        }\n        //setTexture(\"Leather_001\", textureUID);\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.setBumpMap)(\"Leather_001\", bumpMapUID);\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Leather_001\", {\n            r,\n            g,\n            b\n        });\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Leather_002\", {\n            r,\n            g,\n            b\n        });\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"aside\", {\n            className: \"flex flex-col text-left p-10 \",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                    className: \"text-4xl mt-10\",\n                    children: \"Sardine\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                    lineNumber: 42,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                    className: \"text-2xl mt-3\",\n                    children: \"3500 €\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                    lineNumber: 44,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                    className: \"my-10 text-xl\",\n                    children: \"Bag made from supple lambskin leather using Intrecciato Craftsmanship featuring sculptural Read more\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                    lineNumber: 46,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                    className: \"font-bold text-xl\",\n                    children: [\n                        \"Colors:\",\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                            className: \"flex flex-wrap gap-5 my-4\",\n                            children: colors.map(({ name , r , g , b  })=>{\n                                return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                    onClick: ()=>{\n                                        updateColor(name, r, g, b);\n                                    },\n                                    className: \"w-[40px] h-[40px] rounded-full cursor-pointer hover:opacity-70\",\n                                    style: {\n                                        backgroundColor: `rgb(${r},${g},${b})`\n                                    }\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                                    lineNumber: 56,\n                                    columnNumber: 17\n                                }, undefined);\n                            })\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                            lineNumber: 53,\n                            columnNumber: 11\n                        }, undefined)\n                    ]\n                }, void 0, true, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                    lineNumber: 51,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"w-[300px] flex flex-col mt-10\",\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                            className: \"p-3 border border-2 border-solid border-black\",\n                            children: \"Add to bag\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                            lineNumber: 68,\n                            columnNumber: 11\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                            className: \"p-3 mt-5 bg-black text-white border border-2 border-solid border-black\",\n                            children: \"Check in-store availability\"\n                        }, void 0, false, {\n                            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                            lineNumber: 71,\n                            columnNumber: 11\n                        }, undefined)\n                    ]\n                }, void 0, true, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n                    lineNumber: 67,\n                    columnNumber: 9\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\sidebar.tsx\",\n            lineNumber: 41,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL3NpZGViYXIudHN4LmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBTTJCO0FBTTNCLE1BQU1JLFVBQVUsQ0FBQ0MsUUFBaUI7SUFDaEMsTUFBTUMseUJBQXlCLENBQUNDLE9BQWlCO1FBQy9DTixtRUFBaUJBLENBQUNNO0lBQ3BCO0lBRUEsTUFBTUMsU0FBUztRQUNiO1lBQUVDLE1BQU07WUFBU0MsR0FBRztZQUFLQyxHQUFHO1lBQUtDLEdBQUc7UUFBSTtRQUN4QztZQUFFSCxNQUFNO1lBQVNDLEdBQUc7WUFBR0MsR0FBRztZQUFHQyxHQUFHO1FBQUU7UUFDbEM7WUFBRUgsTUFBTTtZQUFTQyxHQUFHO1lBQUlDLEdBQUc7WUFBSUMsR0FBRztRQUFHO1FBQ3JDO1lBQUVILE1BQU07WUFBT0MsR0FBRztZQUFJQyxHQUFHO1lBQUlDLEdBQUc7UUFBRztLQUNwQztJQUVELE1BQU1DLGNBQWMsT0FBT0osTUFBY0MsR0FBV0MsR0FBV0MsSUFBYztRQUMzRSxJQUFJRSxhQUFhO1FBRWpCLElBQUlDLGFBQWE7UUFDakIsSUFBSU4sUUFBUSxTQUFTO1lBQ25CTSxhQUFhLE1BQU1iLDREQUFVQSxDQUFDO1FBQzlCLG1FQUFtRTtRQUNyRSxDQUFDO1FBQ0Qsd0NBQXdDO1FBQ3hDQyw0REFBVUEsQ0FBQyxlQUFlWTtRQUMxQmYsNkRBQVdBLENBQUMsZUFBZTtZQUFFVTtZQUFHQztZQUFHQztRQUFFO1FBQ3JDWiw2REFBV0EsQ0FBQyxlQUFlO1lBQUVVO1lBQUdDO1lBQUdDO1FBQUU7SUFDdkM7SUFFQSxxQkFDRTtrQkFDRSw0RUFBQ0k7WUFBTUMsV0FBVTs7OEJBQ2YsOERBQUNDO29CQUFHRCxXQUFVOzhCQUFpQjs7Ozs7OzhCQUUvQiw4REFBQ0U7b0JBQUdGLFdBQVU7OEJBQWdCOzs7Ozs7OEJBRTlCLDhEQUFDRztvQkFBRUgsV0FBVTs4QkFBZ0I7Ozs7Ozs4QkFLN0IsOERBQUNHO29CQUFFSCxXQUFVOzt3QkFBb0I7c0NBRS9CLDhEQUFDSTs0QkFBSUosV0FBVTtzQ0FDWlQsT0FBT2MsR0FBRyxDQUFDLENBQUMsRUFBRWIsS0FBSSxFQUFFQyxFQUFDLEVBQUVDLEVBQUMsRUFBRUMsRUFBQyxFQUFFLEdBQUs7Z0NBQ2pDLHFCQUNFLDhEQUFDUztvQ0FDQ0UsU0FBUyxJQUFNO3dDQUNiVixZQUFZSixNQUFNQyxHQUFHQyxHQUFHQztvQ0FDMUI7b0NBQ0FLLFdBQVU7b0NBQ1ZPLE9BQU87d0NBQUVDLGlCQUFpQixDQUFDLElBQUksRUFBRWYsRUFBRSxDQUFDLEVBQUVDLEVBQUUsQ0FBQyxFQUFFQyxFQUFFLENBQUMsQ0FBQztvQ0FBQzs7Ozs7OzRCQUd0RDs7Ozs7Ozs7Ozs7OzhCQUdKLDhEQUFDUztvQkFBSUosV0FBVTs7c0NBQ2IsOERBQUNTOzRCQUFPVCxXQUFVO3NDQUFnRDs7Ozs7O3NDQUdsRSw4REFBQ1M7NEJBQU9ULFdBQVU7c0NBQXlFOzs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBT3JHO0FBRUEsaUVBQWViLE9BQU9BLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9ib3R0ZWdhLy4vY29tcG9uZW50cy9zaWRlYmFyLnRzeD83YTg3Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XHJcbiAgY2hhbmdlQ29sb3IsXHJcbiAgZW1pc3Npb25BbmltYXRpb24sXHJcbiAgYWRkVGV4dHVyZSxcclxuICBzZXRUZXh0dXJlLFxyXG4gIHNldEJ1bXBNYXAsXHJcbn0gZnJvbSBcIkAvdXRpbHMvc2tldGNoZmFiXCI7XHJcblxyXG5pbnRlcmZhY2UgUHJvcHMge1xyXG4gIGNoYW5nZVNjZW5hcmlvOiAodmFsOiBzdHJpbmcpID0+IHZvaWQ7XHJcbn1cclxuXHJcbmNvbnN0IFNpZGViYXIgPSAocHJvcHM6IFByb3BzKSA9PiB7XHJcbiAgY29uc3QgZW1pc3Npb25Ib3ZlcmFuaW1hdGlvbiA9IChwYXJ0OiBzdHJpbmcpID0+IHtcclxuICAgIGVtaXNzaW9uQW5pbWF0aW9uKHBhcnQpO1xyXG4gIH07XHJcblxyXG4gIGNvbnN0IGNvbG9ycyA9IFtcclxuICAgIHsgbmFtZTogXCJ3aGl0ZVwiLCByOiAyNTUsIGc6IDI0NywgYjogMjMyIH0sXHJcbiAgICB7IG5hbWU6IFwiYmxhY2tcIiwgcjogMCwgZzogMCwgYjogMCB9LFxyXG4gICAgeyBuYW1lOiBcImdyZWVuXCIsIHI6IDI1LCBnOiA2MSwgYjogNTAgfSxcclxuICAgIHsgbmFtZTogXCJyZWRcIiwgcjogODMsIGc6IDMyLCBiOiA0NCB9LFxyXG4gIF07XHJcblxyXG4gIGNvbnN0IHVwZGF0ZUNvbG9yID0gYXN5bmMgKG5hbWU6IHN0cmluZywgcjogbnVtYmVyLCBnOiBudW1iZXIsIGI6IG51bWJlcikgPT4ge1xyXG4gICAgbGV0IHRleHR1cmVVSUQgPSBcIlwiO1xyXG5cclxuICAgIGxldCBidW1wTWFwVUlEID0gXCIzNWE0YTg0ZDRhNTA0ZjllYjk0ZDJiODljZTRlN2U4ZlwiO1xyXG4gICAgaWYgKG5hbWUgPT0gXCJncmVlblwiKSB7XHJcbiAgICAgIGJ1bXBNYXBVSUQgPSBhd2FpdCBhZGRUZXh0dXJlKFwiaHR0cHM6Ly9pLmltZ3VyLmNvbS9UbjJVWUR1LmpwZ1wiKTtcclxuICAgICAgLy90ZXh0dXJlVUlEID0gYXdhaXQgYWRkVGV4dHVyZShcImh0dHBzOi8vaS5pbWd1ci5jb20vd0hGckNQeS5qcGdcIik7XHJcbiAgICB9XHJcbiAgICAvL3NldFRleHR1cmUoXCJMZWF0aGVyXzAwMVwiLCB0ZXh0dXJlVUlEKTtcclxuICAgIHNldEJ1bXBNYXAoXCJMZWF0aGVyXzAwMVwiLCBidW1wTWFwVUlEKTtcclxuICAgIGNoYW5nZUNvbG9yKFwiTGVhdGhlcl8wMDFcIiwgeyByLCBnLCBiIH0pO1xyXG4gICAgY2hhbmdlQ29sb3IoXCJMZWF0aGVyXzAwMlwiLCB7IHIsIGcsIGIgfSk7XHJcbiAgfTtcclxuXHJcbiAgcmV0dXJuIChcclxuICAgIDw+XHJcbiAgICAgIDxhc2lkZSBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sIHRleHQtbGVmdCBwLTEwIFwiPlxyXG4gICAgICAgIDxoMSBjbGFzc05hbWU9XCJ0ZXh0LTR4bCBtdC0xMFwiPlNhcmRpbmU8L2gxPlxyXG5cclxuICAgICAgICA8aDIgY2xhc3NOYW1lPVwidGV4dC0yeGwgbXQtM1wiPjM1MDAg4oKsPC9oMj5cclxuXHJcbiAgICAgICAgPHAgY2xhc3NOYW1lPVwibXktMTAgdGV4dC14bFwiPlxyXG4gICAgICAgICAgQmFnIG1hZGUgZnJvbSBzdXBwbGUgbGFtYnNraW4gbGVhdGhlciB1c2luZyBJbnRyZWNjaWF0byBDcmFmdHNtYW5zaGlwXHJcbiAgICAgICAgICBmZWF0dXJpbmcgc2N1bHB0dXJhbCBSZWFkIG1vcmVcclxuICAgICAgICA8L3A+XHJcblxyXG4gICAgICAgIDxwIGNsYXNzTmFtZT1cImZvbnQtYm9sZCB0ZXh0LXhsXCI+XHJcbiAgICAgICAgICBDb2xvcnM6XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC13cmFwIGdhcC01IG15LTRcIj5cclxuICAgICAgICAgICAge2NvbG9ycy5tYXAoKHsgbmFtZSwgciwgZywgYiB9KSA9PiB7XHJcbiAgICAgICAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgICAgIDxkaXZcclxuICAgICAgICAgICAgICAgICAgb25DbGljaz17KCkgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgIHVwZGF0ZUNvbG9yKG5hbWUsIHIsIGcsIGIpO1xyXG4gICAgICAgICAgICAgICAgICB9fVxyXG4gICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LVs0MHB4XSBoLVs0MHB4XSByb3VuZGVkLWZ1bGwgY3Vyc29yLXBvaW50ZXIgaG92ZXI6b3BhY2l0eS03MFwiXHJcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogYHJnYigke3J9LCR7Z30sJHtifSlgIH19XHJcbiAgICAgICAgICAgICAgICA+PC9kaXY+XHJcbiAgICAgICAgICAgICAgKTtcclxuICAgICAgICAgICAgfSl9XHJcbiAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICA8L3A+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LVszMDBweF0gZmxleCBmbGV4LWNvbCBtdC0xMFwiPlxyXG4gICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9XCJwLTMgYm9yZGVyIGJvcmRlci0yIGJvcmRlci1zb2xpZCBib3JkZXItYmxhY2tcIj5cclxuICAgICAgICAgICAgQWRkIHRvIGJhZ1xyXG4gICAgICAgICAgPC9idXR0b24+XHJcbiAgICAgICAgICA8YnV0dG9uIGNsYXNzTmFtZT1cInAtMyBtdC01IGJnLWJsYWNrIHRleHQtd2hpdGUgYm9yZGVyIGJvcmRlci0yIGJvcmRlci1zb2xpZCBib3JkZXItYmxhY2tcIj5cclxuICAgICAgICAgICAgQ2hlY2sgaW4tc3RvcmUgYXZhaWxhYmlsaXR5XHJcbiAgICAgICAgICA8L2J1dHRvbj5cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgPC9hc2lkZT5cclxuICAgIDwvPlxyXG4gICk7XHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBTaWRlYmFyO1xyXG4iXSwibmFtZXMiOlsiY2hhbmdlQ29sb3IiLCJlbWlzc2lvbkFuaW1hdGlvbiIsImFkZFRleHR1cmUiLCJzZXRCdW1wTWFwIiwiU2lkZWJhciIsInByb3BzIiwiZW1pc3Npb25Ib3ZlcmFuaW1hdGlvbiIsInBhcnQiLCJjb2xvcnMiLCJuYW1lIiwiciIsImciLCJiIiwidXBkYXRlQ29sb3IiLCJ0ZXh0dXJlVUlEIiwiYnVtcE1hcFVJRCIsImFzaWRlIiwiY2xhc3NOYW1lIiwiaDEiLCJoMiIsInAiLCJkaXYiLCJtYXAiLCJvbkNsaWNrIiwic3R5bGUiLCJiYWNrZ3JvdW5kQ29sb3IiLCJidXR0b24iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/sidebar.tsx\n");
-
-/***/ }),
-
-/***/ "./components/viewer.tsx":
-/*!*******************************!*\
-  !*** ./components/viewer.tsx ***!
-  \*******************************/
+/***/ 2801:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _components_debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/debug */ \"./components/debug.tsx\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_debug__WEBPACK_IMPORTED_MODULE_3__]);\n_components_debug__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\n\n\n\nconst Viewer = ({ apiRef , modelId , setIsModelLoaded , setMaterials , setNodes  })=>{\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();\n    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{\n        let iframe = document.getElementById(\"api-frame\");\n        let client = new window.Sketchfab(iframe);\n        client.init(modelId, {\n            autostart: 1,\n            navigation: 0,\n            ui_controls: 0,\n            ui_stop: 0,\n            ui_animations: 0,\n            ui_general_controls: 0,\n            ui_infos: 0,\n            ui_loading: 0,\n            ui_watermark: 0,\n            transparent: 0,\n            success: (callback)=>{\n                apiRef.current = callback;\n                callback.addEventListener(\"viewerready\", function() {\n                    setIsModelLoaded(true);\n                    apiRef.current.getNodeMap((err, nodes)=>{\n                        if (!err) {\n                            let nodeList = Object.values(nodes).map((item)=>{\n                                return {\n                                    instanceID: item.instanceID,\n                                    name: item.name\n                                };\n                            });\n                            setNodes(nodeList);\n                        }\n                    });\n                    apiRef.current.getMaterialList(function(err, materials) {\n                        if (!err) {\n                            setMaterials(materials);\n                        }\n                    });\n                });\n            }\n        });\n    }, [\n        apiRef,\n        modelId,\n        setIsModelLoaded,\n        setMaterials\n    ]);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            id: \"viewer\",\n            children: [\n                router.query.debug && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_debug__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {}, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\viewer.tsx\",\n                    lineNumber: 66,\n                    columnNumber: 32\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    id: \"numbers\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"canvas\", {\n                        width: \"400\",\n                        height: \"400\",\n                        id: \"numberCanvas\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\viewer.tsx\",\n                        lineNumber: 68,\n                        columnNumber: 11\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\viewer.tsx\",\n                    lineNumber: 67,\n                    columnNumber: 9\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"iframe\", {\n                    title: \"Sketchfab Viewer\",\n                    src: \"\",\n                    id: \"api-frame\",\n                    width: \"400\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\viewer.tsx\",\n                    lineNumber: 71,\n                    columnNumber: 9\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\components\\\\viewer.tsx\",\n            lineNumber: 65,\n            columnNumber: 7\n        }, undefined)\n    }, void 0, false);\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Viewer);\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL3ZpZXdlci50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7O0FBS3dDO0FBQ0k7QUFDSjtBQVN4QyxNQUFNRyxTQUFTLENBQUMsRUFDZEMsT0FBTSxFQUNOQyxRQUFPLEVBQ1BDLGlCQUFnQixFQUNoQkMsYUFBWSxFQUNaQyxTQUFRLEVBQ1EsR0FBSztJQUNyQixNQUFNQyxTQUFTVCxzREFBU0E7SUFFeEJDLGdEQUFTQSxDQUFDLElBQU07UUFDZCxJQUFJUyxTQUFTQyxTQUFTQyxjQUFjLENBQUM7UUFDckMsSUFBSUMsU0FBUyxJQUFJQyxPQUFPQyxTQUFTLENBQUNMO1FBQ2xDRyxPQUFPRyxJQUFJLENBQUNYLFNBQVM7WUFDbkJZLFdBQVc7WUFDWEMsWUFBWTtZQUNaQyxhQUFhO1lBQ2JDLFNBQVM7WUFDVEMsZUFBZTtZQUNmQyxxQkFBcUI7WUFDckJDLFVBQVU7WUFDVkMsWUFBWTtZQUNaQyxjQUFjO1lBQ2RDLGFBQWE7WUFDYkMsU0FBUyxDQUFDQyxXQUFrQjtnQkFDMUJ4QixPQUFPeUIsT0FBTyxHQUFHRDtnQkFDakJBLFNBQVNFLGdCQUFnQixDQUFDLGVBQWUsV0FBWTtvQkFDbkR4QixpQkFBaUIsSUFBSTtvQkFDckJGLE9BQU95QixPQUFPLENBQUNFLFVBQVUsQ0FBQyxDQUFDQyxLQUFVQyxRQUFlO3dCQUNsRCxJQUFJLENBQUNELEtBQUs7NEJBQ1IsSUFBSUUsV0FBV0MsT0FBT0MsTUFBTSxDQUFDSCxPQUFPSSxHQUFHLENBQUMsQ0FBQ0MsT0FBYztnQ0FDckQsT0FBTztvQ0FBRUMsWUFBWUQsS0FBS0MsVUFBVTtvQ0FBRUMsTUFBTUYsS0FBS0UsSUFBSTtnQ0FBQzs0QkFDeEQ7NEJBQ0FoQyxTQUFTMEI7d0JBQ1gsQ0FBQztvQkFDSDtvQkFFQTlCLE9BQU95QixPQUFPLENBQUNZLGVBQWUsQ0FBQyxTQUFVVCxHQUFRLEVBQUVVLFNBQWMsRUFBRTt3QkFDakUsSUFBSSxDQUFDVixLQUFLOzRCQUNSekIsYUFBYW1DO3dCQUNmLENBQUM7b0JBQ0g7Z0JBQ0Y7WUFDRjtRQUNGO0lBQ0YsR0FBRztRQUFDdEM7UUFBUUM7UUFBU0M7UUFBa0JDO0tBQWE7SUFFcEQscUJBQ0U7a0JBQ0UsNEVBQUNvQztZQUFJQyxJQUFHOztnQkFDTG5DLE9BQU9vQyxLQUFLLENBQUNDLEtBQUssa0JBQUksOERBQUM1Qyx5REFBS0E7Ozs7OzhCQUM3Qiw4REFBQ3lDO29CQUFJQyxJQUFHOzhCQUNOLDRFQUFDRzt3QkFBT0MsT0FBTTt3QkFBTUMsUUFBTzt3QkFBTUwsSUFBRzs7Ozs7Ozs7Ozs7OEJBR3RDLDhEQUFDbEM7b0JBQ0N3QyxPQUFNO29CQUNOQyxLQUFJO29CQUNKUCxJQUFHO29CQUNISSxPQUFNOzs7Ozs7Ozs7Ozs7O0FBS2hCO0FBRUEsaUVBQWU3QyxNQUFNQSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYm90dGVnYS8uL2NvbXBvbmVudHMvdmlld2VyLnRzeD9lYjBiIl0sInNvdXJjZXNDb250ZW50IjpbImRlY2xhcmUgZ2xvYmFsIHtcclxuICBpbnRlcmZhY2UgV2luZG93IHtcclxuICAgIFNrZXRjaGZhYjogYW55O1xyXG4gIH1cclxufVxyXG5pbXBvcnQgeyB1c2VSb3V0ZXIgfSBmcm9tIFwibmV4dC9yb3V0ZXJcIjtcclxuaW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgRGVidWcgZnJvbSBcIi4uL2NvbXBvbmVudHMvZGVidWdcIjtcclxuaW1wb3J0IHsgY2hhbmdlQ29sb3IgfSBmcm9tIFwiQC91dGlscy9za2V0Y2hmYWJcIjtcclxuaW50ZXJmYWNlIFZpZXdlckludGVyZmFjZSB7XHJcbiAgYXBpUmVmOiBhbnk7XHJcbiAgbW9kZWxJZDogc3RyaW5nO1xyXG4gIHNldElzTW9kZWxMb2FkZWQ6ICh2YWx1ZTogYm9vbGVhbikgPT4gdm9pZDtcclxuICBzZXRNYXRlcmlhbHM6ICh2YWx1ZTogYW55W10pID0+IHZvaWQ7XHJcbiAgc2V0Tm9kZXM6ICh2YWx1ZTogeyBpbnN0YW5jZUlEOiBzdHJpbmc7IG5hbWU6IHN0cmluZyB9W10pID0+IHZvaWQ7XHJcbn1cclxuY29uc3QgVmlld2VyID0gKHtcclxuICBhcGlSZWYsXHJcbiAgbW9kZWxJZCxcclxuICBzZXRJc01vZGVsTG9hZGVkLFxyXG4gIHNldE1hdGVyaWFscyxcclxuICBzZXROb2RlcyxcclxufTogVmlld2VySW50ZXJmYWNlKSA9PiB7XHJcbiAgY29uc3Qgcm91dGVyID0gdXNlUm91dGVyKCk7XHJcblxyXG4gIHVzZUVmZmVjdCgoKSA9PiB7XHJcbiAgICBsZXQgaWZyYW1lID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJhcGktZnJhbWVcIik7XHJcbiAgICBsZXQgY2xpZW50ID0gbmV3IHdpbmRvdy5Ta2V0Y2hmYWIoaWZyYW1lKTtcclxuICAgIGNsaWVudC5pbml0KG1vZGVsSWQsIHtcclxuICAgICAgYXV0b3N0YXJ0OiAxLFxyXG4gICAgICBuYXZpZ2F0aW9uOiAwLFxyXG4gICAgICB1aV9jb250cm9sczogMCxcclxuICAgICAgdWlfc3RvcDogMCxcclxuICAgICAgdWlfYW5pbWF0aW9uczogMCxcclxuICAgICAgdWlfZ2VuZXJhbF9jb250cm9sczogMCxcclxuICAgICAgdWlfaW5mb3M6IDAsXHJcbiAgICAgIHVpX2xvYWRpbmc6IDAsXHJcbiAgICAgIHVpX3dhdGVybWFyazogMCxcclxuICAgICAgdHJhbnNwYXJlbnQ6IDAsXHJcbiAgICAgIHN1Y2Nlc3M6IChjYWxsYmFjazogYW55KSA9PiB7XHJcbiAgICAgICAgYXBpUmVmLmN1cnJlbnQgPSBjYWxsYmFjaztcclxuICAgICAgICBjYWxsYmFjay5hZGRFdmVudExpc3RlbmVyKFwidmlld2VycmVhZHlcIiwgZnVuY3Rpb24gKCkge1xyXG4gICAgICAgICAgc2V0SXNNb2RlbExvYWRlZCh0cnVlKTtcclxuICAgICAgICAgIGFwaVJlZi5jdXJyZW50LmdldE5vZGVNYXAoKGVycjogYW55LCBub2RlczogYW55KSA9PiB7XHJcbiAgICAgICAgICAgIGlmICghZXJyKSB7XHJcbiAgICAgICAgICAgICAgbGV0IG5vZGVMaXN0ID0gT2JqZWN0LnZhbHVlcyhub2RlcykubWFwKChpdGVtOiBhbnkpID0+IHtcclxuICAgICAgICAgICAgICAgIHJldHVybiB7IGluc3RhbmNlSUQ6IGl0ZW0uaW5zdGFuY2VJRCwgbmFtZTogaXRlbS5uYW1lIH07XHJcbiAgICAgICAgICAgICAgfSk7XHJcbiAgICAgICAgICAgICAgc2V0Tm9kZXMobm9kZUxpc3QpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICB9KTtcclxuXHJcbiAgICAgICAgICBhcGlSZWYuY3VycmVudC5nZXRNYXRlcmlhbExpc3QoZnVuY3Rpb24gKGVycjogYW55LCBtYXRlcmlhbHM6IGFueSkge1xyXG4gICAgICAgICAgICBpZiAoIWVycikge1xyXG4gICAgICAgICAgICAgIHNldE1hdGVyaWFscyhtYXRlcmlhbHMpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICB9KTtcclxuICAgICAgICB9KTtcclxuICAgICAgfSxcclxuICAgIH0pO1xyXG4gIH0sIFthcGlSZWYsIG1vZGVsSWQsIHNldElzTW9kZWxMb2FkZWQsIHNldE1hdGVyaWFsc10pO1xyXG5cclxuICByZXR1cm4gKFxyXG4gICAgPD5cclxuICAgICAgPGRpdiBpZD1cInZpZXdlclwiPlxyXG4gICAgICAgIHtyb3V0ZXIucXVlcnkuZGVidWcgJiYgPERlYnVnIC8+fVxyXG4gICAgICAgIDxkaXYgaWQ9XCJudW1iZXJzXCI+XHJcbiAgICAgICAgICA8Y2FudmFzIHdpZHRoPVwiNDAwXCIgaGVpZ2h0PVwiNDAwXCIgaWQ9XCJudW1iZXJDYW52YXNcIj48L2NhbnZhcz5cclxuICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICAgICAgPGlmcmFtZVxyXG4gICAgICAgICAgdGl0bGU9XCJTa2V0Y2hmYWIgVmlld2VyXCJcclxuICAgICAgICAgIHNyYz1cIlwiXHJcbiAgICAgICAgICBpZD1cImFwaS1mcmFtZVwiXHJcbiAgICAgICAgICB3aWR0aD1cIjQwMFwiXHJcbiAgICAgICAgPjwvaWZyYW1lPlxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvPlxyXG4gICk7XHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBWaWV3ZXI7XHJcbiJdLCJuYW1lcyI6WyJ1c2VSb3V0ZXIiLCJ1c2VFZmZlY3QiLCJEZWJ1ZyIsIlZpZXdlciIsImFwaVJlZiIsIm1vZGVsSWQiLCJzZXRJc01vZGVsTG9hZGVkIiwic2V0TWF0ZXJpYWxzIiwic2V0Tm9kZXMiLCJyb3V0ZXIiLCJpZnJhbWUiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIiwiY2xpZW50Iiwid2luZG93IiwiU2tldGNoZmFiIiwiaW5pdCIsImF1dG9zdGFydCIsIm5hdmlnYXRpb24iLCJ1aV9jb250cm9scyIsInVpX3N0b3AiLCJ1aV9hbmltYXRpb25zIiwidWlfZ2VuZXJhbF9jb250cm9scyIsInVpX2luZm9zIiwidWlfbG9hZGluZyIsInVpX3dhdGVybWFyayIsInRyYW5zcGFyZW50Iiwic3VjY2VzcyIsImNhbGxiYWNrIiwiY3VycmVudCIsImFkZEV2ZW50TGlzdGVuZXIiLCJnZXROb2RlTWFwIiwiZXJyIiwibm9kZXMiLCJub2RlTGlzdCIsIk9iamVjdCIsInZhbHVlcyIsIm1hcCIsIml0ZW0iLCJpbnN0YW5jZUlEIiwibmFtZSIsImdldE1hdGVyaWFsTGlzdCIsIm1hdGVyaWFscyIsImRpdiIsImlkIiwicXVlcnkiLCJkZWJ1ZyIsImNhbnZhcyIsIndpZHRoIiwiaGVpZ2h0IiwidGl0bGUiLCJzcmMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/viewer.tsx\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3250);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_debug__WEBPACK_IMPORTED_MODULE_3__]);
+_components_debug__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
+
+
+const Viewer = ({ apiRef , modelId , setIsModelLoaded , setMaterials , setNodes  })=>{
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
+    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
+        let iframe = document.getElementById("api-frame");
+        let client = new window.Sketchfab(iframe);
+        client.init(modelId, {
+            autostart: 1,
+            navigation: 0,
+            ui_controls: 0,
+            ui_stop: 0,
+            ui_animations: 0,
+            ui_general_controls: 0,
+            ui_infos: 0,
+            ui_loading: 0,
+            ui_watermark: 0,
+            transparent: 0,
+            success: (callback)=>{
+                apiRef.current = callback;
+                callback.addEventListener("viewerready", function() {
+                    setIsModelLoaded(true);
+                    apiRef.current.getNodeMap((err, nodes)=>{
+                        if (!err) {
+                            let nodeList = Object.values(nodes).map((item)=>{
+                                return {
+                                    instanceID: item.instanceID,
+                                    name: item.name
+                                };
+                            });
+                            setNodes(nodeList);
+                        }
+                    });
+                    apiRef.current.getMaterialList(function(err, materials) {
+                        if (!err) {
+                            setMaterials(materials);
+                        }
+                    });
+                });
+            }
+        });
+    }, [
+        apiRef,
+        modelId,
+        setIsModelLoaded,
+        setMaterials
+    ]);
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            id: "viewer",
+            children: [
+                router.query.debug && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_debug__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {}),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    id: "numbers",
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("canvas", {
+                        width: "400",
+                        height: "400",
+                        id: "numberCanvas"
+                    })
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("iframe", {
+                    title: "Sketchfab Viewer",
+                    src: "",
+                    id: "api-frame",
+                    width: "400"
+                })
+            ]
+        })
+    });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Viewer);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ "./data/colors.ts":
-/*!************************!*\
-  !*** ./data/colors.ts ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"categories\": () => (/* binding */ categories),\n/* harmony export */   \"colorList\": () => (/* binding */ colorList),\n/* harmony export */   \"matrix\": () => (/* binding */ matrix)\n/* harmony export */ });\nconst categories = [\n    {\n        name: \"Paintwork\",\n        id: \"Carroceria\"\n    },\n    {\n        name: \"Livery\",\n        id: \"Livery_1\"\n    },\n    {\n        name: \"Interior\",\n        id: \"Asiento\"\n    },\n    {\n        name: \"Piping\",\n        id: \"Pipin\"\n    },\n    {\n        name: \"Tonneau\",\n        id: \"Textura_lona\"\n    }\n];\nconst colorList = [\n    //Exterior\n    {\n        id: 1,\n        name: \"Bianco Avus\",\n        r: 223,\n        g: 223,\n        b: 213,\n        metallic: false\n    },\n    {\n        id: 2,\n        name: \"Giallo Modena\",\n        r: 221,\n        g: 188,\n        b: 0,\n        metallic: false\n    },\n    {\n        id: 3,\n        name: \"Rosso Scuderia\",\n        r: 251,\n        g: 0,\n        b: 0,\n        metallic: false\n    },\n    {\n        id: 4,\n        name: \"Rosso Corsa\",\n        r: 237,\n        g: 0,\n        b: 7,\n        metallic: false\n    },\n    {\n        id: 5,\n        name: \"Rosso Mugello\",\n        r: 187,\n        g: 0,\n        b: 35,\n        metallic: false\n    },\n    {\n        id: 6,\n        name: \"Grigio Ingrid\",\n        r: 181,\n        g: 177,\n        b: 166,\n        metallic: true\n    },\n    {\n        id: 7,\n        name: \"Argento Nurburgring\",\n        r: 233,\n        g: 226,\n        b: 221,\n        metallic: true\n    },\n    {\n        id: 8,\n        name: \"Grigio Titanio\",\n        r: 198,\n        g: 196,\n        b: 195,\n        metallic: true\n    },\n    {\n        id: 9,\n        name: \"Grigio Silverstone\",\n        r: 79,\n        g: 73,\n        b: 70,\n        metallic: false\n    },\n    {\n        id: 10,\n        name: \"Grigio Alloy\",\n        r: 234,\n        g: 234,\n        b: 235,\n        metallic: true\n    },\n    {\n        id: 11,\n        name: \"Blu Tour de France\",\n        r: 47,\n        g: 33,\n        b: 118,\n        metallic: true\n    },\n    {\n        id: 12,\n        name: \"Blu Abu Dhabi\",\n        r: 23,\n        g: 31,\n        b: 69,\n        metallic: false\n    },\n    {\n        id: 13,\n        name: \"Blu Mirabeau\",\n        r: 59,\n        g: 74,\n        b: 126,\n        metallic: false\n    },\n    {\n        id: 14,\n        name: \"Blu Pozzi\",\n        r: 33,\n        g: 35,\n        b: 46,\n        metallic: false\n    },\n    {\n        id: 15,\n        name: \"Nero Ds\",\n        r: 29,\n        g: 29,\n        b: 27,\n        metallic: false\n    },\n    {\n        id: 16,\n        name: \"Nero Daytona\",\n        r: 43,\n        g: 43,\n        b: 41,\n        metallic: false\n    },\n    {\n        id: 17,\n        name: \"Blu Scozia\",\n        r: 0,\n        g: 14,\n        b: 57,\n        metallic: false\n    },\n    {\n        id: 18,\n        name: \"Vinaccia\",\n        r: 43,\n        g: 10,\n        b: 28,\n        metallic: false\n    },\n    {\n        id: 19,\n        name: \"Verde Abetone\",\n        r: 4,\n        g: 38,\n        b: 26,\n        metallic: false\n    },\n    {\n        id: 20,\n        name: \"Grigio Scuro\",\n        r: 65,\n        g: 60,\n        b: 58,\n        metallic: false\n    },\n    {\n        id: 21,\n        name: \"Grigio Ferro Met \",\n        r: 160,\n        g: 151,\n        b: 146,\n        metallic: true\n    },\n    {\n        id: 22,\n        name: \"Grigio Medio\",\n        r: 89,\n        g: 108,\n        b: 107,\n        metallic: false\n    },\n    {\n        id: 23,\n        name: \"Azzurro Met\",\n        r: 139,\n        g: 184,\n        b: 216,\n        metallic: true\n    },\n    {\n        id: 24,\n        name: \"Avio Met\",\n        r: 131,\n        g: 170,\n        b: 219,\n        metallic: false\n    },\n    {\n        id: 25,\n        name: \"Celeste Met\",\n        r: 150,\n        g: 172,\n        b: 179,\n        metallic: true\n    },\n    {\n        id: 26,\n        name: \"Avorio\",\n        r: 203,\n        g: 197,\n        b: 174,\n        metallic: false\n    },\n    {\n        id: 27,\n        name: \"Blu Nart\",\n        r: 31,\n        g: 57,\n        b: 100,\n        metallic: false\n    },\n    {\n        id: 28,\n        name: \"Verde British Racing Green\",\n        r: 22,\n        g: 50,\n        b: 22,\n        metallic: false\n    },\n    {\n        id: 29,\n        name: \"Rubino Micalizzato\",\n        r: 69,\n        g: 0,\n        b: 3,\n        metallic: true\n    },\n    {\n        id: 30,\n        name: \"Blu Le Mans FER\",\n        r: 31,\n        g: 17,\n        b: 76,\n        metallic: true\n    },\n    {\n        id: 31,\n        name: \"Rosso Dino\",\n        r: 252,\n        g: 40,\n        b: 0,\n        metallic: false\n    },\n    {\n        id: 32,\n        name: \"Rosso Barchetta\",\n        r: 122,\n        g: 15,\n        b: 47,\n        metallic: false\n    },\n    {\n        id: 33,\n        name: \"Bianco Cervino\",\n        r: 206,\n        g: 213,\n        b: 209,\n        metallic: false\n    },\n    {\n        id: 34,\n        name: \"Blu Corsa\",\n        r: 0,\n        g: 123,\n        b: 224,\n        metallic: true\n    },\n    {\n        id: 35,\n        name: \"Giallo Triplostrato\",\n        r: 241,\n        g: 192,\n        b: 0,\n        metallic: false\n    },\n    //Interior\n    {\n        id: 36,\n        name: \"Nero\",\n        r: 23,\n        g: 19,\n        b: 18,\n        metallic: false\n    },\n    {\n        id: 37,\n        name: \"Charcoal\",\n        r: 72,\n        g: 68,\n        b: 70,\n        metallic: false\n    },\n    {\n        id: 38,\n        name: \"Blu Sterling\",\n        r: 32,\n        g: 47,\n        b: 78,\n        metallic: false\n    },\n    {\n        id: 39,\n        name: \"Blu Medio\",\n        r: 38,\n        g: 58,\n        b: 105,\n        metallic: false\n    },\n    {\n        id: 40,\n        name: \"Carta Da Zucchero\",\n        r: 70,\n        g: 92,\n        b: 122,\n        metallic: false\n    },\n    {\n        id: 41,\n        name: \"Rosso\",\n        r: 192,\n        g: 61,\n        b: 49,\n        metallic: false\n    },\n    {\n        id: 42,\n        name: \"Bordeaux\",\n        r: 128,\n        g: 50,\n        b: 52,\n        metallic: false\n    },\n    {\n        id: 43,\n        name: \"Cioccolato\",\n        r: 103,\n        g: 65,\n        b: 40,\n        metallic: false\n    },\n    {\n        id: 44,\n        name: \"Iroko\",\n        r: 127,\n        g: 79,\n        b: 51,\n        metallic: false\n    },\n    {\n        id: 45,\n        name: \"Terra Bruciata\",\n        r: 127,\n        g: 79,\n        b: 51,\n        metallic: false\n    },\n    {\n        id: 46,\n        name: \"Tortora\",\n        r: 172,\n        g: 160,\n        b: 151,\n        metallic: false\n    },\n    {\n        id: 47,\n        name: \"Cuoio\",\n        r: 185,\n        g: 111,\n        b: 65,\n        metallic: false\n    },\n    {\n        id: 48,\n        name: \"Beige Tradizione\",\n        r: 165,\n        g: 111,\n        b: 65,\n        metallic: false\n    },\n    {\n        id: 49,\n        name: \"Sabbia\",\n        r: 233,\n        g: 216,\n        b: 188,\n        metallic: false\n    },\n    {\n        id: 50,\n        name: \"Crema\",\n        r: 248,\n        g: 246,\n        b: 220,\n        metallic: false\n    },\n    //Tonneau\n    {\n        id: 51,\n        name: \"Rosso\",\n        r: 192,\n        g: 61,\n        b: 49,\n        metallic: false\n    },\n    {\n        id: 52,\n        name: \"Nero\",\n        r: 34,\n        g: 44,\n        b: 44,\n        metallic: false\n    },\n    //Pipings\n    {\n        id: 53,\n        name: \"Bordeaux\",\n        r: 103,\n        g: 47,\n        b: 49,\n        metallic: false\n    },\n    {\n        id: 54,\n        name: \"Nero\",\n        r: 34,\n        g: 44,\n        b: 44,\n        metallic: false\n    },\n    {\n        id: 55,\n        name: \"White\",\n        r: 232,\n        g: 232,\n        b: 232,\n        metallic: false\n    },\n    //Livery\n    {\n        id: 56,\n        name: \"Giallo Modena\",\n        r: 229,\n        g: 192,\n        b: 21,\n        metallic: false\n    },\n    {\n        id: 57,\n        name: \"Verde British Racing Green\",\n        r: 38,\n        g: 49,\n        b: 38,\n        metallic: false\n    },\n    {\n        id: 58,\n        name: \"Bianco Cervino\",\n        r: 200,\n        g: 195,\n        b: 194,\n        metallic: false\n    },\n    {\n        id: 59,\n        name: \"Blu Le Mans FER\",\n        r: 31,\n        g: 18,\n        b: 75,\n        metallic: false\n    },\n    {\n        id: 60,\n        name: \"Rosso Barchetta\",\n        r: 122,\n        g: 15,\n        b: 47,\n        metallic: false\n    },\n    {\n        id: 61,\n        name: \"Rosso Corsa\",\n        r: 237,\n        g: 0,\n        b: 7,\n        metallic: false\n    },\n    {\n        id: 62,\n        name: \"Rosso Mugello\",\n        r: 187,\n        g: 0,\n        b: 35,\n        metallic: false\n    },\n    {\n        id: 63,\n        name: \"Blu Nart\",\n        r: 31,\n        g: 57,\n        b: 100,\n        metallic: false\n    },\n    {\n        id: 64,\n        name: \"BP Green\",\n        r: 47,\n        g: 161,\n        b: 85,\n        metallic: false\n    },\n    //Fix\n    {\n        id: 65,\n        name: \"Bianco Italia\",\n        r: 246,\n        g: 245,\n        b: 249,\n        metallic: true\n    },\n    {\n        id: 66,\n        name: \"Canna Di Fucile\",\n        r: 72,\n        g: 72,\n        b: 80,\n        metallic: false\n    },\n    {\n        id: 67,\n        name: \"Rosso Fiorano Fer\",\n        r: 117,\n        g: 0,\n        b: 0,\n        metallic: false\n    }\n];\nconst matrix = [\n    {\n        id: 4,\n        Livery: [\n            33,\n            27,\n            29\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54,\n                    55\n                ]\n            }\n        ]\n    },\n    {\n        id: 3,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 31,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: false,\n                id: 48,\n                p: [\n                    48\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 5,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 67,\n        Livery: [\n            33,\n            27,\n            29\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54,\n                    55\n                ]\n            }\n        ]\n    },\n    {\n        id: 32,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 29,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 18,\n        Livery: [\n            15\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 35,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 2,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 28,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 19,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 34,\n        Livery: [\n            56\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 23,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 25,\n        Livery: [\n            33\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 24,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 13,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: false,\n                id: 48,\n                p: [\n                    48\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 27,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 11,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: false,\n                id: 48,\n                p: [\n                    48\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 30,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 14,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 12,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: false,\n                id: 48,\n                p: [\n                    48\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 17,\n        Livery: [\n            56\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 10,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 37,\n                p: [\n                    37\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: false,\n                id: 48,\n                p: [\n                    48\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 8,\n        Livery: [\n            17,\n            56\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: false,\n                id: 43,\n                p: [\n                    43\n                ]\n            },\n            {\n                available: false,\n                id: 44,\n                p: [\n                    44\n                ]\n            },\n            {\n                available: false,\n                id: 45,\n                p: [\n                    45\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: false,\n                id: 47,\n                p: [\n                    47\n                ]\n            },\n            {\n                available: false,\n                id: 48,\n                p: [\n                    48\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 7,\n        Livery: [\n            32,\n            63\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 26,\n        Livery: [\n            32\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: false,\n                id: 41,\n                p: [\n                    41\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 6,\n        Livery: [\n            33\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 37,\n                p: [\n                    37\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 21,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 22,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 38,\n                p: [\n                    38\n                ]\n            },\n            {\n                available: false,\n                id: 39,\n                p: [\n                    39\n                ]\n            },\n            {\n                available: false,\n                id: 40,\n                p: [\n                    40\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: false,\n                id: 42,\n                p: [\n                    42\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 46,\n                p: [\n                    46\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 9,\n        Livery: [\n            33\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 66,\n        Livery: [\n            65\n        ],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 20,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    54\n                ]\n            },\n            {\n                available: false,\n                id: 49,\n                p: [\n                    49\n                ]\n            },\n            {\n                available: false,\n                id: 50,\n                p: [\n                    50\n                ]\n            }\n        ]\n    },\n    {\n        id: 16,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 15,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 65,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 33,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    54\n                ]\n            }\n        ]\n    },\n    {\n        id: 1,\n        Livery: [],\n        Interior: [\n            {\n                available: true,\n                id: 36,\n                p: [\n                    36,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 37,\n                p: [\n                    37,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 38,\n                p: [\n                    38,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 39,\n                p: [\n                    39,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 40,\n                p: [\n                    40,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 41,\n                p: [\n                    41,\n                    53,\n                    54,\n                    55\n                ]\n            },\n            {\n                available: true,\n                id: 42,\n                p: [\n                    42,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 43,\n                p: [\n                    43,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 44,\n                p: [\n                    44,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 45,\n                p: [\n                    45,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 46,\n                p: [\n                    46,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 47,\n                p: [\n                    47,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 48,\n                p: [\n                    48,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 49,\n                p: [\n                    49,\n                    53,\n                    54\n                ]\n            },\n            {\n                available: true,\n                id: 50,\n                p: [\n                    50,\n                    53,\n                    54\n                ]\n            }\n        ]\n    }\n];\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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LEdBQUc7UUFBR0MsR0FBRztRQUFJQyxHQUFHO1FBQUlDLFVBQVUsS0FBSztJQUFDO0lBQ3JFO1FBQUVMLElBQUk7UUFBSUQsTUFBTTtRQUFnQkcsR0FBRztRQUFJQyxHQUFHO1FBQUlDLEdBQUc7UUFBSUMsVUFBVSxLQUFLO0lBQUM7SUFDckU7UUFBRUwsSUFBSTtRQUFJRCxNQUFNO1FBQXFCRyxHQUFHO1FBQUtDLEdBQUc7UUFBS0MsR0FBRztRQUFLQyxVQUFVLElBQUk7SUFBQztJQUM1RTtRQUFFTCxJQUFJO1FBQUlELE1BQU07UUFBZ0JHLEdBQUc7UUFBSUMsR0FBRztRQUFLQyxHQUFHO1FBQUtDLFVBQVUsS0FBSztJQUFDO0lBQ3ZFO1FBQUVMLElBQUk7UUFBSUQsTUFBTTtRQUFlRyxHQUFHO1FBQUtDLEdBQUc7UUFBS0MsR0FBRztRQUFLQyxVQUFVLElBQUk7SUFBQztJQUN0RTtRQUFFTCxJQUFJO1FBQUlELE1BQU07UUFBWUcsR0FBRztRQUFLQyxHQUFHO1FBQUtDLEdBQUc7UUFBS0MsVUFBVSxLQUFLO0lBQUM7SUFDcEU7UUFBRUwsSUFBSTtRQUFJRCxNQUFNO1FBQWVHLEdBQUc7UUFBS0MsR0FBRztRQUFLQyxHQUFHO1FBQUtDLFVBQVUsSUFBSTtJQUFDO0lBQ3RFO1FBQUVMLElBQUk7UUFBSUQsTUFBTTtRQUFVRyxHQUFHO1FBQUtDLEdBQUc7UUFBS0MsR0FBRztRQUFLQyxVQUFVLEtBQUs7SUFBQztJQUNsRTtRQUFFTCxJQUFJO1FBQUlELE1BQU07UUFBWUcsR0FBRztRQUFJQyxHQUFHO1FBQUlDLEdBQUc7UUFBS0MsVUFBVSxLQUFLO0lBQUM7SUFDbEU7UUFBRUwsSUFBSTtRQUFJRCxNQUFNO1FBQThCRyxHQUFHO1FBQUlDLEdBQUc7UUFBSUMsR0FBRztRQUFJQyxVQUFVLEtBQUs7SUFBQztJQUNuRjtRQUFFTCxJQUFJO1FBQUlELE1BQU07UUFBc0JHLEdBQUc7UUFBSUMsR0FBRztRQUFHQyxHQUFHO1FBQUdDLFVBQVUsSUFBSTtJQUFDO0lBQ3hFO1FBQUVMLElBQUk7UUFBSUQsTUFB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QUM7b0JBQUk7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMvQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDL0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQy9DO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQy9DO2dCQUFFRCxX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QUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMvQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDL0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQy9DO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDL0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDL0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUs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QztvQkFBSTtvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQy9DO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMvQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMvQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDL0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7aUJBQUc7WUFBQztZQUN2QztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO2lCQUFHO1lBQUM7U0FDeEM7SUFDSDtJQUNBO1FBQ0VWLElBQUk7UUFDSk8sUUFBUSxFQUFFO1FBQ1ZDLFVBQVU7WUFDUjtnQkFBRUMsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDL0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQy9DO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMvQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztZQUMzQztnQkFBRUQsV0FBVyxJQUFJO2dCQUFFVCxJQUFJO2dCQUFJVSxHQUFHO29CQUFDO29CQUFJO29CQUFJO2lCQUFHO1lBQUM7WUFDM0M7Z0JBQUVELFdBQVcsSUFBSTtnQkFBRVQsSUFBSTtnQkFBSVUsR0FBRztvQkFBQztvQkFBSTtvQkFBSTtpQkFBRztZQUFDO1lBQzNDO2dCQUFFRCxXQUFXLElBQUk7Z0JBQUVULElBQUk7Z0JBQUlVLEdBQUc7b0JBQUM7b0JBQUk7b0JBQUk7aUJBQUc7WUFBQztTQUM1QztJQUNIO0NBQ0QsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi9kYXRhL2NvbG9ycy50cz83Yzk3Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBjYXRlZ29yaWVzID0gW1xyXG4gIHsgbmFtZTogJ1BhaW50d29yaycsIGlkOiAnQ2Fycm9jZXJpYScgfSxcclxuICB7IG5hbWU6ICdMaXZlcnknLCBpZDogJ0xpdmVyeV8xJyB9LFxyXG4gIHsgbmFtZTogJ0ludGVyaW9yJywgaWQ6ICdBc2llbnRvJyB9LFxyXG4gIHsgbmFtZTogJ1BpcGluZycsIGlkOiAnUGlwaW4nIH0sXHJcbiAgeyBuYW1lOiAnVG9ubmVhdScsIGlkOiAnVGV4dHVyYV9sb25hJyB9XHJcbl07XHJcblxyXG5leHBvcnQgY29uc3QgY29sb3JMaXN0ID0gW1xyXG4gIC8vRXh0ZXJpb3JcclxuICB7IGlkOiAxLCBuYW1lOiAnQmlhbmNvIEF2dXMnLCByOiAyMjMsIGc6IDIyMywgYjogMjEzLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiAyLCBuYW1lOiAnR2lhbGxvIE1vZGVuYScsIHI6IDIyMSwgZzogMTg4LCBiOiAwLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiAzLCBuYW1lOiAnUm9zc28gU2N1ZGVyaWEnLCByOiAyNTEsIGc6IDAsIGI6IDAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDQsIG5hbWU6ICdSb3NzbyBDb3JzYScsIHI6IDIzNywgZzogMCwgYjogNywgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNSwgbmFtZTogJ1Jvc3NvIE11Z2VsbG8nLCByOiAxODcsIGc6IDAsIGI6IDM1LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA2LCBuYW1lOiAnR3JpZ2lvIEluZ3JpZCcsIHI6IDE4MSwgZzogMTc3LCBiOiAxNjYsIG1ldGFsbGljOiB0cnVlIH0sXHJcbiAgeyBpZDogNywgbmFtZTogJ0FyZ2VudG8gTnVyYnVyZ3JpbmcnLCByOiAyMzMsIGc6IDIyNiwgYjogMjIxLCBtZXRhbGxpYzogdHJ1ZSB9LFxyXG4gIHsgaWQ6IDgsIG5hbWU6ICdHcmlnaW8gVGl0YW5pbycsIHI6IDE5OCwgZzogMTk2LCBiOiAxOTUsIG1ldGFsbGljOiB0cnVlIH0sXHJcbiAgeyBpZDogOSwgbmFtZTogJ0dyaWdpbyBTaWx2ZXJzdG9uZScsIHI6IDc5LCBnOiA3MywgYjogNzAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDEwLCBuYW1lOiAnR3JpZ2lvIEFsbG95JywgcjogMjM0LCBnOiAyMzQsIGI6IDIzNSwgbWV0YWxsaWM6IHRydWUgfSxcclxuICB7IGlkOiAxMSwgbmFtZTogJ0JsdSBUb3VyIGRlIEZyYW5jZScsIHI6IDQ3LCBnOiAzMywgYjogMTE4LCBtZXRhbGxpYzogdHJ1ZSB9LFxyXG4gIHsgaWQ6IDEyLCBuYW1lOiAnQmx1IEFidSBEaGFiaScsIHI6IDIzLCBnOiAzMSwgYjogNjksIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDEzLCBuYW1lOiAnQmx1IE1pcmFiZWF1JywgcjogNTksIGc6IDc0LCBiOiAxMjYsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDE0LCBuYW1lOiAnQmx1IFBvenppJywgcjogMzMsIGc6IDM1LCBiOiA0NiwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogMTUsIG5hbWU6ICdOZXJvIERzJywgcjogMjksIGc6IDI5LCBiOiAyNywgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogMTYsIG5hbWU6ICdOZXJvIERheXRvbmEnLCByOiA0MywgZzogNDMsIGI6IDQxLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiAxNywgbmFtZTogJ0JsdSBTY296aWEnLCByOiAwLCBnOiAxNCwgYjogNTcsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDE4LCBuYW1lOiAnVmluYWNjaWEnLCByOiA0MywgZzogMTAsIGI6IDI4LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiAxOSwgbmFtZTogJ1ZlcmRlIEFiZXRvbmUnLCByOiA0LCBnOiAzOCwgYjogMjYsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDIwLCBuYW1lOiAnR3JpZ2lvIFNjdXJvJywgcjogNjUsIGc6IDYwLCBiOiA1OCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogMjEsIG5hbWU6ICdHcmlnaW8gRmVycm8gTWV0ICcsIHI6IDE2MCwgZzogMTUxLCBiOiAxNDYsIG1ldGFsbGljOiB0cnVlIH0sXHJcbiAgeyBpZDogMjIsIG5hbWU6ICdHcmlnaW8gTWVkaW8nLCByOiA4OSwgZzogMTA4LCBiOiAxMDcsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDIzLCBuYW1lOiAnQXp6dXJybyBNZXQnLCByOiAxMzksIGc6IDE4NCwgYjogMjE2LCBtZXRhbGxpYzogdHJ1ZSB9LFxyXG4gIHsgaWQ6IDI0LCBuYW1lOiAnQXZpbyBNZXQnLCByOiAxMzEsIGc6IDE3MCwgYjogMjE5LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiAyNSwgbmFtZTogJ0NlbGVzdGUgTWV0JywgcjogMTUwLCBnOiAxNzIsIGI6IDE3OSwgbWV0YWxsaWM6IHRydWUgfSxcclxuICB7IGlkOiAyNiwgbmFtZTogJ0F2b3JpbycsIHI6IDIwMywgZzogMTk3LCBiOiAxNzQsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDI3LCBuYW1lOiAnQmx1IE5hcnQnLCByOiAzMSwgZzogNTcsIGI6IDEwMCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogMjgsIG5hbWU6ICdWZXJkZSBCcml0aXNoIFJhY2luZyBHcmVlbicsIHI6IDIyLCBnOiA1MCwgYjogMjIsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDI5LCBuYW1lOiAnUnViaW5vIE1pY2FsaXp6YXRvJywgcjogNjksIGc6IDAsIGI6IDMsIG1ldGFsbGljOiB0cnVlIH0sXHJcbiAgeyBpZDogMzAsIG5hbWU6ICdCbHUgTGUgTWFucyBGRVInLCByOiAzMSwgZzogMTcsIGI6IDc2LCBtZXRhbGxpYzogdHJ1ZSB9LFxyXG4gIHsgaWQ6IDMxLCBuYW1lOiAnUm9zc28gRGlubycsIHI6IDI1MiwgZzogNDAsIGI6IDAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDMyLCBuYW1lOiAnUm9zc28gQmFyY2hldHRhJywgcjogMTIyLCBnOiAxNSwgYjogNDcsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDMzLCBuYW1lOiAnQmlhbmNvIENlcnZpbm8nLCByOiAyMDYsIGc6IDIxMywgYjogMjA5LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiAzNCwgbmFtZTogJ0JsdSBDb3JzYScsIHI6IDAsIGc6IDEyMywgYjogMjI0LCBtZXRhbGxpYzogdHJ1ZSB9LFxyXG4gIHsgaWQ6IDM1LCBuYW1lOiAnR2lhbGxvIFRyaXBsb3N0cmF0bycsIHI6IDI0MSwgZzogMTkyLCBiOiAwLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICAvL0ludGVyaW9yXHJcbiAgeyBpZDogMzYsIG5hbWU6ICdOZXJvJywgcjogMjMsIGc6IDE5LCBiOiAxOCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogMzcsIG5hbWU6ICdDaGFyY29hbCcsIHI6IDcyLCBnOiA2OCwgYjogNzAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDM4LCBuYW1lOiAnQmx1IFN0ZXJsaW5nJywgcjogMzIsIGc6IDQ3LCBiOiA3OCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogMzksIG5hbWU6ICdCbHUgTWVkaW8nLCByOiAzOCwgZzogNTgsIGI6IDEwNSwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNDAsIG5hbWU6ICdDYXJ0YSBEYSBadWNjaGVybycsIHI6IDcwLCBnOiA5MiwgYjogMTIyLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA0MSwgbmFtZTogJ1Jvc3NvJywgcjogMTkyLCBnOiA2MSwgYjogNDksIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDQyLCBuYW1lOiAnQm9yZGVhdXgnLCByOiAxMjgsIGc6IDUwLCBiOiA1MiwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNDMsIG5hbWU6ICdDaW9jY29sYXRvJywgcjogMTAzLCBnOiA2NSwgYjogNDAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDQ0LCBuYW1lOiAnSXJva28nLCByOiAxMjcsIGc6IDc5LCBiOiA1MSwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNDUsIG5hbWU6ICdUZXJyYSBCcnVjaWF0YScsIHI6IDEyNywgZzogNzksIGI6IDUxLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA0NiwgbmFtZTogJ1RvcnRvcmEnLCByOiAxNzIsIGc6IDE2MCwgYjogMTUxLCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA0NywgbmFtZTogJ0N1b2lvJywgcjogMTg1LCBnOiAxMTEsIGI6IDY1LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA0OCwgbmFtZTogJ0JlaWdlIFRyYWRpemlvbmUnLCByOiAxNjUsIGc6IDExMSwgYjogNjUsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDQ5LCBuYW1lOiAnU2FiYmlhJywgcjogMjMzLCBnOiAyMTYsIGI6IDE4OCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNTAsIG5hbWU6ICdDcmVtYScsIHI6IDI0OCwgZzogMjQ2LCBiOiAyMjAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIC8vVG9ubmVhdVxyXG4gIHsgaWQ6IDUxLCBuYW1lOiAnUm9zc28nLCByOiAxOTIsIGc6IDYxLCBiOiA0OSwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNTIsIG5hbWU6ICdOZXJvJywgcjogMzQsIGc6IDQ0LCBiOiA0NCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgLy9QaXBpbmdzXHJcbiAgeyBpZDogNTMsIG5hbWU6ICdCb3JkZWF1eCcsIHI6IDEwMywgZzogNDcsIGI6IDQ5LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA1NCwgbmFtZTogJ05lcm8nLCByOiAzNCwgZzogNDQsIGI6IDQ0LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA1NSwgbmFtZTogJ1doaXRlJywgcjogMjMyLCBnOiAyMzIsIGI6IDIzMiwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgLy9MaXZlcnlcclxuICB7IGlkOiA1NiwgbmFtZTogJ0dpYWxsbyBNb2RlbmEnLCByOiAyMjksIGc6IDE5MiwgYjogMjEsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDU3LCBuYW1lOiAnVmVyZGUgQnJpdGlzaCBSYWNpbmcgR3JlZW4nLCByOiAzOCwgZzogNDksIGI6IDM4LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA1OCwgbmFtZTogJ0JpYW5jbyBDZXJ2aW5vJywgcjogMjAwLCBnOiAxOTUsIGI6IDE5NCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNTksIG5hbWU6ICdCbHUgTGUgTWFucyBGRVInLCByOiAzMSwgZzogMTgsIGI6IDc1LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA2MCwgbmFtZTogJ1Jvc3NvIEJhcmNoZXR0YScsIHI6IDEyMiwgZzogMTUsIGI6IDQ3LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA2MSwgbmFtZTogJ1Jvc3NvIENvcnNhJywgcjogMjM3LCBnOiAwLCBiOiA3LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA2MiwgbmFtZTogJ1Jvc3NvIE11Z2VsbG8nLCByOiAxODcsIGc6IDAsIGI6IDM1LCBtZXRhbGxpYzogZmFsc2UgfSxcclxuICB7IGlkOiA2MywgbmFtZTogJ0JsdSBOYXJ0JywgcjogMzEsIGc6IDU3LCBiOiAxMDAsIG1ldGFsbGljOiBmYWxzZSB9LFxyXG4gIHsgaWQ6IDY0LCBuYW1lOiAnQlAgR3JlZW4nLCByOiA0NywgZzogMTYxLCBiOiA4NSwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgLy9GaXhcclxuICB7IGlkOiA2NSwgbmFtZTogJ0JpYW5jbyBJdGFsaWEnLCByOiAyNDYsIGc6IDI0NSwgYjogMjQ5LCBtZXRhbGxpYzogdHJ1ZSB9LFxyXG4gIHsgaWQ6IDY2LCBuYW1lOiAnQ2FubmEgRGkgRnVjaWxlJywgcjogNzIsIGc6IDcyLCBiOiA4MCwgbWV0YWxsaWM6IGZhbHNlIH0sXHJcbiAgeyBpZDogNjcsIG5hbWU6ICdSb3NzbyBGaW9yYW5vIEZlcicsIHI6IDExNywgZzogMCwgYjogMCwgbWV0YWxsaWM6IGZhbHNlIH1cclxuXTtcclxuXHJcbmV4cG9ydCBjb25zdCBtYXRyaXggPSBbXHJcbiAge1xyXG4gICAgaWQ6IDQsXHJcbiAgICBMaXZlcnk6IFszMywgMjcsIDI5XSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MCwgcDogWzQwLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQyLCBwOiBbNDJdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA1MCwgcDogWzUwLCA1NCwgNTVdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAzLFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOCwgcDogWzM4LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDAsIHA6IFs0MF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDEsIHA6IFs0MV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDIsIHA6IFs0Ml0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDMsIHA6IFs0M10gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDQsIHA6IFs0NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDUsIHA6IFs0NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDYsIHA6IFs0Nl0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ5LCBwOiBbNDldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDUwLCBwOiBbNTBdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAzMSxcclxuICAgIExpdmVyeTogW10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM4LCBwOiBbMzhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQxLCBwOiBbNDFdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQyLCBwOiBbNDJdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQzLCBwOiBbNDNdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ0LCBwOiBbNDRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ1LCBwOiBbNDVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ2LCBwOiBbNDZdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ3LCBwOiBbNDddIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ4LCBwOiBbNDhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ5LCBwOiBbNDldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDUwLCBwOiBbNTBdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiA1LFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MiwgcDogWzQyLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ0LCBwOiBbNDQsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ2LCBwOiBbNDZdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiA2NyxcclxuICAgIExpdmVyeTogWzMzLCAyNywgMjldLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOSwgcDogWzM5LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQwLCBwOiBbNDAsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDIsIHA6IFs0Ml0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0LCA1NV0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDMyLFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MSwgcDogWzQxXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMjksXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzgsIHA6IFszOF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDAsIHA6IFs0MF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDEsIHA6IFs0MV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MiwgcDogWzQyLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ0LCBwOiBbNDQsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OSwgcDogWzQ5LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA1MCwgcDogWzUwLCA1NF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDE4LFxyXG4gICAgTGl2ZXJ5OiBbMTVdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOCwgcDogWzM4XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MSwgcDogWzQxXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OSwgcDogWzQ5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMzUsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOCwgcDogWzM4LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDAsIHA6IFs0MF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQzLCBwOiBbNDMsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NiwgcDogWzQ2XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ3LCBwOiBbNDcsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ5LCBwOiBbNDldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDUwLCBwOiBbNTBdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAyLFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MiwgcDogWzQyLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDYsIHA6IFs0Nl0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OSwgcDogWzQ5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA1MCwgcDogWzUwXSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMjgsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOCwgcDogWzM4XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMTksXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOCwgcDogWzM4XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MSwgcDogWzQxXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMzQsXHJcbiAgICBMaXZlcnk6IFs1Nl0sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM4LCBwOiBbMzhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQyLCBwOiBbNDJdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQzLCBwOiBbNDNdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ0LCBwOiBbNDRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ1LCBwOiBbNDVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ2LCBwOiBbNDZdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAyMyxcclxuICAgIExpdmVyeTogW10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MSwgcDogWzQxXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MiwgcDogWzQyXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQzLCBwOiBbNDMsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMjUsXHJcbiAgICBMaXZlcnk6IFszM10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM4LCBwOiBbMzhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQxLCBwOiBbNDFdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQyLCBwOiBbNDJdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ0LCBwOiBbNDQsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ3LCBwOiBbNDcsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAyNCxcclxuICAgIExpdmVyeTogW10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MiwgcDogWzQyXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQzLCBwOiBbNDMsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMTMsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDAsIHA6IFs0MF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MiwgcDogWzQyXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NiwgcDogWzQ2XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NywgcDogWzQ3XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OCwgcDogWzQ4XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OSwgcDogWzQ5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA1MCwgcDogWzUwXSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMjcsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDAsIHA6IFs0MF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NiwgcDogWzQ2XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NywgcDogWzQ3XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMTEsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDAsIHA6IFs0MF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NiwgcDogWzQ2XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NywgcDogWzQ3XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OCwgcDogWzQ4XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OSwgcDogWzQ5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA1MCwgcDogWzUwXSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMzAsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOCwgcDogWzM4XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzOSwgcDogWzM5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MCwgcDogWzQwXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDIsIHA6IFs0MiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NiwgcDogWzQ2XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ3LCBwOiBbNDcsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ5LCBwOiBbNDldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAxNCxcclxuICAgIExpdmVyeTogW10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDAsIHA6IFs0MCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDIsIHA6IFs0MiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0MywgcDogWzQzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NCwgcDogWzQ0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0NSwgcDogWzQ1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMTIsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM4LCBwOiBbMzhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDIsIHA6IFs0Ml0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDMsIHA6IFs0M10gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDQsIHA6IFs0NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDUsIHA6IFs0NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDYsIHA6IFs0Nl0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDcsIHA6IFs0N10gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDgsIHA6IFs0OF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDksIHA6IFs0OV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNTAsIHA6IFs1MF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDE3LFxyXG4gICAgTGl2ZXJ5OiBbNTZdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogMzksIHA6IFszOV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MCwgcDogWzQwLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDIsIHA6IFs0Ml0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDMsIHA6IFs0M10gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDQsIHA6IFs0NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDUsIHA6IFs0NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OSwgcDogWzQ5LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA1MCwgcDogWzUwLCA1NF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDEwLFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiAzNywgcDogWzM3XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOSwgcDogWzM5LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDIsIHA6IFs0Ml0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDMsIHA6IFs0M10gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDQsIHA6IFs0NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDUsIHA6IFs0NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDYsIHA6IFs0Nl0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDcsIHA6IFs0N10gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDgsIHA6IFs0OF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDksIHA6IFs0OV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNTAsIHA6IFs1MF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDgsXHJcbiAgICBMaXZlcnk6IFsxNywgNTZdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOSwgcDogWzM5LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDAsIHA6IFs0MCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQyLCBwOiBbNDJdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQzLCBwOiBbNDNdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ0LCBwOiBbNDRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ1LCBwOiBbNDVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ2LCBwOiBbNDZdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ3LCBwOiBbNDddIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ4LCBwOiBbNDhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ5LCBwOiBbNDldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDUwLCBwOiBbNTBdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiA3LFxyXG4gICAgTGl2ZXJ5OiBbMzIsIDYzXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQwLCBwOiBbNDAsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAyNixcclxuICAgIExpdmVyeTogWzMyXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM4LCBwOiBbMzhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQxLCBwOiBbNDFdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDIsIHA6IFs0MiwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ0LCBwOiBbNDQsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ3LCBwOiBbNDcsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiA2LFxyXG4gICAgTGl2ZXJ5OiBbMzNdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM3LCBwOiBbMzddIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDksIHA6IFs0OV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNTAsIHA6IFs1MF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDIxLFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOSwgcDogWzM5LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDAsIHA6IFs0MCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MiwgcDogWzQyLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ3LCBwOiBbNDcsIDUzXSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogZmFsc2UsIGlkOiA0OSwgcDogWzQ5XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMjIsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM4LCBwOiBbMzhdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDM5LCBwOiBbMzldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQwLCBwOiBbNDBdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDIsIHA6IFs0Ml0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDYsIHA6IFs0Nl0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IGZhbHNlLCBpZDogNDksIHA6IFs0OV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA1MCwgcDogWzUwLCA1NF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDksXHJcbiAgICBMaXZlcnk6IFszM10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOCwgcDogWzM4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQwLCBwOiBbNDAsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OCwgcDogWzQ4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDksIHA6IFs0OSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTRdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiA2NixcclxuICAgIExpdmVyeTogWzY1XSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOSwgcDogWzM5LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDAsIHA6IFs0MCwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OSwgcDogWzQ5LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA1MCwgcDogWzUwLCA1NF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDIwLFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOSwgcDogWzM5LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDAsIHA6IFs0MCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MiwgcDogWzQyLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDQ5LCBwOiBbNDldIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiBmYWxzZSwgaWQ6IDUwLCBwOiBbNTBdIH1cclxuICAgIF1cclxuICB9LFxyXG4gIHtcclxuICAgIGlkOiAxNixcclxuICAgIExpdmVyeTogW10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOCwgcDogWzM4LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM5LCBwOiBbMzksIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDAsIHA6IFs0MCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDIsIHA6IFs0MiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQzLCBwOiBbNDMsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OSwgcDogWzQ5LCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA1MCwgcDogWzUwLCA1NF0gfVxyXG4gICAgXVxyXG4gIH0sXHJcbiAge1xyXG4gICAgaWQ6IDE1LFxyXG4gICAgTGl2ZXJ5OiBbXSxcclxuICAgIEludGVyaW9yOiBbXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzYsIHA6IFszNiwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNywgcDogWzM3LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM4LCBwOiBbMzgsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MCwgcDogWzQwLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDEsIHA6IFs0MSwgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MiwgcDogWzQyLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDMsIHA6IFs0MywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ0LCBwOiBbNDQsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NSwgcDogWzQ1LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDYsIHA6IFs0NiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ3LCBwOiBbNDcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogNjUsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM5LCBwOiBbMzksIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MCwgcDogWzQwLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDIsIHA6IFs0MiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQzLCBwOiBbNDMsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMzMsXHJcbiAgICBMaXZlcnk6IFtdLFxyXG4gICAgSW50ZXJpb3I6IFtcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzNiwgcDogWzM2LCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM3LCBwOiBbMzcsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzgsIHA6IFszOCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM5LCBwOiBbMzksIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MCwgcDogWzQwLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQxLCBwOiBbNDEsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDIsIHA6IFs0MiwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQzLCBwOiBbNDMsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NCwgcDogWzQ0LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDUsIHA6IFs0NSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ2LCBwOiBbNDYsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NywgcDogWzQ3LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDgsIHA6IFs0OCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ5LCBwOiBbNDksIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDUwLCBwOiBbNTAsIDU0XSB9XHJcbiAgICBdXHJcbiAgfSxcclxuICB7XHJcbiAgICBpZDogMSxcclxuICAgIExpdmVyeTogW10sXHJcbiAgICBJbnRlcmlvcjogW1xyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDM2LCBwOiBbMzYsIDUzLCA1NCwgNTVdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzcsIHA6IFszNywgNTMsIDU0LCA1NV0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiAzOCwgcDogWzM4LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogMzksIHA6IFszOSwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQwLCBwOiBbNDAsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MSwgcDogWzQxLCA1MywgNTQsIDU1XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQyLCBwOiBbNDIsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0MywgcDogWzQzLCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDQsIHA6IFs0NCwgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ1LCBwOiBbNDUsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0NiwgcDogWzQ2LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNDcsIHA6IFs0NywgNTMsIDU0XSB9LFxyXG4gICAgICB7IGF2YWlsYWJsZTogdHJ1ZSwgaWQ6IDQ4LCBwOiBbNDgsIDUzLCA1NF0gfSxcclxuICAgICAgeyBhdmFpbGFibGU6IHRydWUsIGlkOiA0OSwgcDogWzQ5LCA1MywgNTRdIH0sXHJcbiAgICAgIHsgYXZhaWxhYmxlOiB0cnVlLCBpZDogNTAsIHA6IFs1MCwgNTMsIDU0XSB9XHJcbiAgICBdXHJcbiAgfVxyXG5dOyJdLCJuYW1lcyI6WyJjYXRlZ29yaWVzIiwibmFtZSIsImlkIiwiY29sb3JMaXN0IiwiciIsImciLCJiIiwibWV0YWxsaWMiLCJtYXRyaXgiLCJMaXZlcnkiLCJJbnRlcmlvciIsImF2YWlsYWJsZSIsInAiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./data/colors.ts\n");
-
-/***/ }),
-
-/***/ "./data/nodes.ts":
-/*!***********************!*\
-  !*** ./data/nodes.ts ***!
-  \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"nodesToHide\": () => (/* binding */ nodesToHide)\n/* harmony export */ });\nconst nodesToHide = [\n    \"Stripe_1\",\n    \"Stripe_2\",\n    \"Stripe_3\",\n    \"Stripe_4\",\n    \"Stripe_5\",\n    \"Stripe_6\",\n    \"Lip_1\",\n    \"Lip_2\",\n    \"Lip_3\",\n    \"Tail_1\",\n    \"Number_1\",\n    \"Number_2\",\n    \"Number_3\",\n    \"Number_4\",\n    \"Number_5\",\n    \"Number_6\",\n    \"Number_7\"\n];\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9kYXRhL25vZGVzLnRzLmpzIiwibWFwcGluZ3MiOiI7Ozs7QUFBTyxNQUFNQSxjQUFjO0lBQ3pCO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7SUFDQTtJQUNBO0lBQ0E7Q0FDRCxDQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYm90dGVnYS8uL2RhdGEvbm9kZXMudHM/MmU0NiJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3Qgbm9kZXNUb0hpZGUgPSBbXHJcbiAgJ1N0cmlwZV8xJyxcclxuICAnU3RyaXBlXzInLFxyXG4gICdTdHJpcGVfMycsXHJcbiAgJ1N0cmlwZV80JyxcclxuICAnU3RyaXBlXzUnLFxyXG4gICdTdHJpcGVfNicsXHJcbiAgJ0xpcF8xJyxcclxuICAnTGlwXzInLFxyXG4gICdMaXBfMycsXHJcbiAgJ1RhaWxfMScsXHJcbiAgJ051bWJlcl8xJyxcclxuICAnTnVtYmVyXzInLFxyXG4gICdOdW1iZXJfMycsXHJcbiAgJ051bWJlcl80JyxcclxuICAnTnVtYmVyXzUnLFxyXG4gICdOdW1iZXJfNicsXHJcbiAgJ051bWJlcl83J1xyXG5dO1xyXG4iXSwibmFtZXMiOlsibm9kZXNUb0hpZGUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./data/nodes.ts\n");
-
-/***/ }),
-
-/***/ "./pages/index.tsx":
-/*!*************************!*\
-  !*** ./pages/index.tsx ***!
-  \*************************/
+/***/ 4186:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ \"axios\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ \"next/head\");\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/store/store */ \"./store/store.ts\");\n/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/components/header */ \"./components/header.tsx\");\n/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/components/sidebar */ \"./components/sidebar.tsx\");\n/* harmony import */ var _components_viewer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/components/viewer */ \"./components/viewer.tsx\");\n/* harmony import */ var _components_loadingScreen__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @/components/loadingScreen */ \"./components/loadingScreen.tsx\");\n/* harmony import */ var _components_pleaseRotate__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @/components/pleaseRotate */ \"./components/pleaseRotate.tsx\");\n/* harmony import */ var _utils_car__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/utils/car */ \"./utils/car.ts\");\n/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @/utils/sketchfab */ \"./utils/sketchfab.ts\");\n/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/config */ \"next/config\");\n/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_config__WEBPACK_IMPORTED_MODULE_13__);\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__, _store_store__WEBPACK_IMPORTED_MODULE_5__, _components_viewer__WEBPACK_IMPORTED_MODULE_8__]);\n([axios__WEBPACK_IMPORTED_MODULE_1__, _store_store__WEBPACK_IMPORTED_MODULE_5__, _components_viewer__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);\n\"use client\";\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nconst { publicRuntimeConfig  } = next_config__WEBPACK_IMPORTED_MODULE_13___default()();\nfunction Home({ data  }) {\n    const store = (0,_store_store__WEBPACK_IMPORTED_MODULE_5__.useCarStore)((state)=>state);\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();\n    const apiRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);\n    const [modelId, setModelId] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(\"24523f1bb77c4b20b39d12d906938ec5\");\n    const [isModelLoaded, setIsModelLoaded] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);\n    const [showLoading, setShowLoading] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(true);\n    const [materials, setMaterials] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);\n    const [nodes, setNodes] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);\n    const innerHeight =  false ? 0 : 0;\n    const innerWidth =  false ? 0 : 0;\n    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{\n        if (materials[0] && nodes[0]) {\n            (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_12__.initService)(apiRef.current, materials, nodes);\n            getData();\n        }\n    }, [\n        materials,\n        nodes\n    ]);\n    //Load the default car model\n    const setDefaultCar = async (newCar)=>{\n        (0,_utils_car__WEBPACK_IMPORTED_MODULE_11__.selectCar)(newCar);\n        store.updateCar(newCar);\n        setShowLoading(false);\n    };\n    const changeScenario = (val)=>{\n        setModelId(val);\n    };\n    const getData = async ()=>{\n        if (router.query.id) {\n            await axios__WEBPACK_IMPORTED_MODULE_1__[\"default\"].get(publicRuntimeConfig.NEXT_PUBLIC_CDN + \"json/\" + router.query.id + \".json\").then(({ data  })=>{\n                setDefaultCar(data.options);\n            });\n        } else {\n            setDefaultCar(store.car);\n        }\n    };\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: \"w-full grid grid-cols-[1fr,550px]\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)((next_head__WEBPACK_IMPORTED_MODULE_4___default()), {\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"title\", {\n                        children: \"Bottega Veneta | Configurateur\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                        lineNumber: 81,\n                        columnNumber: 11\n                    }, this)\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                    lineNumber: 80,\n                    columnNumber: 9\n                }, this),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_pleaseRotate__WEBPACK_IMPORTED_MODULE_10__[\"default\"], {}, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                    lineNumber: 83,\n                    columnNumber: 9\n                }, this),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_header__WEBPACK_IMPORTED_MODULE_6__[\"default\"], {}, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                    lineNumber: 84,\n                    columnNumber: 9\n                }, this),\n                showLoading && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_loadingScreen__WEBPACK_IMPORTED_MODULE_9__[\"default\"], {}, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                    lineNumber: 85,\n                    columnNumber: 25\n                }, this),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_viewer__WEBPACK_IMPORTED_MODULE_8__[\"default\"], {\n                    apiRef: apiRef,\n                    modelId: modelId,\n                    setIsModelLoaded: setIsModelLoaded,\n                    setMaterials: setMaterials,\n                    setNodes: setNodes\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                    lineNumber: 86,\n                    columnNumber: 9\n                }, this),\n                materials.length > 0 && /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_sidebar__WEBPACK_IMPORTED_MODULE_7__[\"default\"], {\n                    changeScenario: changeScenario\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n                    lineNumber: 94,\n                    columnNumber: 11\n                }, this)\n            ]\n        }, void 0, true, {\n            fileName: \"C:\\\\Users\\\\Leo\\\\Documents\\\\Proyectos\\\\Demos\\\\Bottega2\\\\pages\\\\index.tsx\",\n            lineNumber: 79,\n            columnNumber: 7\n        }, this)\n    }, void 0, false);\n}\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9pbmRleC50c3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTs7QUFDMEI7QUFFMEI7QUFDWjtBQUNYO0FBRWU7QUFJSDtBQUNFO0FBQ0Y7QUFDYztBQUNGO0FBRWI7QUFDUTtBQUVaO0FBQ3BDLE1BQU0sRUFBRWUsb0JBQW1CLEVBQUUsR0FBR0QsbURBQVNBO0FBRTFCLFNBQVNFLEtBQUssRUFBRUMsS0FBSSxFQUFPLEVBQUU7SUFDMUMsTUFBTUMsUUFBUVoseURBQVdBLENBQUMsQ0FBQ2EsUUFBZUE7SUFFMUMsTUFBTUMsU0FBU2hCLHNEQUFTQTtJQUV4QixNQUFNaUIsU0FBY3BCLDZDQUFNQSxDQUFDLElBQUk7SUFDL0IsTUFBTSxDQUFDcUIsU0FBU0MsV0FBVyxHQUFHckIsK0NBQVFBLENBQUM7SUFDdkMsTUFBTSxDQUFDc0IsZUFBZUMsaUJBQWlCLEdBQUd2QiwrQ0FBUUEsQ0FBQyxLQUFLO0lBQ3hELE1BQU0sQ0FBQ3dCLGFBQWFDLGVBQWUsR0FBR3pCLCtDQUFRQSxDQUFDLElBQUk7SUFDbkQsTUFBTSxDQUFDMEIsV0FBV0MsYUFBYSxHQUFHM0IsK0NBQVFBLENBQU0sRUFBRTtJQUNsRCxNQUFNLENBQUM0QixPQUFPQyxTQUFTLEdBQUc3QiwrQ0FBUUEsQ0FBTSxFQUFFO0lBQzFDLE1BQU04QixjQUFjLE1BQTZCLEdBQUdDLENBQWtCLEdBQUcsQ0FBQztJQUMxRSxNQUFNQyxhQUFhLE1BQTZCLEdBQUdELENBQWlCLEdBQUcsQ0FBQztJQUV4RTlCLGdEQUFTQSxDQUFDLElBQU07UUFDZCxJQUFJeUIsU0FBUyxDQUFDLEVBQUUsSUFBSUUsS0FBSyxDQUFDLEVBQUUsRUFBRTtZQUM1QmpCLDhEQUFXQSxDQUFDUSxPQUFPYyxPQUFPLEVBQUVQLFdBQVdFO1lBQ3ZDTTtRQUNGLENBQUM7SUFDSCxHQUFHO1FBQUNSO1FBQVdFO0tBQU07SUFFckIsNEJBQTRCO0lBQzVCLE1BQU1PLGdCQUFnQixPQUFPQyxTQUFnQjtRQUMzQzFCLHNEQUFTQSxDQUFDMEI7UUFDVnBCLE1BQU1xQixTQUFTLENBQUNEO1FBQ2hCWCxlQUFlLEtBQUs7SUFDdEI7SUFNQSxNQUFNYSxpQkFBaUIsQ0FBQ0MsTUFBZ0I7UUFDdENsQixXQUFXa0I7SUFDYjtJQUVBLE1BQU1MLFVBQVUsVUFBWTtRQUMxQixJQUFJaEIsT0FBT3NCLEtBQUssQ0FBQ0MsRUFBRSxFQUFFO1lBQ25CLE1BQU0zQyxpREFDQSxDQUNGZSxvQkFBb0I4QixlQUFlLEdBQ2pDLFVBQ0F6QixPQUFPc0IsS0FBSyxDQUFDQyxFQUFFLEdBQ2YsU0FFSEcsSUFBSSxDQUFDLENBQUMsRUFBRTdCLEtBQUksRUFBRSxHQUFLO2dCQUNsQm9CLGNBQWNwQixLQUFLOEIsT0FBTztZQUM1QjtRQUNKLE9BQU87WUFDTFYsY0FBY25CLE1BQU04QixHQUFHO1FBQ3pCLENBQUM7SUFDSDtJQUVBLHFCQUNFO2tCQUNFLDRFQUFDQztZQUFJQyxXQUFVOzs4QkFDYiw4REFBQzdDLGtEQUFJQTs4QkFDSCw0RUFBQzhDO2tDQUFNOzs7Ozs7Ozs7Ozs4QkFFVCw4REFBQ3hDLGlFQUFZQTs7Ozs7OEJBQ2IsOERBQUNKLDBEQUFNQTs7Ozs7Z0JBQ05tQiw2QkFBZSw4REFBQ2hCLGlFQUFhQTs7Ozs7OEJBQzlCLDhEQUFDRCwwREFBTUE7b0JBQ0xZLFFBQVFBO29CQUNSQyxTQUFTQTtvQkFDVEcsa0JBQWtCQTtvQkFDbEJJLGNBQWNBO29CQUNkRSxVQUFVQTs7Ozs7O2dCQUVYSCxVQUFVd0IsTUFBTSxHQUFHLG1CQUNsQiw4REFBQzVDLDJEQUFPQTtvQkFBQ2dDLGdCQUFnQkE7Ozs7Ozs7Ozs7Ozs7QUFLbkMsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi9wYWdlcy9pbmRleC50c3g/MDdmZiJdLCJzb3VyY2VzQ29udGVudCI6WyJcInVzZSBjbGllbnRcIjtcclxuaW1wb3J0IGF4aW9zIGZyb20gXCJheGlvc1wiO1xyXG5cclxuaW1wb3J0IHsgdXNlUmVmLCB1c2VTdGF0ZSwgdXNlRWZmZWN0IH0gZnJvbSBcInJlYWN0XCI7XHJcbmltcG9ydCB7IHVzZVJvdXRlciB9IGZyb20gXCJuZXh0L3JvdXRlclwiO1xyXG5pbXBvcnQgSGVhZCBmcm9tIFwibmV4dC9oZWFkXCI7XHJcblxyXG5pbXBvcnQgeyB1c2VDYXJTdG9yZSB9IGZyb20gXCJAL3N0b3JlL3N0b3JlXCI7XHJcblxyXG5pbXBvcnQgeyBDYXIgfSBmcm9tIFwiaW50ZXJmYWNlcy9nZW5lcmFsXCI7XHJcblxyXG5pbXBvcnQgSGVhZGVyIGZyb20gXCJAL2NvbXBvbmVudHMvaGVhZGVyXCI7XHJcbmltcG9ydCBTaWRlYmFyIGZyb20gXCJAL2NvbXBvbmVudHMvc2lkZWJhclwiO1xyXG5pbXBvcnQgVmlld2VyIGZyb20gXCJAL2NvbXBvbmVudHMvdmlld2VyXCI7XHJcbmltcG9ydCBMb2FkaW5nU2NyZWVuIGZyb20gXCJAL2NvbXBvbmVudHMvbG9hZGluZ1NjcmVlblwiO1xyXG5pbXBvcnQgUGxlYXNlUm90YXRlIGZyb20gXCJAL2NvbXBvbmVudHMvcGxlYXNlUm90YXRlXCI7XHJcblxyXG5pbXBvcnQgeyBzZWxlY3RDYXIgfSBmcm9tIFwiQC91dGlscy9jYXJcIjtcclxuaW1wb3J0IHsgaW5pdFNlcnZpY2UgfSBmcm9tIFwiQC91dGlscy9za2V0Y2hmYWJcIjtcclxuXHJcbmltcG9ydCBnZXRDb25maWcgZnJvbSBcIm5leHQvY29uZmlnXCI7XHJcbmNvbnN0IHsgcHVibGljUnVudGltZUNvbmZpZyB9ID0gZ2V0Q29uZmlnKCk7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBIb21lKHsgZGF0YSB9OiBhbnkpIHtcclxuICBjb25zdCBzdG9yZSA9IHVzZUNhclN0b3JlKChzdGF0ZTogYW55KSA9PiBzdGF0ZSk7XHJcblxyXG4gIGNvbnN0IHJvdXRlciA9IHVzZVJvdXRlcigpO1xyXG5cclxuICBjb25zdCBhcGlSZWY6IGFueSA9IHVzZVJlZihudWxsKTtcclxuICBjb25zdCBbbW9kZWxJZCwgc2V0TW9kZWxJZF0gPSB1c2VTdGF0ZShcIjI0NTIzZjFiYjc3YzRiMjBiMzlkMTJkOTA2OTM4ZWM1XCIpO1xyXG4gIGNvbnN0IFtpc01vZGVsTG9hZGVkLCBzZXRJc01vZGVsTG9hZGVkXSA9IHVzZVN0YXRlKGZhbHNlKTtcclxuICBjb25zdCBbc2hvd0xvYWRpbmcsIHNldFNob3dMb2FkaW5nXSA9IHVzZVN0YXRlKHRydWUpO1xyXG4gIGNvbnN0IFttYXRlcmlhbHMsIHNldE1hdGVyaWFsc10gPSB1c2VTdGF0ZTxhbnk+KFtdKTtcclxuICBjb25zdCBbbm9kZXMsIHNldE5vZGVzXSA9IHVzZVN0YXRlPGFueT4oW10pO1xyXG4gIGNvbnN0IGlubmVySGVpZ2h0ID0gdHlwZW9mIHdpbmRvdyAhPT0gXCJ1bmRlZmluZWRcIiA/IHdpbmRvdy5pbm5lckhlaWdodCA6IDA7XHJcbiAgY29uc3QgaW5uZXJXaWR0aCA9IHR5cGVvZiB3aW5kb3cgIT09IFwidW5kZWZpbmVkXCIgPyB3aW5kb3cuaW5uZXJXaWR0aCA6IDA7XHJcblxyXG4gIHVzZUVmZmVjdCgoKSA9PiB7XHJcbiAgICBpZiAobWF0ZXJpYWxzWzBdICYmIG5vZGVzWzBdKSB7XHJcbiAgICAgIGluaXRTZXJ2aWNlKGFwaVJlZi5jdXJyZW50LCBtYXRlcmlhbHMsIG5vZGVzKTtcclxuICAgICAgZ2V0RGF0YSgpO1xyXG4gICAgfVxyXG4gIH0sIFttYXRlcmlhbHMsIG5vZGVzXSk7XHJcblxyXG4gIC8vTG9hZCB0aGUgZGVmYXVsdCBjYXIgbW9kZWxcclxuICBjb25zdCBzZXREZWZhdWx0Q2FyID0gYXN5bmMgKG5ld0NhcjogQ2FyKSA9PiB7XHJcbiAgICBzZWxlY3RDYXIobmV3Q2FyKTtcclxuICAgIHN0b3JlLnVwZGF0ZUNhcihuZXdDYXIpO1xyXG4gICAgc2V0U2hvd0xvYWRpbmcoZmFsc2UpO1xyXG4gIH07XHJcblxyXG4gIGludGVyZmFjZSBQcm9wcyB7XHJcbiAgICBjaGFuZ2VTY2VuYXJpbzogKHZhbDogU3RyaW5nKSA9PiB2b2lkO1xyXG4gIH1cclxuXHJcbiAgY29uc3QgY2hhbmdlU2NlbmFyaW8gPSAodmFsOiBzdHJpbmcpID0+IHtcclxuICAgIHNldE1vZGVsSWQodmFsKTtcclxuICB9O1xyXG5cclxuICBjb25zdCBnZXREYXRhID0gYXN5bmMgKCkgPT4ge1xyXG4gICAgaWYgKHJvdXRlci5xdWVyeS5pZCkge1xyXG4gICAgICBhd2FpdCBheGlvc1xyXG4gICAgICAgIC5nZXQoXHJcbiAgICAgICAgICBwdWJsaWNSdW50aW1lQ29uZmlnLk5FWFRfUFVCTElDX0NETiArXHJcbiAgICAgICAgICAgIFwianNvbi9cIiArXHJcbiAgICAgICAgICAgIHJvdXRlci5xdWVyeS5pZCArXHJcbiAgICAgICAgICAgIFwiLmpzb25cIlxyXG4gICAgICAgIClcclxuICAgICAgICAudGhlbigoeyBkYXRhIH0pID0+IHtcclxuICAgICAgICAgIHNldERlZmF1bHRDYXIoZGF0YS5vcHRpb25zKTtcclxuICAgICAgICB9KTtcclxuICAgIH0gZWxzZSB7XHJcbiAgICAgIHNldERlZmF1bHRDYXIoc3RvcmUuY2FyKTtcclxuICAgIH1cclxuICB9O1xyXG5cclxuICByZXR1cm4gKFxyXG4gICAgPD5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3LWZ1bGwgZ3JpZCBncmlkLWNvbHMtWzFmciw1NTBweF1cIj5cclxuICAgICAgICA8SGVhZD5cclxuICAgICAgICAgIDx0aXRsZT5Cb3R0ZWdhIFZlbmV0YSB8IENvbmZpZ3VyYXRldXI8L3RpdGxlPlxyXG4gICAgICAgIDwvSGVhZD5cclxuICAgICAgICA8UGxlYXNlUm90YXRlIC8+XHJcbiAgICAgICAgPEhlYWRlciAvPlxyXG4gICAgICAgIHtzaG93TG9hZGluZyAmJiA8TG9hZGluZ1NjcmVlbiAvPn1cclxuICAgICAgICA8Vmlld2VyXHJcbiAgICAgICAgICBhcGlSZWY9e2FwaVJlZn1cclxuICAgICAgICAgIG1vZGVsSWQ9e21vZGVsSWR9XHJcbiAgICAgICAgICBzZXRJc01vZGVsTG9hZGVkPXtzZXRJc01vZGVsTG9hZGVkfVxyXG4gICAgICAgICAgc2V0TWF0ZXJpYWxzPXtzZXRNYXRlcmlhbHN9XHJcbiAgICAgICAgICBzZXROb2Rlcz17c2V0Tm9kZXN9XHJcbiAgICAgICAgLz5cclxuICAgICAgICB7bWF0ZXJpYWxzLmxlbmd0aCA+IDAgJiYgKFxyXG4gICAgICAgICAgPFNpZGViYXIgY2hhbmdlU2NlbmFyaW89e2NoYW5nZVNjZW5hcmlvfT48L1NpZGViYXI+XHJcbiAgICAgICAgKX1cclxuICAgICAgPC9kaXY+XHJcbiAgICA8Lz5cclxuICApO1xyXG59XHJcbiJdLCJuYW1lcyI6WyJheGlvcyIsInVzZVJlZiIsInVzZVN0YXRlIiwidXNlRWZmZWN0IiwidXNlUm91dGVyIiwiSGVhZCIsInVzZUNhclN0b3JlIiwiSGVhZGVyIiwiU2lkZWJhciIsIlZpZXdlciIsIkxvYWRpbmdTY3JlZW4iLCJQbGVhc2VSb3RhdGUiLCJzZWxlY3RDYXIiLCJpbml0U2VydmljZSIsImdldENvbmZpZyIsInB1YmxpY1J1bnRpbWVDb25maWciLCJIb21lIiwiZGF0YSIsInN0b3JlIiwic3RhdGUiLCJyb3V0ZXIiLCJhcGlSZWYiLCJtb2RlbElkIiwic2V0TW9kZWxJZCIsImlzTW9kZWxMb2FkZWQiLCJzZXRJc01vZGVsTG9hZGVkIiwic2hvd0xvYWRpbmciLCJzZXRTaG93TG9hZGluZyIsIm1hdGVyaWFscyIsInNldE1hdGVyaWFscyIsIm5vZGVzIiwic2V0Tm9kZXMiLCJpbm5lckhlaWdodCIsIndpbmRvdyIsImlubmVyV2lkdGgiLCJjdXJyZW50IiwiZ2V0RGF0YSIsInNldERlZmF1bHRDYXIiLCJuZXdDYXIiLCJ1cGRhdGVDYXIiLCJjaGFuZ2VTY2VuYXJpbyIsInZhbCIsInF1ZXJ5IiwiaWQiLCJnZXQiLCJORVhUX1BVQkxJQ19DRE4iLCJ0aGVuIiwib3B0aW9ucyIsImNhciIsImRpdiIsImNsYXNzTmFtZSIsInRpdGxlIiwibGVuZ3RoIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./pages/index.tsx\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Home)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9648);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8407);
+/* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4320);
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3859);
+/* harmony import */ var _components_viewer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2801);
+/* harmony import */ var _components_loadingScreen__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8919);
+/* harmony import */ var _components_pleaseRotate__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(2368);
+/* harmony import */ var _utils_car__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(325);
+/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(4573);
+/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4558);
+/* harmony import */ var next_config__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_config__WEBPACK_IMPORTED_MODULE_12__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__, _store_store__WEBPACK_IMPORTED_MODULE_5__, _components_viewer__WEBPACK_IMPORTED_MODULE_8__]);
+([axios__WEBPACK_IMPORTED_MODULE_1__, _store_store__WEBPACK_IMPORTED_MODULE_5__, _components_viewer__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+"use client";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const { publicRuntimeConfig  } = next_config__WEBPACK_IMPORTED_MODULE_12___default()();
+function Home({ data  }) {
+    const store = (0,_store_store__WEBPACK_IMPORTED_MODULE_5__/* .useCarStore */ .r)((state)=>state);
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
+    const apiRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+    const [modelId, setModelId] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)("24523f1bb77c4b20b39d12d906938ec5");
+    const [isModelLoaded, setIsModelLoaded] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+    const [showLoading, setShowLoading] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(true);
+    const [materials, setMaterials] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
+    const [nodes, setNodes] = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
+    const innerHeight =  false ? 0 : 0;
+    const innerWidth =  false ? 0 : 0;
+    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
+        if (materials[0] && nodes[0]) {
+            (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_13__/* .initService */ .Qc)(apiRef.current, materials, nodes);
+            getData();
+        }
+    }, [
+        materials,
+        nodes
+    ]);
+    //Load the default car model
+    const setDefaultCar = async (newCar)=>{
+        (0,_utils_car__WEBPACK_IMPORTED_MODULE_11__/* .selectCar */ .PR)(newCar);
+        store.updateCar(newCar);
+        setShowLoading(false);
+    };
+    const changeScenario = (val)=>{
+        setModelId(val);
+    };
+    const getData = async ()=>{
+        if (router.query.id) {
+            await axios__WEBPACK_IMPORTED_MODULE_1__["default"].get(publicRuntimeConfig.NEXT_PUBLIC_CDN + "json/" + router.query.id + ".json").then(({ data  })=>{
+                setDefaultCar(data.options);
+            });
+        } else {
+            setDefaultCar(store.car);
+        }
+    };
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            className: "w-full grid grid-cols-[1fr,550px]",
+            children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_4___default()), {
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                        children: "Bottega Veneta | Configurateur"
+                    })
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_pleaseRotate__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_header__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {}),
+                showLoading && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_loadingScreen__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_viewer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                    apiRef: apiRef,
+                    modelId: modelId,
+                    setIsModelLoaded: setIsModelLoaded,
+                    setMaterials: setMaterials,
+                    setNodes: setNodes
+                }),
+                materials.length > 0 && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_sidebar__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                    changeScenario: changeScenario
+                })
+            ]
+        })
+    });
+}
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ "./store/store.ts":
-/*!************************!*\
-  !*** ./store/store.ts ***!
-  \************************/
+/***/ 8407:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"useCarStore\": () => (/* binding */ useCarStore),\n/* harmony export */   \"useModelStore\": () => (/* binding */ useModelStore)\n/* harmony export */ });\n/* harmony import */ var zustand__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zustand */ \"zustand\");\nvar __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([zustand__WEBPACK_IMPORTED_MODULE_0__]);\nzustand__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];\n\nconst useCarStore = (0,zustand__WEBPACK_IMPORTED_MODULE_0__.create)((set)=>({\n        car: {\n            model: {\n                id: 1,\n                name: \"LM 01A\"\n            },\n            URL: \"LM 01A.jpeg\",\n            Paintwork: {\n                id: 15\n            },\n            Livery: {\n                id: 4\n            },\n            LiveryExtra: {\n                id: 33\n            },\n            Interior: {\n                id: 41\n            },\n            Piping: {\n                id: 55\n            },\n            Tonneau: {\n                id: 53\n            },\n            radiatorNumber: {\n                show: false,\n                parts: [\n                    \"Number_6\",\n                    \"Number_7\"\n                ],\n                number: \"\",\n                type: \"transparent\",\n                numberColor: {\n                    id: 33\n                },\n                typography: \"Acumin Variable Concept Condensed Black\",\n                fontSize: \"195px\"\n            },\n            roundelNumber: {\n                show: false,\n                parts: [\n                    \"Number_6\",\n                    \"Number_7\"\n                ],\n                number: \"\",\n                type: \"transparent\",\n                numberColor: {\n                    id: 33\n                },\n                typography: \"Acumin Variable Concept Condensed Black\",\n                fontSize: \"195px\"\n            },\n            flag: {\n                show: false,\n                parts: [\n                    \"Number_6\",\n                    \"Number_7\"\n                ]\n            },\n            parts: [\n                \"Lip_1\",\n                \"Lip_2\"\n            ],\n            racePack: \"Base\",\n            borranniUpgrade: false\n        },\n        updateCar: (val)=>set(()=>({\n                    car: val\n                }))\n    }));\nconst useModelStore = (0,zustand__WEBPACK_IMPORTED_MODULE_0__.create)((set)=>({\n        modelType: \"Historic Liveries\",\n        colorCategory: \"Paintwork\",\n        updateModelType: (val)=>set(()=>({\n                    modelType: val\n                })),\n        updateColorCategory: (val)=>set(()=>({\n                    colorCategory: val\n                }))\n    }));\n\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } });//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zdG9yZS9zdG9yZS50cy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBaUM7QUFHMUIsTUFBTUMsY0FBY0QsK0NBQU1BLENBQWUsQ0FBQ0UsTUFBUztRQUN4REMsS0FBSztZQUNIQyxPQUFPO2dCQUNMQyxJQUFJO2dCQUNKQyxNQUFNO1lBQ1I7WUFDQUMsS0FBSztZQUNMQyxXQUFXO2dCQUNUSCxJQUFJO1lBQ047WUFDQUksUUFBUTtnQkFDTkosSUFBSTtZQUNOO1lBQ0FLLGFBQWE7Z0JBQ1hMLElBQUk7WUFDTjtZQUNBTSxVQUFVO2dCQUNSTixJQUFJO1lBQ047WUFDQU8sUUFBUTtnQkFDTlAsSUFBSTtZQUNOO1lBQ0FRLFNBQVM7Z0JBQ1BSLElBQUk7WUFDTjtZQUNBUyxnQkFBZ0I7Z0JBQ2RDLE1BQU0sS0FBSztnQkFDWEMsT0FBTztvQkFBQztvQkFBWTtpQkFBVztnQkFDL0JDLFFBQVE7Z0JBQ1JDLE1BQU07Z0JBQ05DLGFBQWE7b0JBQ1hkLElBQUk7Z0JBQ047Z0JBQ0FlLFlBQVk7Z0JBQ1pDLFVBQVU7WUFDWjtZQUNBQyxlQUFlO2dCQUNiUCxNQUFNLEtBQUs7Z0JBQ1hDLE9BQU87b0JBQUM7b0JBQVk7aUJBQVc7Z0JBQy9CQyxRQUFRO2dCQUNSQyxNQUFNO2dCQUNOQyxhQUFhO29CQUNYZCxJQUFJO2dCQUNOO2dCQUNBZSxZQUFZO2dCQUNaQyxVQUFVO1lBQ1o7WUFDQUUsTUFBTTtnQkFDSlIsTUFBTSxLQUFLO2dCQUNYQyxPQUFPO29CQUFDO29CQUFZO2lCQUFXO1lBQ2pDO1lBQ0FBLE9BQU87Z0JBQUM7Z0JBQVM7YUFBUTtZQUN6QlEsVUFBVTtZQUNWQyxpQkFBaUIsS0FBSztRQUN4QjtRQUVBQyxXQUFXLENBQUNDLE1BQWF6QixJQUFJLElBQU87b0JBQUVDLEtBQUt3QjtnQkFBSTtJQUNqRCxJQUFJO0FBRUcsTUFBTUMsZ0JBQWdCNUIsK0NBQU1BLENBQWEsQ0FBQ0UsTUFBUztRQUN4RDJCLFdBQVc7UUFDWEMsZUFBZTtRQUVmQyxpQkFBaUIsQ0FBQ0osTUFBZ0J6QixJQUFJLElBQU87b0JBQUUyQixXQUFXRjtnQkFBSTtRQUM5REsscUJBQXFCLENBQUNMLE1BQWdCekIsSUFBSSxJQUFPO29CQUFFNEIsZUFBZUg7Z0JBQUk7SUFDeEUsSUFBSSIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi9zdG9yZS9zdG9yZS50cz8xMmU3Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZSB9IGZyb20gJ3p1c3RhbmQnO1xyXG5pbXBvcnQgeyBDYXIsIE1vZGVsU3RvcmUgfSBmcm9tICcuLi9pbnRlcmZhY2VzL2dlbmVyYWwnO1xyXG5cclxuZXhwb3J0IGNvbnN0IHVzZUNhclN0b3JlID0gY3JlYXRlPHsgY2FyOiBDYXIgfT4oKHNldCkgPT4gKHtcclxuICBjYXI6IHtcclxuICAgIG1vZGVsOiB7XHJcbiAgICAgIGlkOiAxLFxyXG4gICAgICBuYW1lOiAnTE0gMDFBJ1xyXG4gICAgfSxcclxuICAgIFVSTDogJ0xNIDAxQS5qcGVnJyxcclxuICAgIFBhaW50d29yazoge1xyXG4gICAgICBpZDogMTVcclxuICAgIH0sXHJcbiAgICBMaXZlcnk6IHtcclxuICAgICAgaWQ6IDRcclxuICAgIH0sXHJcbiAgICBMaXZlcnlFeHRyYToge1xyXG4gICAgICBpZDogMzNcclxuICAgIH0sXHJcbiAgICBJbnRlcmlvcjoge1xyXG4gICAgICBpZDogNDFcclxuICAgIH0sXHJcbiAgICBQaXBpbmc6IHtcclxuICAgICAgaWQ6IDU1XHJcbiAgICB9LFxyXG4gICAgVG9ubmVhdToge1xyXG4gICAgICBpZDogNTNcclxuICAgIH0sXHJcbiAgICByYWRpYXRvck51bWJlcjoge1xyXG4gICAgICBzaG93OiBmYWxzZSxcclxuICAgICAgcGFydHM6IFsnTnVtYmVyXzYnLCAnTnVtYmVyXzcnXSxcclxuICAgICAgbnVtYmVyOiAnJyxcclxuICAgICAgdHlwZTogJ3RyYW5zcGFyZW50JyxcclxuICAgICAgbnVtYmVyQ29sb3I6IHtcclxuICAgICAgICBpZDogMzNcclxuICAgICAgfSxcclxuICAgICAgdHlwb2dyYXBoeTogJ0FjdW1pbiBWYXJpYWJsZSBDb25jZXB0IENvbmRlbnNlZCBCbGFjaycsXHJcbiAgICAgIGZvbnRTaXplOiAnMTk1cHgnXHJcbiAgICB9LFxyXG4gICAgcm91bmRlbE51bWJlcjoge1xyXG4gICAgICBzaG93OiBmYWxzZSxcclxuICAgICAgcGFydHM6IFsnTnVtYmVyXzYnLCAnTnVtYmVyXzcnXSxcclxuICAgICAgbnVtYmVyOiAnJyxcclxuICAgICAgdHlwZTogJ3RyYW5zcGFyZW50JyxcclxuICAgICAgbnVtYmVyQ29sb3I6IHtcclxuICAgICAgICBpZDogMzNcclxuICAgICAgfSxcclxuICAgICAgdHlwb2dyYXBoeTogJ0FjdW1pbiBWYXJpYWJsZSBDb25jZXB0IENvbmRlbnNlZCBCbGFjaycsXHJcbiAgICAgIGZvbnRTaXplOiAnMTk1cHgnXHJcbiAgICB9LFxyXG4gICAgZmxhZzoge1xyXG4gICAgICBzaG93OiBmYWxzZSxcclxuICAgICAgcGFydHM6IFsnTnVtYmVyXzYnLCAnTnVtYmVyXzcnXVxyXG4gICAgfSxcclxuICAgIHBhcnRzOiBbJ0xpcF8xJywgJ0xpcF8yJ10sXHJcbiAgICByYWNlUGFjazogJ0Jhc2UnLFxyXG4gICAgYm9ycmFubmlVcGdyYWRlOiBmYWxzZVxyXG4gIH0sXHJcblxyXG4gIHVwZGF0ZUNhcjogKHZhbDogQ2FyKSA9PiBzZXQoKCkgPT4gKHsgY2FyOiB2YWwgfSkpXHJcbn0pKTtcclxuXHJcbmV4cG9ydCBjb25zdCB1c2VNb2RlbFN0b3JlID0gY3JlYXRlPE1vZGVsU3RvcmU+KChzZXQpID0+ICh7XHJcbiAgbW9kZWxUeXBlOiAnSGlzdG9yaWMgTGl2ZXJpZXMnLFxyXG4gIGNvbG9yQ2F0ZWdvcnk6ICdQYWludHdvcmsnLFxyXG5cclxuICB1cGRhdGVNb2RlbFR5cGU6ICh2YWw6IHN0cmluZykgPT4gc2V0KCgpID0+ICh7IG1vZGVsVHlwZTogdmFsIH0pKSxcclxuICB1cGRhdGVDb2xvckNhdGVnb3J5OiAodmFsOiBzdHJpbmcpID0+IHNldCgoKSA9PiAoeyBjb2xvckNhdGVnb3J5OiB2YWwgfSBhcyBNb2RlbFN0b3JlKSlcclxufSkpO1xyXG4iXSwibmFtZXMiOlsiY3JlYXRlIiwidXNlQ2FyU3RvcmUiLCJzZXQiLCJjYXIiLCJtb2RlbCIsImlkIiwibmFtZSIsIlVSTCIsIlBhaW50d29yayIsIkxpdmVyeSIsIkxpdmVyeUV4dHJhIiwiSW50ZXJpb3IiLCJQaXBpbmciLCJUb25uZWF1IiwicmFkaWF0b3JOdW1iZXIiLCJzaG93IiwicGFydHMiLCJudW1iZXIiLCJ0eXBlIiwibnVtYmVyQ29sb3IiLCJ0eXBvZ3JhcGh5IiwiZm9udFNpemUiLCJyb3VuZGVsTnVtYmVyIiwiZmxhZyIsInJhY2VQYWNrIiwiYm9ycmFubmlVcGdyYWRlIiwidXBkYXRlQ2FyIiwidmFsIiwidXNlTW9kZWxTdG9yZSIsIm1vZGVsVHlwZSIsImNvbG9yQ2F0ZWdvcnkiLCJ1cGRhdGVNb2RlbFR5cGUiLCJ1cGRhdGVDb2xvckNhdGVnb3J5Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./store/store.ts\n");
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "r": () => (/* binding */ useCarStore)
+/* harmony export */ });
+/* unused harmony export useModelStore */
+/* harmony import */ var zustand__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6912);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([zustand__WEBPACK_IMPORTED_MODULE_0__]);
+zustand__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+const useCarStore = (0,zustand__WEBPACK_IMPORTED_MODULE_0__.create)((set)=>({
+        car: {
+            model: {
+                id: 1,
+                name: "LM 01A"
+            },
+            URL: "LM 01A.jpeg",
+            Paintwork: {
+                id: 15
+            },
+            Livery: {
+                id: 4
+            },
+            LiveryExtra: {
+                id: 33
+            },
+            Interior: {
+                id: 41
+            },
+            Piping: {
+                id: 55
+            },
+            Tonneau: {
+                id: 53
+            },
+            radiatorNumber: {
+                show: false,
+                parts: [
+                    "Number_6",
+                    "Number_7"
+                ],
+                number: "",
+                type: "transparent",
+                numberColor: {
+                    id: 33
+                },
+                typography: "Acumin Variable Concept Condensed Black",
+                fontSize: "195px"
+            },
+            roundelNumber: {
+                show: false,
+                parts: [
+                    "Number_6",
+                    "Number_7"
+                ],
+                number: "",
+                type: "transparent",
+                numberColor: {
+                    id: 33
+                },
+                typography: "Acumin Variable Concept Condensed Black",
+                fontSize: "195px"
+            },
+            flag: {
+                show: false,
+                parts: [
+                    "Number_6",
+                    "Number_7"
+                ]
+            },
+            parts: [
+                "Lip_1",
+                "Lip_2"
+            ],
+            racePack: "Base",
+            borranniUpgrade: false
+        },
+        updateCar: (val)=>set(()=>({
+                    car: val
+                }))
+    }));
+const useModelStore = (0,zustand__WEBPACK_IMPORTED_MODULE_0__.create)((set)=>({
+        modelType: "Historic Liveries",
+        colorCategory: "Paintwork",
+        updateModelType: (val)=>set(()=>({
+                    modelType: val
+                })),
+        updateColorCategory: (val)=>set(()=>({
+                    colorCategory: val
+                }))
+    }));
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
-/***/ "./utils/car.ts":
-/*!**********************!*\
-  !*** ./utils/car.ts ***!
-  \**********************/
+/***/ 325:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"selectCar\": () => (/* binding */ selectCar),\n/* harmony export */   \"setDefaultCar\": () => (/* binding */ setDefaultCar),\n/* harmony export */   \"toggleBorranni\": () => (/* binding */ toggleBorranni),\n/* harmony export */   \"toggleNumber\": () => (/* binding */ toggleNumber),\n/* harmony export */   \"toggleRacePack\": () => (/* binding */ toggleRacePack),\n/* harmony export */   \"validateColor\": () => (/* binding */ validateColor)\n/* harmony export */ });\n/* harmony import */ var _data_nodes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/data/nodes */ \"./data/nodes.ts\");\n/* harmony import */ var _utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/utils/sketchfab */ \"./utils/sketchfab.ts\");\n/* harmony import */ var _data_colors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/data/colors */ \"./data/colors.ts\");\n/* harmony import */ var _utils_number__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/utils/number */ \"./utils/number.ts\");\n\n\n\n\nconst selectCar = async (newCar)=>{\n    return;\n    const nodesToShow = newCar.parts;\n    _data_nodes__WEBPACK_IMPORTED_MODULE_0__.nodesToHide.forEach((node)=>{\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(node, \"hide\");\n    });\n    nodesToShow.forEach((node)=>{\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(node, \"show\");\n    });\n    toggleRacePack(newCar.racePack);\n    toggleNumber(newCar.radiatorNumber.parts, newCar.radiatorNumber.show);\n    toggleBorranni(newCar.borranniUpgrade);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Livery_1\", newCar[\"Livery\"].id);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Livery_2\", newCar[\"LiveryExtra\"].id);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Pipin\", newCar[\"Piping\"].id);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Carroceria\", newCar.Paintwork.id);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Number_A\", newCar.Paintwork.id);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Asiento\", newCar.Interior.id);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Textura_lona\", newCar.Tonneau.id);\n    const image = (0,_utils_number__WEBPACK_IMPORTED_MODULE_3__[\"default\"])({\n        type: \"mask\",\n        color: _data_colors__WEBPACK_IMPORTED_MODULE_2__.colorList[newCar.radiatorNumber.numberColor.id - 1],\n        val: newCar.radiatorNumber.number,\n        background: newCar.radiatorNumber.type == \"circle\" ? {\n            r: 0,\n            g: 255,\n            b: 255\n        } : _data_colors__WEBPACK_IMPORTED_MODULE_2__.colorList[newCar.Paintwork.id - 1],\n        typography: newCar.radiatorNumber.typography,\n        fontSize: newCar.radiatorNumber.fontSize\n    });\n    const textureUid = await (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.addTexture)(image);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.setTexture)(\"Number_A\", textureUid);\n};\nconst setDefaultCar = ()=>{\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Livery_1\", 33);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Pipin\", 54);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Carroceria\", 4);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Asiento\", 36);\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.changeColor)(\"Number_A\", 33);\n};\nconst validateColor = (car)=>{\n    let selectedPaintWork = _data_colors__WEBPACK_IMPORTED_MODULE_2__.matrix.filter((r)=>{\n        return r.id == car.Paintwork.id;\n    })[0];\n    const result = selectedPaintWork.Interior.find((i)=>{\n        return i.id == car.Interior.id;\n    });\n    let defaultInteriorId = selectedPaintWork.Interior[0].id;\n    let defaultInteriorColor = _data_colors__WEBPACK_IMPORTED_MODULE_2__.colorList[defaultInteriorId - 1];\n    return {\n        available: result.available,\n        Interior: defaultInteriorColor\n    };\n};\nconst toggleRacePack = (val)=>{\n    const defaultNodes = [\n        \"Head\",\n        \"Frenos\"\n    ];\n    defaultNodes.forEach((node)=>{\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(node, val == \"Pacco Gara\" ? \"hide\" : \"show\");\n    });\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(\"Gara\", val == \"Pacco Gara\" ? \"show\" : \"hide\");\n};\nconst toggleBorranni = (val)=>{\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(\"Llantas\", val ? \"hide\" : \"show\");\n    (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(\"Gara_Borranis\", val ? \"show\" : \"hide\");\n};\nconst toggleNumber = (nodes, val)=>{\n    if (!val) {\n        nodes = [\n            \"Number_1\",\n            \"Number_2\",\n            \"Number_3\",\n            \"Number_4\",\n            \"Number_5\",\n            \"Number_6\",\n            \"Number_7\"\n        ];\n    }\n    nodes.forEach((node)=>{\n        (0,_utils_sketchfab__WEBPACK_IMPORTED_MODULE_1__.toggleNode)(node, val ? \"show\" : \"hide\");\n    });\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QUM3QyxNQUFNb0IsZUFBZTtRQUFDO1FBQVE7S0FBUztJQUN2Q0EsYUFBYXJDLE9BQU8sQ0FBQyxDQUFDQyxPQUFTO1FBQzdCWCw0REFBVUEsQ0FBQ1csTUFBTWdCLE9BQU8sZUFBZSxTQUFTLE1BQU07SUFDeEQ7SUFFQTNCLDREQUFVQSxDQUFDLFFBQVEyQixPQUFPLGVBQWUsU0FBUyxNQUFNO0FBQzFELEVBQUU7QUFFSyxNQUFNVixpQkFBaUIsQ0FBQ1UsTUFBaUI7SUFDOUMzQiw0REFBVUEsQ0FBQyxXQUFXMkIsTUFBTSxTQUFTLE1BQU07SUFDM0MzQiw0REFBVUEsQ0FBQyxpQkFBaUIyQixNQUFNLFNBQVMsTUFBTTtBQUNuRCxFQUFFO0FBRUssTUFBTWIsZUFBZSxDQUFDa0MsT0FBaUJyQixNQUFpQjtJQUM3RCxJQUFJLENBQUNBLEtBQUs7UUFDUnFCLFFBQVE7WUFBQztZQUFZO1lBQVk7WUFBWTtZQUFZO1lBQVk7WUFBWTtTQUFXO0lBQzlGLENBQUM7SUFFREEsTUFBTXRDLE9BQU8sQ0FBQyxDQUFDQyxPQUFTO1FBQ3RCWCw0REFBVUEsQ0FBQ1csTUFBTWdCLE1BQU0sU0FBUyxNQUFNO0lBQ3hDO0FBQ0YsRUFBRSIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi91dGlscy9jYXIudHM/YmQxZiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDYXIsIENvbG9yIH0gZnJvbSAnaW50ZXJmYWNlcy9nZW5lcmFsJztcclxuaW1wb3J0IHsgbm9kZXNUb0hpZGUgfSBmcm9tICdAL2RhdGEvbm9kZXMnO1xyXG5pbXBvcnQgeyBjaGFuZ2VDb2xvciwgdG9nZ2xlTm9kZSwgYWRkVGV4dHVyZSwgc2V0VGV4dHVyZSB9IGZyb20gJ0AvdXRpbHMvc2tldGNoZmFiJztcclxuaW1wb3J0IHsgY2F0ZWdvcmllcywgbWF0cml4LCBjb2xvckxpc3QgfSBmcm9tICdAL2RhdGEvY29sb3JzJztcclxuaW1wb3J0IFByaW50TnVtYmVyIGZyb20gJ0AvdXRpbHMvbnVtYmVyJztcclxuXHJcbmV4cG9ydCBjb25zdCBzZWxlY3RDYXIgPSBhc3luYyAobmV3Q2FyOiBDYXIpID0+IHtcclxuICByZXR1cm47XHJcbiAgY29uc3Qgbm9kZXNUb1Nob3c6IHN0cmluZ1tdID0gbmV3Q2FyLnBhcnRzO1xyXG5cclxuICBub2Rlc1RvSGlkZS5mb3JFYWNoKChub2RlKSA9PiB7XHJcbiAgICB0b2dnbGVOb2RlKG5vZGUsICdoaWRlJyk7XHJcbiAgfSk7XHJcblxyXG4gIG5vZGVzVG9TaG93LmZvckVhY2goKG5vZGU6IHN0cmluZykgPT4ge1xyXG4gICAgdG9nZ2xlTm9kZShub2RlLCAnc2hvdycpO1xyXG4gIH0pO1xyXG5cclxuICB0b2dnbGVSYWNlUGFjayhuZXdDYXIucmFjZVBhY2spO1xyXG4gIHRvZ2dsZU51bWJlcihuZXdDYXIucmFkaWF0b3JOdW1iZXIucGFydHMsIG5ld0Nhci5yYWRpYXRvck51bWJlci5zaG93KTtcclxuICB0b2dnbGVCb3JyYW5uaShuZXdDYXIuYm9ycmFubmlVcGdyYWRlKTtcclxuICBjaGFuZ2VDb2xvcignTGl2ZXJ5XzEnLCBuZXdDYXJbJ0xpdmVyeSddLmlkKTtcclxuICBjaGFuZ2VDb2xvcignTGl2ZXJ5XzInLCBuZXdDYXJbJ0xpdmVyeUV4dHJhJ10uaWQpO1xyXG4gIGNoYW5nZUNvbG9yKCdQaXBpbicsIG5ld0NhclsnUGlwaW5nJ10uaWQpO1xyXG4gIGNoYW5nZUNvbG9yKCdDYXJyb2NlcmlhJywgbmV3Q2FyLlBhaW50d29yay5pZCk7XHJcbiAgY2hhbmdlQ29sb3IoJ051bWJlcl9BJywgbmV3Q2FyLlBhaW50d29yay5pZCk7XHJcbiAgY2hhbmdlQ29sb3IoJ0FzaWVudG8nLCBuZXdDYXIuSW50ZXJpb3IuaWQpO1xyXG4gIGNoYW5nZUNvbG9yKCdUZXh0dXJhX2xvbmEnLCBuZXdDYXIuVG9ubmVhdS5pZCk7XHJcbiAgY29uc3QgaW1hZ2UgPSBQcmludE51bWJlcih7XHJcbiAgICB0eXBlOiAnbWFzaycsXHJcbiAgICBjb2xvcjogY29sb3JMaXN0W25ld0Nhci5yYWRpYXRvck51bWJlci5udW1iZXJDb2xvci5pZCAtIDFdLFxyXG4gICAgdmFsOiBuZXdDYXIucmFkaWF0b3JOdW1iZXIubnVtYmVyLFxyXG4gICAgYmFja2dyb3VuZDpcclxuICAgICAgbmV3Q2FyLnJhZGlhdG9yTnVtYmVyLnR5cGUgPT0gJ2NpcmNsZSdcclxuICAgICAgICA/IHsgcjogMCwgZzogMjU1LCBiOiAyNTUgfVxyXG4gICAgICAgIDogY29sb3JMaXN0W25ld0Nhci5QYWludHdvcmsuaWQgLSAxXSxcclxuICAgIHR5cG9ncmFwaHk6IG5ld0Nhci5yYWRpYXRvck51bWJlci50eXBvZ3JhcGh5LFxyXG4gICAgZm9udFNpemU6IG5ld0Nhci5yYWRpYXRvck51bWJlci5mb250U2l6ZVxyXG4gIH0pO1xyXG4gIGNvbnN0IHRleHR1cmVVaWQgPSBhd2FpdCBhZGRUZXh0dXJlKGltYWdlKTtcclxuICBzZXRUZXh0dXJlKCdOdW1iZXJfQScsIHRleHR1cmVVaWQpO1xyXG59O1xyXG5cclxuZXhwb3J0IGNvbnN0IHNldERlZmF1bHRDYXIgPSAoKSA9PiB7XHJcbiAgY2hhbmdlQ29sb3IoJ0xpdmVyeV8xJywgMzMpO1xyXG4gIGNoYW5nZUNvbG9yKCdQaXBpbicsIDU0KTtcclxuICBjaGFuZ2VDb2xvcignQ2Fycm9jZXJpYScsIDQpO1xyXG4gIGNoYW5nZUNvbG9yKCdBc2llbnRvJywgMzYpO1xyXG4gIGNoYW5nZUNvbG9yKCdOdW1iZXJfQScsIDMzKTtcclxufTtcclxuXHJcbmV4cG9ydCBjb25zdCB2YWxpZGF0ZUNvbG9yID0gKGNhcjogYW55KSA9PiB7XHJcbiAgbGV0IHNlbGVjdGVkUGFpbnRXb3JrID0gbWF0cml4LmZpbHRlcigocikgPT4ge1xyXG4gICAgcmV0dXJuIHIuaWQgPT0gY2FyLlBhaW50d29yay5pZDtcclxuICB9KVswXTtcclxuXHJcbiAgY29uc3QgcmVzdWx0ID0gc2VsZWN0ZWRQYWludFdvcmsuSW50ZXJpb3IuZmluZCgoaSkgPT4ge1xyXG4gICAgcmV0dXJuIGkuaWQgPT0gY2FyLkludGVyaW9yLmlkO1xyXG4gIH0pIGFzIHsgYXZhaWxhYmxlOiBib29sZWFuIH07XHJcblxyXG4gIGxldCBkZWZhdWx0SW50ZXJpb3JJZCA9IHNlbGVjdGVkUGFpbnRXb3JrLkludGVyaW9yWzBdLmlkO1xyXG4gIGxldCBkZWZhdWx0SW50ZXJpb3JDb2xvciA9IGNvbG9yTGlzdFtkZWZhdWx0SW50ZXJpb3JJZCAtIDFdO1xyXG4gIHJldHVybiB7XHJcbiAgICBhdmFpbGFibGU6IHJlc3VsdC5hdmFpbGFibGUsXHJcbiAgICBJbnRlcmlvcjogZGVmYXVsdEludGVyaW9yQ29sb3JcclxuICB9O1xyXG59O1xyXG5cclxuZXhwb3J0IGNvbnN0IHRvZ2dsZVJhY2VQYWNrID0gKHZhbDogc3RyaW5nKSA9PiB7XHJcbiAgY29uc3QgZGVmYXVsdE5vZGVzID0gWydIZWFkJywgJ0ZyZW5vcyddO1xyXG4gIGRlZmF1bHROb2Rlcy5mb3JFYWNoKChub2RlKSA9PiB7XHJcbiAgICB0b2dnbGVOb2RlKG5vZGUsIHZhbCA9PSAnUGFjY28gR2FyYScgPyAnaGlkZScgOiAnc2hvdycpO1xyXG4gIH0pO1xyXG5cclxuICB0b2dnbGVOb2RlKCdHYXJhJywgdmFsID09ICdQYWNjbyBHYXJhJyA/ICdzaG93JyA6ICdoaWRlJyk7XHJcbn07XHJcblxyXG5leHBvcnQgY29uc3QgdG9nZ2xlQm9ycmFubmkgPSAodmFsOiBib29sZWFuKSA9PiB7XHJcbiAgdG9nZ2xlTm9kZSgnTGxhbnRhcycsIHZhbCA/ICdoaWRlJyA6ICdzaG93Jyk7XHJcbiAgdG9nZ2xlTm9kZSgnR2FyYV9Cb3JyYW5pcycsIHZhbCA/ICdzaG93JyA6ICdoaWRlJyk7XHJcbn07XHJcblxyXG5leHBvcnQgY29uc3QgdG9nZ2xlTnVtYmVyID0gKG5vZGVzOiBzdHJpbmdbXSwgdmFsOiBib29sZWFuKSA9PiB7XHJcbiAgaWYgKCF2YWwpIHtcclxuICAgIG5vZGVzID0gWydOdW1iZXJfMScsICdOdW1iZXJfMicsICdOdW1iZXJfMycsICdOdW1iZXJfNCcsICdOdW1iZXJfNScsICdOdW1iZXJfNicsICdOdW1iZXJfNyddO1xyXG4gIH1cclxuXHJcbiAgbm9kZXMuZm9yRWFjaCgobm9kZSkgPT4ge1xyXG4gICAgdG9nZ2xlTm9kZShub2RlLCB2YWwgPyAnc2hvdycgOiAnaGlkZScpO1xyXG4gIH0pO1xyXG59O1xyXG4iXSwibmFtZXMiOlsibm9kZXNUb0hpZGUiLCJjaGFuZ2VDb2xvciIsInRvZ2dsZU5vZGUiLCJhZGRUZXh0dXJlIiwic2V0VGV4dHVyZSIsIm1hdHJpeCIsImNvbG9yTGlzdCIsIlByaW50TnVtYmVyIiwic2VsZWN0Q2FyIiwibmV3Q2FyIiwibm9kZXNUb1Nob3ciLCJwYXJ0cyIsImZvckVhY2giLCJub2RlIiwidG9nZ2xlUmFjZVBhY2siLCJyYWNlUGFjayIsInRvZ2dsZU51bWJlciIsInJhZGlhdG9yTnVtYmVyIiwic2hvdyIsInRvZ2dsZUJvcnJhbm5pIiwiYm9ycmFubmlVcGdyYWRlIiwiaWQiLCJQYWludHdvcmsiLCJJbnRlcmlvciIsIlRvbm5lYXUiLCJpbWFnZSIsInR5cGUiLCJjb2xvciIsIm51bWJlckNvbG9yIiwidmFsIiwibnVtYmVyIiwiYmFja2dyb3VuZCIsInIiLCJnIiwiYiIsInR5cG9ncmFwaHkiLCJmb250U2l6ZSIsInRleHR1cmVVaWQiLCJzZXREZWZhdWx0Q2FyIiwidmFsaWRhdGVDb2xvciIsImNhciIsInNlbGVjdGVkUGFpbnRXb3JrIiwiZmlsdGVyIiwicmVzdWx0IiwiZmluZCIsImkiLCJkZWZhdWx0SW50ZXJpb3JJZCIsImRlZmF1bHRJbnRlcmlvckNvbG9yIiwiYXZhaWxhYmxlIiwiZGVmYXVsdE5vZGVzIiwibm9kZXMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./utils/car.ts\n");
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "PR": () => (/* binding */ selectCar)
+});
+
+// UNUSED EXPORTS: setDefaultCar, toggleBorranni, toggleNumber, toggleRacePack, validateColor
+
+;// CONCATENATED MODULE: ./data/nodes.ts
+const nodesToHide = [
+    "Stripe_1",
+    "Stripe_2",
+    "Stripe_3",
+    "Stripe_4",
+    "Stripe_5",
+    "Stripe_6",
+    "Lip_1",
+    "Lip_2",
+    "Lip_3",
+    "Tail_1",
+    "Number_1",
+    "Number_2",
+    "Number_3",
+    "Number_4",
+    "Number_5",
+    "Number_6",
+    "Number_7"
+];
+
+// EXTERNAL MODULE: ./utils/sketchfab.ts
+var sketchfab = __webpack_require__(4573);
+;// CONCATENATED MODULE: ./data/colors.ts
+const categories = [
+    {
+        name: "Paintwork",
+        id: "Carroceria"
+    },
+    {
+        name: "Livery",
+        id: "Livery_1"
+    },
+    {
+        name: "Interior",
+        id: "Asiento"
+    },
+    {
+        name: "Piping",
+        id: "Pipin"
+    },
+    {
+        name: "Tonneau",
+        id: "Textura_lona"
+    }
+];
+const colors_colorList = [
+    //Exterior
+    {
+        id: 1,
+        name: "Bianco Avus",
+        r: 223,
+        g: 223,
+        b: 213,
+        metallic: false
+    },
+    {
+        id: 2,
+        name: "Giallo Modena",
+        r: 221,
+        g: 188,
+        b: 0,
+        metallic: false
+    },
+    {
+        id: 3,
+        name: "Rosso Scuderia",
+        r: 251,
+        g: 0,
+        b: 0,
+        metallic: false
+    },
+    {
+        id: 4,
+        name: "Rosso Corsa",
+        r: 237,
+        g: 0,
+        b: 7,
+        metallic: false
+    },
+    {
+        id: 5,
+        name: "Rosso Mugello",
+        r: 187,
+        g: 0,
+        b: 35,
+        metallic: false
+    },
+    {
+        id: 6,
+        name: "Grigio Ingrid",
+        r: 181,
+        g: 177,
+        b: 166,
+        metallic: true
+    },
+    {
+        id: 7,
+        name: "Argento Nurburgring",
+        r: 233,
+        g: 226,
+        b: 221,
+        metallic: true
+    },
+    {
+        id: 8,
+        name: "Grigio Titanio",
+        r: 198,
+        g: 196,
+        b: 195,
+        metallic: true
+    },
+    {
+        id: 9,
+        name: "Grigio Silverstone",
+        r: 79,
+        g: 73,
+        b: 70,
+        metallic: false
+    },
+    {
+        id: 10,
+        name: "Grigio Alloy",
+        r: 234,
+        g: 234,
+        b: 235,
+        metallic: true
+    },
+    {
+        id: 11,
+        name: "Blu Tour de France",
+        r: 47,
+        g: 33,
+        b: 118,
+        metallic: true
+    },
+    {
+        id: 12,
+        name: "Blu Abu Dhabi",
+        r: 23,
+        g: 31,
+        b: 69,
+        metallic: false
+    },
+    {
+        id: 13,
+        name: "Blu Mirabeau",
+        r: 59,
+        g: 74,
+        b: 126,
+        metallic: false
+    },
+    {
+        id: 14,
+        name: "Blu Pozzi",
+        r: 33,
+        g: 35,
+        b: 46,
+        metallic: false
+    },
+    {
+        id: 15,
+        name: "Nero Ds",
+        r: 29,
+        g: 29,
+        b: 27,
+        metallic: false
+    },
+    {
+        id: 16,
+        name: "Nero Daytona",
+        r: 43,
+        g: 43,
+        b: 41,
+        metallic: false
+    },
+    {
+        id: 17,
+        name: "Blu Scozia",
+        r: 0,
+        g: 14,
+        b: 57,
+        metallic: false
+    },
+    {
+        id: 18,
+        name: "Vinaccia",
+        r: 43,
+        g: 10,
+        b: 28,
+        metallic: false
+    },
+    {
+        id: 19,
+        name: "Verde Abetone",
+        r: 4,
+        g: 38,
+        b: 26,
+        metallic: false
+    },
+    {
+        id: 20,
+        name: "Grigio Scuro",
+        r: 65,
+        g: 60,
+        b: 58,
+        metallic: false
+    },
+    {
+        id: 21,
+        name: "Grigio Ferro Met ",
+        r: 160,
+        g: 151,
+        b: 146,
+        metallic: true
+    },
+    {
+        id: 22,
+        name: "Grigio Medio",
+        r: 89,
+        g: 108,
+        b: 107,
+        metallic: false
+    },
+    {
+        id: 23,
+        name: "Azzurro Met",
+        r: 139,
+        g: 184,
+        b: 216,
+        metallic: true
+    },
+    {
+        id: 24,
+        name: "Avio Met",
+        r: 131,
+        g: 170,
+        b: 219,
+        metallic: false
+    },
+    {
+        id: 25,
+        name: "Celeste Met",
+        r: 150,
+        g: 172,
+        b: 179,
+        metallic: true
+    },
+    {
+        id: 26,
+        name: "Avorio",
+        r: 203,
+        g: 197,
+        b: 174,
+        metallic: false
+    },
+    {
+        id: 27,
+        name: "Blu Nart",
+        r: 31,
+        g: 57,
+        b: 100,
+        metallic: false
+    },
+    {
+        id: 28,
+        name: "Verde British Racing Green",
+        r: 22,
+        g: 50,
+        b: 22,
+        metallic: false
+    },
+    {
+        id: 29,
+        name: "Rubino Micalizzato",
+        r: 69,
+        g: 0,
+        b: 3,
+        metallic: true
+    },
+    {
+        id: 30,
+        name: "Blu Le Mans FER",
+        r: 31,
+        g: 17,
+        b: 76,
+        metallic: true
+    },
+    {
+        id: 31,
+        name: "Rosso Dino",
+        r: 252,
+        g: 40,
+        b: 0,
+        metallic: false
+    },
+    {
+        id: 32,
+        name: "Rosso Barchetta",
+        r: 122,
+        g: 15,
+        b: 47,
+        metallic: false
+    },
+    {
+        id: 33,
+        name: "Bianco Cervino",
+        r: 206,
+        g: 213,
+        b: 209,
+        metallic: false
+    },
+    {
+        id: 34,
+        name: "Blu Corsa",
+        r: 0,
+        g: 123,
+        b: 224,
+        metallic: true
+    },
+    {
+        id: 35,
+        name: "Giallo Triplostrato",
+        r: 241,
+        g: 192,
+        b: 0,
+        metallic: false
+    },
+    //Interior
+    {
+        id: 36,
+        name: "Nero",
+        r: 23,
+        g: 19,
+        b: 18,
+        metallic: false
+    },
+    {
+        id: 37,
+        name: "Charcoal",
+        r: 72,
+        g: 68,
+        b: 70,
+        metallic: false
+    },
+    {
+        id: 38,
+        name: "Blu Sterling",
+        r: 32,
+        g: 47,
+        b: 78,
+        metallic: false
+    },
+    {
+        id: 39,
+        name: "Blu Medio",
+        r: 38,
+        g: 58,
+        b: 105,
+        metallic: false
+    },
+    {
+        id: 40,
+        name: "Carta Da Zucchero",
+        r: 70,
+        g: 92,
+        b: 122,
+        metallic: false
+    },
+    {
+        id: 41,
+        name: "Rosso",
+        r: 192,
+        g: 61,
+        b: 49,
+        metallic: false
+    },
+    {
+        id: 42,
+        name: "Bordeaux",
+        r: 128,
+        g: 50,
+        b: 52,
+        metallic: false
+    },
+    {
+        id: 43,
+        name: "Cioccolato",
+        r: 103,
+        g: 65,
+        b: 40,
+        metallic: false
+    },
+    {
+        id: 44,
+        name: "Iroko",
+        r: 127,
+        g: 79,
+        b: 51,
+        metallic: false
+    },
+    {
+        id: 45,
+        name: "Terra Bruciata",
+        r: 127,
+        g: 79,
+        b: 51,
+        metallic: false
+    },
+    {
+        id: 46,
+        name: "Tortora",
+        r: 172,
+        g: 160,
+        b: 151,
+        metallic: false
+    },
+    {
+        id: 47,
+        name: "Cuoio",
+        r: 185,
+        g: 111,
+        b: 65,
+        metallic: false
+    },
+    {
+        id: 48,
+        name: "Beige Tradizione",
+        r: 165,
+        g: 111,
+        b: 65,
+        metallic: false
+    },
+    {
+        id: 49,
+        name: "Sabbia",
+        r: 233,
+        g: 216,
+        b: 188,
+        metallic: false
+    },
+    {
+        id: 50,
+        name: "Crema",
+        r: 248,
+        g: 246,
+        b: 220,
+        metallic: false
+    },
+    //Tonneau
+    {
+        id: 51,
+        name: "Rosso",
+        r: 192,
+        g: 61,
+        b: 49,
+        metallic: false
+    },
+    {
+        id: 52,
+        name: "Nero",
+        r: 34,
+        g: 44,
+        b: 44,
+        metallic: false
+    },
+    //Pipings
+    {
+        id: 53,
+        name: "Bordeaux",
+        r: 103,
+        g: 47,
+        b: 49,
+        metallic: false
+    },
+    {
+        id: 54,
+        name: "Nero",
+        r: 34,
+        g: 44,
+        b: 44,
+        metallic: false
+    },
+    {
+        id: 55,
+        name: "White",
+        r: 232,
+        g: 232,
+        b: 232,
+        metallic: false
+    },
+    //Livery
+    {
+        id: 56,
+        name: "Giallo Modena",
+        r: 229,
+        g: 192,
+        b: 21,
+        metallic: false
+    },
+    {
+        id: 57,
+        name: "Verde British Racing Green",
+        r: 38,
+        g: 49,
+        b: 38,
+        metallic: false
+    },
+    {
+        id: 58,
+        name: "Bianco Cervino",
+        r: 200,
+        g: 195,
+        b: 194,
+        metallic: false
+    },
+    {
+        id: 59,
+        name: "Blu Le Mans FER",
+        r: 31,
+        g: 18,
+        b: 75,
+        metallic: false
+    },
+    {
+        id: 60,
+        name: "Rosso Barchetta",
+        r: 122,
+        g: 15,
+        b: 47,
+        metallic: false
+    },
+    {
+        id: 61,
+        name: "Rosso Corsa",
+        r: 237,
+        g: 0,
+        b: 7,
+        metallic: false
+    },
+    {
+        id: 62,
+        name: "Rosso Mugello",
+        r: 187,
+        g: 0,
+        b: 35,
+        metallic: false
+    },
+    {
+        id: 63,
+        name: "Blu Nart",
+        r: 31,
+        g: 57,
+        b: 100,
+        metallic: false
+    },
+    {
+        id: 64,
+        name: "BP Green",
+        r: 47,
+        g: 161,
+        b: 85,
+        metallic: false
+    },
+    //Fix
+    {
+        id: 65,
+        name: "Bianco Italia",
+        r: 246,
+        g: 245,
+        b: 249,
+        metallic: true
+    },
+    {
+        id: 66,
+        name: "Canna Di Fucile",
+        r: 72,
+        g: 72,
+        b: 80,
+        metallic: false
+    },
+    {
+        id: 67,
+        name: "Rosso Fiorano Fer",
+        r: 117,
+        g: 0,
+        b: 0,
+        metallic: false
+    }
+];
+const colors_matrix = [
+    {
+        id: 4,
+        Livery: [
+            33,
+            27,
+            29
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54,
+                    55
+                ]
+            }
+        ]
+    },
+    {
+        id: 3,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 31,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: false,
+                id: 48,
+                p: [
+                    48
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 5,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 67,
+        Livery: [
+            33,
+            27,
+            29
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54,
+                    55
+                ]
+            }
+        ]
+    },
+    {
+        id: 32,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 29,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 18,
+        Livery: [
+            15
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 35,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 2,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 28,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 19,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 34,
+        Livery: [
+            56
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 23,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 25,
+        Livery: [
+            33
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 24,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 13,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: false,
+                id: 48,
+                p: [
+                    48
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 27,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 11,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: false,
+                id: 48,
+                p: [
+                    48
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 30,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 14,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 12,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: false,
+                id: 48,
+                p: [
+                    48
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 17,
+        Livery: [
+            56
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 10,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 37,
+                p: [
+                    37
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: false,
+                id: 48,
+                p: [
+                    48
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 8,
+        Livery: [
+            17,
+            56
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: false,
+                id: 43,
+                p: [
+                    43
+                ]
+            },
+            {
+                available: false,
+                id: 44,
+                p: [
+                    44
+                ]
+            },
+            {
+                available: false,
+                id: 45,
+                p: [
+                    45
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: false,
+                id: 47,
+                p: [
+                    47
+                ]
+            },
+            {
+                available: false,
+                id: 48,
+                p: [
+                    48
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 7,
+        Livery: [
+            32,
+            63
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 26,
+        Livery: [
+            32
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: false,
+                id: 41,
+                p: [
+                    41
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 6,
+        Livery: [
+            33
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 37,
+                p: [
+                    37
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 21,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 22,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 38,
+                p: [
+                    38
+                ]
+            },
+            {
+                available: false,
+                id: 39,
+                p: [
+                    39
+                ]
+            },
+            {
+                available: false,
+                id: 40,
+                p: [
+                    40
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: false,
+                id: 42,
+                p: [
+                    42
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 46,
+                p: [
+                    46
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 9,
+        Livery: [
+            33
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 66,
+        Livery: [
+            65
+        ],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 20,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    54
+                ]
+            },
+            {
+                available: false,
+                id: 49,
+                p: [
+                    49
+                ]
+            },
+            {
+                available: false,
+                id: 50,
+                p: [
+                    50
+                ]
+            }
+        ]
+    },
+    {
+        id: 16,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 15,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 65,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 33,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    54
+                ]
+            }
+        ]
+    },
+    {
+        id: 1,
+        Livery: [],
+        Interior: [
+            {
+                available: true,
+                id: 36,
+                p: [
+                    36,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 37,
+                p: [
+                    37,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 38,
+                p: [
+                    38,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 39,
+                p: [
+                    39,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 40,
+                p: [
+                    40,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 41,
+                p: [
+                    41,
+                    53,
+                    54,
+                    55
+                ]
+            },
+            {
+                available: true,
+                id: 42,
+                p: [
+                    42,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 43,
+                p: [
+                    43,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 44,
+                p: [
+                    44,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 45,
+                p: [
+                    45,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 46,
+                p: [
+                    46,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 47,
+                p: [
+                    47,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 48,
+                p: [
+                    48,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 49,
+                p: [
+                    49,
+                    53,
+                    54
+                ]
+            },
+            {
+                available: true,
+                id: 50,
+                p: [
+                    50,
+                    53,
+                    54
+                ]
+            }
+        ]
+    }
+];
+
+;// CONCATENATED MODULE: ./utils/number.ts
+const printNumber = ({ type , color , val , background , typography , fontSize  })=>{
+    let canvas = document.getElementById("numberCanvas");
+    canvas.style.backgroundColor = "black";
+    let ctx = canvas.getContext("2d");
+    ctx.font = `${fontSize} ${typography}`;
+    ctx.textAlign = "center";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (type == "mask") {
+        ctx.font = `${fontSize} ${typography}`;
+        ctx.fillStyle = `rgb(${background.r},${background.g},${background.b})`;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    ctx.fillStyle = `rgb(${color.r},${color.g},${color.b})`;
+    ctx.fillText(val, canvas.width / 2, 270);
+    return canvas.toDataURL();
+};
+/* harmony default export */ const number = (printNumber);
+
+;// CONCATENATED MODULE: ./utils/car.ts
+
+
+
+
+const selectCar = async (newCar)=>{
+    return;
+    const nodesToShow = newCar.parts;
+    nodesToHide.forEach((node)=>{
+        (0,sketchfab/* toggleNode */.bh)(node, "hide");
+    });
+    nodesToShow.forEach((node)=>{
+        (0,sketchfab/* toggleNode */.bh)(node, "show");
+    });
+    toggleRacePack(newCar.racePack);
+    toggleNumber(newCar.radiatorNumber.parts, newCar.radiatorNumber.show);
+    toggleBorranni(newCar.borranniUpgrade);
+    (0,sketchfab/* changeColor */.zX)("Livery_1", newCar["Livery"].id);
+    (0,sketchfab/* changeColor */.zX)("Livery_2", newCar["LiveryExtra"].id);
+    (0,sketchfab/* changeColor */.zX)("Pipin", newCar["Piping"].id);
+    (0,sketchfab/* changeColor */.zX)("Carroceria", newCar.Paintwork.id);
+    (0,sketchfab/* changeColor */.zX)("Number_A", newCar.Paintwork.id);
+    (0,sketchfab/* changeColor */.zX)("Asiento", newCar.Interior.id);
+    (0,sketchfab/* changeColor */.zX)("Textura_lona", newCar.Tonneau.id);
+    const image = number({
+        type: "mask",
+        color: colors_colorList[newCar.radiatorNumber.numberColor.id - 1],
+        val: newCar.radiatorNumber.number,
+        background: newCar.radiatorNumber.type == "circle" ? {
+            r: 0,
+            g: 255,
+            b: 255
+        } : colors_colorList[newCar.Paintwork.id - 1],
+        typography: newCar.radiatorNumber.typography,
+        fontSize: newCar.radiatorNumber.fontSize
+    });
+    const textureUid = await (0,sketchfab/* addTexture */.iF)(image);
+    (0,sketchfab/* setTexture */.wu)("Number_A", textureUid);
+};
+const setDefaultCar = ()=>{
+    changeColor("Livery_1", 33);
+    changeColor("Pipin", 54);
+    changeColor("Carroceria", 4);
+    changeColor("Asiento", 36);
+    changeColor("Number_A", 33);
+};
+const validateColor = (car)=>{
+    let selectedPaintWork = matrix.filter((r)=>{
+        return r.id == car.Paintwork.id;
+    })[0];
+    const result = selectedPaintWork.Interior.find((i)=>{
+        return i.id == car.Interior.id;
+    });
+    let defaultInteriorId = selectedPaintWork.Interior[0].id;
+    let defaultInteriorColor = colorList[defaultInteriorId - 1];
+    return {
+        available: result.available,
+        Interior: defaultInteriorColor
+    };
+};
+const toggleRacePack = (val)=>{
+    const defaultNodes = [
+        "Head",
+        "Frenos"
+    ];
+    defaultNodes.forEach((node)=>{
+        (0,sketchfab/* toggleNode */.bh)(node, val == "Pacco Gara" ? "hide" : "show");
+    });
+    (0,sketchfab/* toggleNode */.bh)("Gara", val == "Pacco Gara" ? "show" : "hide");
+};
+const toggleBorranni = (val)=>{
+    (0,sketchfab/* toggleNode */.bh)("Llantas", val ? "hide" : "show");
+    (0,sketchfab/* toggleNode */.bh)("Gara_Borranis", val ? "show" : "hide");
+};
+const toggleNumber = (nodes, val)=>{
+    if (!val) {
+        nodes = [
+            "Number_1",
+            "Number_2",
+            "Number_3",
+            "Number_4",
+            "Number_5",
+            "Number_6",
+            "Number_7"
+        ];
+    }
+    nodes.forEach((node)=>{
+        (0,sketchfab/* toggleNode */.bh)(node, val ? "show" : "hide");
+    });
+};
+
 
 /***/ }),
 
-/***/ "./utils/number.ts":
-/*!*************************!*\
-  !*** ./utils/number.ts ***!
-  \*************************/
+/***/ 4573:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst printNumber = ({ type , color , val , background , typography , fontSize  })=>{\n    let canvas = document.getElementById(\"numberCanvas\");\n    canvas.style.backgroundColor = \"black\";\n    let ctx = canvas.getContext(\"2d\");\n    ctx.font = `${fontSize} ${typography}`;\n    ctx.textAlign = \"center\";\n    ctx.clearRect(0, 0, canvas.width, canvas.height);\n    if (type == \"mask\") {\n        ctx.font = `${fontSize} ${typography}`;\n        ctx.fillStyle = `rgb(${background.r},${background.g},${background.b})`;\n        ctx.fillRect(0, 0, canvas.width, canvas.height);\n    }\n    ctx.fillStyle = `rgb(${color.r},${color.g},${color.b})`;\n    ctx.fillText(val, canvas.width / 2, 270);\n    return canvas.toDataURL();\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (printNumber);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi91dGlscy9udW1iZXIudHMuanMiLCJtYXBwaW5ncyI6Ijs7OztBQVVBLE1BQU1BLGNBQWMsQ0FBQyxFQUFFQyxLQUFJLEVBQUVDLE1BQUssRUFBRUMsSUFBRyxFQUFFQyxXQUFVLEVBQUVDLFdBQVUsRUFBRUMsU0FBUSxFQUFjLEdBQUs7SUFDMUYsSUFBSUMsU0FBY0MsU0FBU0MsY0FBYyxDQUFDO0lBQzFDRixPQUFPRyxLQUFLLENBQUNDLGVBQWUsR0FBRztJQUMvQixJQUFJQyxNQUFNTCxPQUFPTSxVQUFVLENBQUM7SUFDNUJELElBQUlFLElBQUksR0FBRyxDQUFDLEVBQUVSLFNBQVMsQ0FBQyxFQUFFRCxXQUFXLENBQUM7SUFDdENPLElBQUlHLFNBQVMsR0FBRztJQUVoQkgsSUFBSUksU0FBUyxDQUFDLEdBQUcsR0FBR1QsT0FBT1UsS0FBSyxFQUFFVixPQUFPVyxNQUFNO0lBQy9DLElBQUlqQixRQUFRLFFBQVE7UUFDbEJXLElBQUlFLElBQUksR0FBRyxDQUFDLEVBQUVSLFNBQVMsQ0FBQyxFQUFFRCxXQUFXLENBQUM7UUFDdENPLElBQUlPLFNBQVMsR0FBRyxDQUFDLElBQUksRUFBRWYsV0FBV2dCLENBQUMsQ0FBQyxDQUFDLEVBQUVoQixXQUFXaUIsQ0FBQyxDQUFDLENBQUMsRUFBRWpCLFdBQVdrQixDQUFDLENBQUMsQ0FBQyxDQUFDO1FBQ3RFVixJQUFJVyxRQUFRLENBQUMsR0FBRyxHQUFHaEIsT0FBT1UsS0FBSyxFQUFFVixPQUFPVyxNQUFNO0lBQ2hELENBQUM7SUFDRE4sSUFBSU8sU0FBUyxHQUFHLENBQUMsSUFBSSxFQUFFakIsTUFBTWtCLENBQUMsQ0FBQyxDQUFDLEVBQUVsQixNQUFNbUIsQ0FBQyxDQUFDLENBQUMsRUFBRW5CLE1BQU1vQixDQUFDLENBQUMsQ0FBQyxDQUFDO0lBQ3ZEVixJQUFJWSxRQUFRLENBQUNyQixLQUFLSSxPQUFPVSxLQUFLLEdBQUcsR0FBRztJQUNwQyxPQUFPVixPQUFPa0IsU0FBUztBQUN6QjtBQUVBLGlFQUFlekIsV0FBV0EsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL2JvdHRlZ2EvLi91dGlscy9udW1iZXIudHM/MzFmNyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb2xvciB9IGZyb20gJ0AvaW50ZXJmYWNlcy9nZW5lcmFsJztcclxuXHJcbmludGVyZmFjZSBOdW1iZXJUeXBlIHtcclxuICB0eXBlOiAnaW1hZ2UnIHwgJ21hc2snO1xyXG4gIGNvbG9yOiBDb2xvcjtcclxuICB2YWw6IE51bWJlciB8IFN0cmluZyB8ICcnO1xyXG4gIGJhY2tncm91bmQ6IGFueTtcclxuICB0eXBvZ3JhcGh5OiBzdHJpbmc7XHJcbiAgZm9udFNpemU6IHN0cmluZztcclxufVxyXG5jb25zdCBwcmludE51bWJlciA9ICh7IHR5cGUsIGNvbG9yLCB2YWwsIGJhY2tncm91bmQsIHR5cG9ncmFwaHksIGZvbnRTaXplIH06IE51bWJlclR5cGUpID0+IHtcclxuICBsZXQgY2FudmFzOiBhbnkgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbnVtYmVyQ2FudmFzJyk7XHJcbiAgY2FudmFzLnN0eWxlLmJhY2tncm91bmRDb2xvciA9ICdibGFjayc7XHJcbiAgbGV0IGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpO1xyXG4gIGN0eC5mb250ID0gYCR7Zm9udFNpemV9ICR7dHlwb2dyYXBoeX1gO1xyXG4gIGN0eC50ZXh0QWxpZ24gPSAnY2VudGVyJztcclxuXHJcbiAgY3R4LmNsZWFyUmVjdCgwLCAwLCBjYW52YXMud2lkdGgsIGNhbnZhcy5oZWlnaHQpO1xyXG4gIGlmICh0eXBlID09ICdtYXNrJykge1xyXG4gICAgY3R4LmZvbnQgPSBgJHtmb250U2l6ZX0gJHt0eXBvZ3JhcGh5fWA7XHJcbiAgICBjdHguZmlsbFN0eWxlID0gYHJnYigke2JhY2tncm91bmQucn0sJHtiYWNrZ3JvdW5kLmd9LCR7YmFja2dyb3VuZC5ifSlgO1xyXG4gICAgY3R4LmZpbGxSZWN0KDAsIDAsIGNhbnZhcy53aWR0aCwgY2FudmFzLmhlaWdodCk7XHJcbiAgfVxyXG4gIGN0eC5maWxsU3R5bGUgPSBgcmdiKCR7Y29sb3Iucn0sJHtjb2xvci5nfSwke2NvbG9yLmJ9KWA7XHJcbiAgY3R4LmZpbGxUZXh0KHZhbCwgY2FudmFzLndpZHRoIC8gMiwgMjcwKTtcclxuICByZXR1cm4gY2FudmFzLnRvRGF0YVVSTCgpO1xyXG59O1xyXG5cclxuZXhwb3J0IGRlZmF1bHQgcHJpbnROdW1iZXI7XHJcbiJdLCJuYW1lcyI6WyJwcmludE51bWJlciIsInR5cGUiLCJjb2xvciIsInZhbCIsImJhY2tncm91bmQiLCJ0eXBvZ3JhcGh5IiwiZm9udFNpemUiLCJjYW52YXMiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIiwic3R5bGUiLCJiYWNrZ3JvdW5kQ29sb3IiLCJjdHgiLCJnZXRDb250ZXh0IiwiZm9udCIsInRleHRBbGlnbiIsImNsZWFyUmVjdCIsIndpZHRoIiwiaGVpZ2h0IiwiZmlsbFN0eWxlIiwiciIsImciLCJiIiwiZmlsbFJlY3QiLCJmaWxsVGV4dCIsInRvRGF0YVVSTCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./utils/number.ts\n");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "$K": () => (/* binding */ emissionAnimation),
+/* harmony export */   "Qc": () => (/* binding */ initService),
+/* harmony export */   "Tx": () => (/* binding */ setBumpMap),
+/* harmony export */   "aS": () => (/* binding */ getMaterials),
+/* harmony export */   "bS": () => (/* binding */ getNodeList),
+/* harmony export */   "bh": () => (/* binding */ toggleNode),
+/* harmony export */   "fN": () => (/* binding */ fastChangeMainColor),
+/* harmony export */   "iF": () => (/* binding */ addTexture),
+/* harmony export */   "wu": () => (/* binding */ setTexture),
+/* harmony export */   "zX": () => (/* binding */ changeColor)
+/* harmony export */ });
+/* unused harmony exports generateScreenshot, setMetallic, setUVscale, getCamera, setCamera */
+let api = null;
+let materials = [];
+let nodes = [];
+//Set Sektfhcab API to make it available
+const initService = (apiRef, materialList, nodeList)=>{
+    api = apiRef;
+    materials = materialList;
+    nodes = nodeList;
+    console.log(materials);
+};
+const getMaterials = ()=>{
+    return materials;
+};
+const getNodeList = ()=>{
+    return nodes;
+};
+const getCamera = ()=>{
+    api.getCameraLookAt(function(err, camera) {
+        console.log(camera.position); // [x, y, z]
+        console.log(camera.target); // [x, y, z]
+    });
+};
+const setCamera = ({ position , target  })=>{
+    api.setCameraLookAt(position, target, 2);
+};
+const changeColor = async (part, colorCode)=>{
+    let index = materials.findIndex((m)=>{
+        return m.name === part;
+    });
+    materials[index].channels.AlbedoPBR.color = [
+        convertRGBtoLinear(colorCode.r),
+        convertRGBtoLinear(colorCode.g),
+        convertRGBtoLinear(colorCode.b)
+    ];
+    await api.setMaterial(materials[index]);
+};
+const fastChangeMainColor = ({ r , g , b  })=>{
+    materials[13].channels.AlbedoPBR.color = [
+        convertRGBtoLinear(r),
+        convertRGBtoLinear(g),
+        convertRGBtoLinear(b)
+    ];
+    api.setMaterial(materials[13]);
+};
+const addTexture = async (base64)=>{
+    return new Promise((resolve, reject)=>{
+        api.addTexture(base64, function(err, id) {
+            if (!err) {
+                resolve(id);
+            } else {
+                reject(err);
+            }
+        });
+    });
+};
+const setTexture = (part, textureUid)=>{
+    let index = materials.findIndex((m)=>{
+        return m.name === part;
+    });
+    if (textureUid) {
+        materials[index].channels.AlbedoPBR = {
+            texture: {
+                uid: textureUid
+            }
+        };
+        materials[index].channels.AlbedoPBR.factor = 1;
+    } else {
+        materials[index].channels.AlbedoPBR = {
+            texture: ""
+        };
+    }
+    api.setMaterial(materials[index], ()=>{});
+};
+const setBumpMap = (part, textureUid)=>{
+    let index = materials.findIndex((m)=>{
+        return m.name === part;
+    });
+    materials[index].channels.NormalMap = {
+        enable: true,
+        factor: 1,
+        texture: {
+            uid: textureUid
+        }
+    };
+    api.setMaterial(materials[index], ()=>{});
+};
+const setUVscale = (part)=>{
+    let index = materials.findIndex((m)=>{
+        return m.name === part;
+    });
+    api.setUVScale(materials[index], "AlbedoPBR", 10, 10);
+};
+const toggleNode = (node, action)=>{
+    let instanceID = nodes.filter((r)=>{
+        return r.name === node;
+    });
+    if (instanceID[0]) {
+        if (action == "show") {
+            api.show(instanceID[0].instanceID);
+        } else {
+            api.hide(instanceID[0].instanceID);
+        }
+    }
+};
+function convertColor(color) {
+    return [
+        color.r,
+        color.g,
+        color.b
+    ];
+}
+const generateScreenshot = async ()=>{
+    let camera = {
+        position: [
+            -71.71309445654904,
+            -57.16881106698193,
+            32.2789393429998
+        ],
+        target: [
+            2.701051515138964,
+            0.00007667749023099191,
+            4.360299098332644
+        ]
+    };
+    await api.setCameraLookAt(camera.position, camera.target, 0);
+    let screenshot = await makeScreenshot();
+    return screenshot;
+};
+const makeScreenshot = async ()=>{
+    return new Promise((resolve, reject)=>{
+        api.getScreenShot(700, 394, "image/png", function(error, result) {
+            if (error) {
+                reject(error);
+            } else {
+                const base64WithoutHeader = result.substring(result.indexOf(",") + 1);
+                resolve(base64WithoutHeader);
+            }
+        });
+    });
+};
+function convertRGBtoLinear(color) {
+    let value = color / 255;
+    if (value <= 0 && value <= 0.04045) {
+        return value / 12.92;
+    } else {
+        return ((value + 0.055) / 1.055) ** 2.4;
+    }
+}
+async function setMetallic(material, value) {
+    if (value) {
+        material.channels.MetalnessPBR.factor = 1;
+        material.channels.RoughnessPBR.factor = 0.6;
+    } else {
+        material.channels.MetalnessPBR.factor = 0;
+        material.channels.RoughnessPBR.factor = 0.2;
+    }
+    await api.setMaterial(materials[13]);
+}
+function emissionAnimation(part) {
+    let index = materials.findIndex((m)=>{
+        return m.name === part;
+    });
+    function changeEmitFactor(i) {
+        materials[index].channels.EmitColor.enable = true;
+        materials[index].channels.EmitColor.factor = i;
+        api.setMaterial(materials[index], ()=>{});
+    }
+    let number = 0;
+    let increment = 0.025;
+    function animateNumber() {
+        number += increment;
+        if (number >= 0.4) {
+            increment = -increment;
+        }
+        if (number > 0) {
+            setTimeout(animateNumber, 10); // Llamar a la función nuevamente después de 10 milisegundos
+        }
+        changeEmitFactor(number);
+    }
+    animateNumber();
+}
+
+
 
 /***/ }),
 
-/***/ "./utils/sketchfab.ts":
-/*!****************************!*\
-  !*** ./utils/sketchfab.ts ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addTexture\": () => (/* binding */ addTexture),\n/* harmony export */   \"changeColor\": () => (/* binding */ changeColor),\n/* harmony export */   \"emissionAnimation\": () => (/* binding */ emissionAnimation),\n/* harmony export */   \"fastChangeMainColor\": () => (/* binding */ fastChangeMainColor),\n/* harmony export */   \"generateScreenshot\": () => (/* binding */ generateScreenshot),\n/* harmony export */   \"getCamera\": () => (/* binding */ getCamera),\n/* harmony export */   \"getMaterials\": () => (/* binding */ getMaterials),\n/* harmony export */   \"getNodeList\": () => (/* binding */ getNodeList),\n/* harmony export */   \"initService\": () => (/* binding */ initService),\n/* harmony export */   \"setBumpMap\": () => (/* binding */ setBumpMap),\n/* harmony export */   \"setCamera\": () => (/* binding */ setCamera),\n/* harmony export */   \"setMetallic\": () => (/* binding */ setMetallic),\n/* harmony export */   \"setTexture\": () => (/* binding */ setTexture),\n/* harmony export */   \"setUVscale\": () => (/* binding */ setUVscale),\n/* harmony export */   \"toggleNode\": () => (/* binding */ toggleNode)\n/* harmony export */ });\nlet api = null;\nlet materials = [];\nlet nodes = [];\n//Set Sektfhcab API to make it available\nconst initService = (apiRef, materialList, nodeList)=>{\n    api = apiRef;\n    materials = materialList;\n    nodes = nodeList;\n    console.log(materials);\n};\nconst getMaterials = ()=>{\n    return materials;\n};\nconst getNodeList = ()=>{\n    return nodes;\n};\nconst getCamera = ()=>{\n    api.getCameraLookAt(function(err, camera) {\n        console.log(camera.position); // [x, y, z]\n        console.log(camera.target); // [x, y, z]\n    });\n};\nconst setCamera = ({ position , target  })=>{\n    api.setCameraLookAt(position, target, 2);\n};\nconst changeColor = async (part, colorCode)=>{\n    let index = materials.findIndex((m)=>{\n        return m.name === part;\n    });\n    materials[index].channels.AlbedoPBR.color = [\n        convertRGBtoLinear(colorCode.r),\n        convertRGBtoLinear(colorCode.g),\n        convertRGBtoLinear(colorCode.b)\n    ];\n    await api.setMaterial(materials[index]);\n};\nconst fastChangeMainColor = ({ r , g , b  })=>{\n    materials[13].channels.AlbedoPBR.color = [\n        convertRGBtoLinear(r),\n        convertRGBtoLinear(g),\n        convertRGBtoLinear(b)\n    ];\n    api.setMaterial(materials[13]);\n};\nconst addTexture = async (base64)=>{\n    return new Promise((resolve, reject)=>{\n        api.addTexture(base64, function(err, id) {\n            if (!err) {\n                resolve(id);\n            } else {\n                reject(err);\n            }\n        });\n    });\n};\nconst setTexture = (part, textureUid)=>{\n    let index = materials.findIndex((m)=>{\n        return m.name === part;\n    });\n    if (textureUid) {\n        materials[index].channels.AlbedoPBR = {\n            texture: {\n                uid: textureUid\n            }\n        };\n        materials[index].channels.AlbedoPBR.factor = 1;\n    } else {\n        materials[index].channels.AlbedoPBR = {\n            texture: \"\"\n        };\n    }\n    api.setMaterial(materials[index], ()=>{});\n};\nconst setBumpMap = (part, textureUid)=>{\n    let index = materials.findIndex((m)=>{\n        return m.name === part;\n    });\n    materials[index].channels.NormalMap = {\n        enable: true,\n        factor: 1,\n        texture: {\n            uid: textureUid\n        }\n    };\n    api.setMaterial(materials[index], ()=>{});\n};\nconst setUVscale = (part)=>{\n    let index = materials.findIndex((m)=>{\n        return m.name === part;\n    });\n    api.setUVScale(materials[index], \"AlbedoPBR\", 10, 10);\n};\nconst toggleNode = (node, action)=>{\n    let instanceID = nodes.filter((r)=>{\n        return r.name === node;\n    });\n    if (instanceID[0]) {\n        if (action == \"show\") {\n            api.show(instanceID[0].instanceID);\n        } else {\n            api.hide(instanceID[0].instanceID);\n        }\n    }\n};\nfunction convertColor(color) {\n    return [\n        color.r,\n        color.g,\n        color.b\n    ];\n}\nconst generateScreenshot = async ()=>{\n    let camera = {\n        position: [\n            -71.71309445654904,\n            -57.16881106698193,\n            32.2789393429998\n        ],\n        target: [\n            2.701051515138964,\n            0.00007667749023099191,\n            4.360299098332644\n        ]\n    };\n    await api.setCameraLookAt(camera.position, camera.target, 0);\n    let screenshot = await makeScreenshot();\n    return screenshot;\n};\nconst makeScreenshot = async ()=>{\n    return new Promise((resolve, reject)=>{\n        api.getScreenShot(700, 394, \"image/png\", function(error, result) {\n            if (error) {\n                reject(error);\n            } else {\n                const base64WithoutHeader = result.substring(result.indexOf(\",\") + 1);\n                resolve(base64WithoutHeader);\n            }\n        });\n    });\n};\nfunction convertRGBtoLinear(color) {\n    let value = color / 255;\n    if (value <= 0 && value <= 0.04045) {\n        return value / 12.92;\n    } else {\n        return ((value + 0.055) / 1.055) ** 2.4;\n    }\n}\nasync function setMetallic(material, value) {\n    if (value) {\n        material.channels.MetalnessPBR.factor = 1;\n        material.channels.RoughnessPBR.factor = 0.6;\n    } else {\n        material.channels.MetalnessPBR.factor = 0;\n        material.channels.RoughnessPBR.factor = 0.2;\n    }\n    await api.setMaterial(materials[13]);\n}\nfunction emissionAnimation(part) {\n    let index = materials.findIndex((m)=>{\n        return m.name === part;\n    });\n    function changeEmitFactor(i) {\n        materials[index].channels.EmitColor.enable = true;\n        materials[index].channels.EmitColor.factor = i;\n        api.setMaterial(materials[index], ()=>{});\n    }\n    let number = 0;\n    let increment = 0.025;\n    function animateNumber() {\n        number += increment;\n        if (number >= 0.4) {\n            increment = -increment;\n        }\n        if (number > 0) {\n            setTimeout(animateNumber, 10); // Llamar a la función nuevamente después de 10 milisegundos\n        }\n        changeEmitFactor(number);\n    }\n    animateNumber();\n}\n\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QVEsQ0FBQzhDLFlBQVksQ0FBQzNCLE1BQU0sR0FBRztJQUMxQyxDQUFDO0lBQ0QsTUFBTTdDLElBQUlpQyxXQUFXLENBQUNoQyxTQUFTLENBQUMsR0FBRztBQUNyQztBQUVBLFNBQVN3RSxrQkFBa0JyRCxJQUFZLEVBQUU7SUFDdkMsSUFBSUUsUUFBUXJCLFVBQVVzQixTQUFTLENBQUMsQ0FBQ0MsSUFBTTtRQUNyQyxPQUFPQSxFQUFFQyxJQUFJLEtBQUtMO0lBQ3BCO0lBRUEsU0FBU3NELGlCQUFpQkMsQ0FBUyxFQUFFO1FBQ25DMUUsU0FBUyxDQUFDcUIsTUFBTSxDQUFDSSxRQUFRLENBQUNrRCxTQUFTLENBQUM1QixNQUFNLEdBQUcsSUFBSTtRQUNqRC9DLFNBQVMsQ0FBQ3FCLE1BQU0sQ0FBQ0ksUUFBUSxDQUFDa0QsU0FBUyxDQUFDL0IsTUFBTSxHQUFHOEI7UUFDN0MzRSxJQUFJaUMsV0FBVyxDQUFDaEMsU0FBUyxDQUFDcUIsTUFBTSxFQUFFLElBQU0sQ0FBQztJQUMzQztJQUVBLElBQUl1RCxTQUFTO0lBQ2IsSUFBSUMsWUFBWTtJQUVoQixTQUFTQyxnQkFBZ0I7UUFDdkJGLFVBQVVDO1FBRVYsSUFBSUQsVUFBVSxLQUFLO1lBQ2pCQyxZQUFZLENBQUNBO1FBQ2YsQ0FBQztRQUVELElBQUlELFNBQVMsR0FBRztZQUNkRyxXQUFXRCxlQUFlLEtBQUssNERBQTREO1FBQzdGLENBQUM7UUFFREwsaUJBQWlCRztJQUNuQjtJQUNBRTtBQUNGO0FBaUJFIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vYm90dGVnYS8uL3V0aWxzL3NrZXRjaGZhYi50cz9jZmQ5Il0sInNvdXJjZXNDb250ZW50IjpbImxldCBhcGk6IGFueSA9IG51bGw7XHJcbmxldCBtYXRlcmlhbHM6IGFueVtdID0gW107XHJcbmxldCBub2RlczogYW55W10gPSBbXTtcclxuXHJcbi8vU2V0IFNla3RmaGNhYiBBUEkgdG8gbWFrZSBpdCBhdmFpbGFibGVcclxuY29uc3QgaW5pdFNlcnZpY2UgPSAoYXBpUmVmOiBhbnksIG1hdGVyaWFsTGlzdDogYW55W10sIG5vZGVMaXN0OiBhbnlbXSkgPT4ge1xyXG4gIGFwaSA9IGFwaVJlZjtcclxuICBtYXRlcmlhbHMgPSBtYXRlcmlhbExpc3Q7XHJcbiAgbm9kZXMgPSBub2RlTGlzdDtcclxuICBjb25zb2xlLmxvZyhtYXRlcmlhbHMpO1xyXG59O1xyXG5cclxuY29uc3QgZ2V0TWF0ZXJpYWxzID0gKCkgPT4ge1xyXG4gIHJldHVybiBtYXRlcmlhbHM7XHJcbn07XHJcblxyXG5jb25zdCBnZXROb2RlTGlzdCA9ICgpID0+IHtcclxuICByZXR1cm4gbm9kZXM7XHJcbn07XHJcblxyXG5jb25zdCBnZXRDYW1lcmEgPSAoKSA9PiB7XHJcbiAgYXBpLmdldENhbWVyYUxvb2tBdChmdW5jdGlvbiAoZXJyOiBhbnksIGNhbWVyYTogYW55KSB7XHJcbiAgICBjb25zb2xlLmxvZyhjYW1lcmEucG9zaXRpb24pOyAvLyBbeCwgeSwgel1cclxuICAgIGNvbnNvbGUubG9nKGNhbWVyYS50YXJnZXQpOyAvLyBbeCwgeSwgel1cclxuICB9KTtcclxufTtcclxuXHJcbmNvbnN0IHNldENhbWVyYSA9ICh7XHJcbiAgcG9zaXRpb24sXHJcbiAgdGFyZ2V0LFxyXG59OiB7XHJcbiAgcG9zaXRpb246IG51bWJlcltdO1xyXG4gIHRhcmdldDogbnVtYmVyW107XHJcbn0pID0+IHtcclxuICBhcGkuc2V0Q2FtZXJhTG9va0F0KHBvc2l0aW9uLCB0YXJnZXQsIDIpO1xyXG59O1xyXG5cclxuY29uc3QgY2hhbmdlQ29sb3IgPSBhc3luYyAocGFydDogc3RyaW5nLCBjb2xvckNvZGU6IGFueSkgPT4ge1xyXG4gIGxldCBpbmRleCA9IG1hdGVyaWFscy5maW5kSW5kZXgoKG0pID0+IHtcclxuICAgIHJldHVybiBtLm5hbWUgPT09IHBhcnQ7XHJcbiAgfSk7XHJcblxyXG4gIG1hdGVyaWFsc1tpbmRleF0uY2hhbm5lbHMuQWxiZWRvUEJSLmNvbG9yID0gW1xyXG4gICAgY29udmVydFJHQnRvTGluZWFyKGNvbG9yQ29kZS5yKSxcclxuICAgIGNvbnZlcnRSR0J0b0xpbmVhcihjb2xvckNvZGUuZyksXHJcbiAgICBjb252ZXJ0UkdCdG9MaW5lYXIoY29sb3JDb2RlLmIpLFxyXG4gIF07XHJcblxyXG4gIGF3YWl0IGFwaS5zZXRNYXRlcmlhbChtYXRlcmlhbHNbaW5kZXhdKTtcclxufTtcclxuXHJcbmNvbnN0IGZhc3RDaGFuZ2VNYWluQ29sb3IgPSAoeyByLCBnLCBiIH06IGFueSkgPT4ge1xyXG4gIG1hdGVyaWFsc1sxM10uY2hhbm5lbHMuQWxiZWRvUEJSLmNvbG9yID0gW1xyXG4gICAgY29udmVydFJHQnRvTGluZWFyKHIpLFxyXG4gICAgY29udmVydFJHQnRvTGluZWFyKGcpLFxyXG4gICAgY29udmVydFJHQnRvTGluZWFyKGIpLFxyXG4gIF07XHJcbiAgYXBpLnNldE1hdGVyaWFsKG1hdGVyaWFsc1sxM10pO1xyXG59O1xyXG5cclxuY29uc3QgYWRkVGV4dHVyZSA9IGFzeW5jIChiYXNlNjQ6IHN0cmluZykgPT4ge1xyXG4gIHJldHVybiBuZXcgUHJvbWlzZTxzdHJpbmc+KChyZXNvbHZlLCByZWplY3QpID0+IHtcclxuICAgIGFwaS5hZGRUZXh0dXJlKGJhc2U2NCwgZnVuY3Rpb24gKGVycjogc3RyaW5nLCBpZDogc3RyaW5nKSB7XHJcbiAgICAgIGlmICghZXJyKSB7XHJcbiAgICAgICAgcmVzb2x2ZShpZCk7XHJcbiAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgcmVqZWN0KGVycik7XHJcbiAgICAgIH1cclxuICAgIH0pO1xyXG4gIH0pO1xyXG59O1xyXG5cclxuY29uc3Qgc2V0VGV4dHVyZSA9IChwYXJ0OiBzdHJpbmcsIHRleHR1cmVVaWQ6IHN0cmluZykgPT4ge1xyXG4gIGxldCBpbmRleCA9IG1hdGVyaWFscy5maW5kSW5kZXgoKG0pID0+IHtcclxuICAgIHJldHVybiBtLm5hbWUgPT09IHBhcnQ7XHJcbiAgfSk7XHJcblxyXG4gIGlmICh0ZXh0dXJlVWlkKSB7XHJcbiAgICBtYXRlcmlhbHNbaW5kZXhdLmNoYW5uZWxzLkFsYmVkb1BCUiA9IHsgdGV4dHVyZTogeyB1aWQ6IHRleHR1cmVVaWQgfSB9O1xyXG4gICAgbWF0ZXJpYWxzW2luZGV4XS5jaGFubmVscy5BbGJlZG9QQlIuZmFjdG9yID0gMTtcclxuICB9IGVsc2Uge1xyXG4gICAgbWF0ZXJpYWxzW2luZGV4XS5jaGFubmVscy5BbGJlZG9QQlIgPSB7IHRleHR1cmU6IFwiXCIgfTtcclxuICB9XHJcbiAgYXBpLnNldE1hdGVyaWFsKG1hdGVyaWFsc1tpbmRleF0sICgpID0+IHt9KTtcclxufTtcclxuXHJcbmNvbnN0IHNldEJ1bXBNYXAgPSAocGFydDogc3RyaW5nLCB0ZXh0dXJlVWlkOiBzdHJpbmcpID0+IHtcclxuICBsZXQgaW5kZXggPSBtYXRlcmlhbHMuZmluZEluZGV4KChtKSA9PiB7XHJcbiAgICByZXR1cm4gbS5uYW1lID09PSBwYXJ0O1xyXG4gIH0pO1xyXG5cclxuICBtYXRlcmlhbHNbaW5kZXhdLmNoYW5uZWxzLk5vcm1hbE1hcCA9IHtcclxuICAgIGVuYWJsZTogdHJ1ZSxcclxuICAgIGZhY3RvcjogMSxcclxuICAgIHRleHR1cmU6IHsgdWlkOiB0ZXh0dXJlVWlkIH0sXHJcbiAgfTtcclxuXHJcbiAgYXBpLnNldE1hdGVyaWFsKG1hdGVyaWFsc1tpbmRleF0sICgpID0+IHt9KTtcclxufTtcclxuXHJcbmNvbnN0IHNldFVWc2NhbGUgPSAocGFydDogc3RyaW5nKSA9PiB7XHJcbiAgbGV0IGluZGV4ID0gbWF0ZXJpYWxzLmZpbmRJbmRleCgobSkgPT4ge1xyXG4gICAgcmV0dXJuIG0ubmFtZSA9PT0gcGFydDtcclxuICB9KTtcclxuICBhcGkuc2V0VVZTY2FsZShtYXRlcmlhbHNbaW5kZXhdLCBcIkFsYmVkb1BCUlwiLCAxMCwgMTApO1xyXG59O1xyXG5cclxuY29uc3QgdG9nZ2xlTm9kZSA9IChub2RlOiBzdHJpbmcsIGFjdGlvbjogc3RyaW5nKSA9PiB7XHJcbiAgbGV0IGluc3RhbmNlSUQgPSBub2Rlcy5maWx0ZXIoKHIpID0+IHtcclxuICAgIHJldHVybiByLm5hbWUgPT09IG5vZGU7XHJcbiAgfSk7XHJcbiAgaWYgKGluc3RhbmNlSURbMF0pIHtcclxuICAgIGlmIChhY3Rpb24gPT0gXCJzaG93XCIpIHtcclxuICAgICAgYXBpLnNob3coaW5zdGFuY2VJRFswXS5pbnN0YW5jZUlEKTtcclxuICAgIH0gZWxzZSB7XHJcbiAgICAgIGFwaS5oaWRlKGluc3RhbmNlSURbMF0uaW5zdGFuY2VJRCk7XHJcbiAgICB9XHJcbiAgfVxyXG59O1xyXG5cclxuZnVuY3Rpb24gY29udmVydENvbG9yKGNvbG9yOiBhbnkpIHtcclxuICByZXR1cm4gW2NvbG9yLnIsIGNvbG9yLmcsIGNvbG9yLmJdO1xyXG59XHJcblxyXG5jb25zdCBnZW5lcmF0ZVNjcmVlbnNob3QgPSBhc3luYyAoKSA9PiB7XHJcbiAgbGV0IGNhbWVyYSA9IHtcclxuICAgIHBvc2l0aW9uOiBbLTcxLjcxMzA5NDQ1NjU0OTA0LCAtNTcuMTY4ODExMDY2OTgxOTMsIDMyLjI3ODkzOTM0Mjk5OThdLFxyXG4gICAgdGFyZ2V0OiBbMi43MDEwNTE1MTUxMzg5NjQsIDAuMDAwMDc2Njc3NDkwMjMwOTkxOTEsIDQuMzYwMjk5MDk4MzMyNjQ0XSxcclxuICB9O1xyXG4gIGF3YWl0IGFwaS5zZXRDYW1lcmFMb29rQXQoY2FtZXJhLnBvc2l0aW9uLCBjYW1lcmEudGFyZ2V0LCAwKTtcclxuICBsZXQgc2NyZWVuc2hvdCA9IGF3YWl0IG1ha2VTY3JlZW5zaG90KCk7XHJcbiAgcmV0dXJuIHNjcmVlbnNob3Q7XHJcbn07XHJcblxyXG5jb25zdCBtYWtlU2NyZWVuc2hvdCA9IGFzeW5jICgpID0+IHtcclxuICByZXR1cm4gbmV3IFByb21pc2U8c3RyaW5nPigocmVzb2x2ZSwgcmVqZWN0KSA9PiB7XHJcbiAgICBhcGkuZ2V0U2NyZWVuU2hvdChcclxuICAgICAgNzAwLFxyXG4gICAgICAzOTQsXHJcbiAgICAgIFwiaW1hZ2UvcG5nXCIsXHJcbiAgICAgIGZ1bmN0aW9uIChlcnJvcjogc3RyaW5nLCByZXN1bHQ6IHN0cmluZykge1xyXG4gICAgICAgIGlmIChlcnJvcikge1xyXG4gICAgICAgICAgcmVqZWN0KGVycm9yKTtcclxuICAgICAgICB9IGVsc2Uge1xyXG4gICAgICAgICAgY29uc3QgYmFzZTY0V2l0aG91dEhlYWRlciA9IHJlc3VsdC5zdWJzdHJpbmcocmVzdWx0LmluZGV4T2YoXCIsXCIpICsgMSk7XHJcbiAgICAgICAgICByZXNvbHZlKGJhc2U2NFdpdGhvdXRIZWFkZXIpO1xyXG4gICAgICAgIH1cclxuICAgICAgfVxyXG4gICAgKTtcclxuICB9KTtcclxufTtcclxuXHJcbmZ1bmN0aW9uIGNvbnZlcnRSR0J0b0xpbmVhcihjb2xvcjogbnVtYmVyKSB7XHJcbiAgbGV0IHZhbHVlID0gY29sb3IgLyAyNTU7XHJcbiAgaWYgKHZhbHVlIDw9IDAgJiYgdmFsdWUgPD0gMC4wNDA0NSkge1xyXG4gICAgcmV0dXJuIHZhbHVlIC8gMTIuOTI7XHJcbiAgfSBlbHNlIHtcclxuICAgIHJldHVybiAoKHZhbHVlICsgMC4wNTUpIC8gMS4wNTUpICoqIDIuNDtcclxuICB9XHJcbn1cclxuXHJcbmFzeW5jIGZ1bmN0aW9uIHNldE1ldGFsbGljKG1hdGVyaWFsOiBhbnksIHZhbHVlOiBib29sZWFuKSB7XHJcbiAgaWYgKHZhbHVlKSB7XHJcbiAgICBtYXRlcmlhbC5jaGFubmVscy5NZXRhbG5lc3NQQlIuZmFjdG9yID0gMTtcclxuICAgIG1hdGVyaWFsLmNoYW5uZWxzLlJvdWdobmVzc1BCUi5mYWN0b3IgPSAwLjY7XHJcbiAgfSBlbHNlIHtcclxuICAgIG1hdGVyaWFsLmNoYW5uZWxzLk1ldGFsbmVzc1BCUi5mYWN0b3IgPSAwO1xyXG4gICAgbWF0ZXJpYWwuY2hhbm5lbHMuUm91Z2huZXNzUEJSLmZhY3RvciA9IDAuMjtcclxuICB9XHJcbiAgYXdhaXQgYXBpLnNldE1hdGVyaWFsKG1hdGVyaWFsc1sxM10pO1xyXG59XHJcblxyXG5mdW5jdGlvbiBlbWlzc2lvbkFuaW1hdGlvbihwYXJ0OiBzdHJpbmcpIHtcclxuICBsZXQgaW5kZXggPSBtYXRlcmlhbHMuZmluZEluZGV4KChtKSA9PiB7XHJcbiAgICByZXR1cm4gbS5uYW1lID09PSBwYXJ0O1xyXG4gIH0pO1xyXG5cclxuICBmdW5jdGlvbiBjaGFuZ2VFbWl0RmFjdG9yKGk6IG51bWJlcikge1xyXG4gICAgbWF0ZXJpYWxzW2luZGV4XS5jaGFubmVscy5FbWl0Q29sb3IuZW5hYmxlID0gdHJ1ZTtcclxuICAgIG1hdGVyaWFsc1tpbmRleF0uY2hhbm5lbHMuRW1pdENvbG9yLmZhY3RvciA9IGk7XHJcbiAgICBhcGkuc2V0TWF0ZXJpYWwobWF0ZXJpYWxzW2luZGV4XSwgKCkgPT4ge30pO1xyXG4gIH1cclxuXHJcbiAgbGV0IG51bWJlciA9IDA7XHJcbiAgbGV0IGluY3JlbWVudCA9IDAuMDI1O1xyXG5cclxuICBmdW5jdGlvbiBhbmltYXRlTnVtYmVyKCkge1xyXG4gICAgbnVtYmVyICs9IGluY3JlbWVudDtcclxuXHJcbiAgICBpZiAobnVtYmVyID49IDAuNCkge1xyXG4gICAgICBpbmNyZW1lbnQgPSAtaW5jcmVtZW50O1xyXG4gICAgfVxyXG5cclxuICAgIGlmIChudW1iZXIgPiAwKSB7XHJcbiAgICAgIHNldFRpbWVvdXQoYW5pbWF0ZU51bWJlciwgMTApOyAvLyBMbGFtYXIgYSBsYSBmdW5jacOzbiBudWV2YW1lbnRlIGRlc3B1w6lzIGRlIDEwIG1pbGlzZWd1bmRvc1xyXG4gICAgfVxyXG5cclxuICAgIGNoYW5nZUVtaXRGYWN0b3IobnVtYmVyKTtcclxuICB9XHJcbiAgYW5pbWF0ZU51bWJlcigpO1xyXG59XHJcbmV4cG9ydCB7XHJcbiAgaW5pdFNlcnZpY2UsXHJcbiAgY2hhbmdlQ29sb3IsXHJcbiAgYWRkVGV4dHVyZSxcclxuICBzZXRUZXh0dXJlLFxyXG4gIGdldE1hdGVyaWFscyxcclxuICBnZXROb2RlTGlzdCxcclxuICB0b2dnbGVOb2RlLFxyXG4gIGdlbmVyYXRlU2NyZWVuc2hvdCxcclxuICBzZXRNZXRhbGxpYyxcclxuICBmYXN0Q2hhbmdlTWFpbkNvbG9yLFxyXG4gIHNldFVWc2NhbGUsXHJcbiAgZW1pc3Npb25BbmltYXRpb24sXHJcbiAgZ2V0Q2FtZXJhLFxyXG4gIHNldENhbWVyYSxcclxuICBzZXRCdW1wTWFwLFxyXG59O1xyXG4iXSwibmFtZXMiOlsiYXBpIiwibWF0ZXJpYWxzIiwibm9kZXMiLCJpbml0U2VydmljZSIsImFwaVJlZiIsIm1hdGVyaWFsTGlzdCIsIm5vZGVMaXN0IiwiY29uc29sZSIsImxvZyIsImdldE1hdGVyaWFscyIsImdldE5vZGVMaXN0IiwiZ2V0Q2FtZXJhIiwiZ2V0Q2FtZXJhTG9va0F0IiwiZXJyIiwiY2FtZXJhIiwicG9zaXRpb24iLCJ0YXJnZXQiLCJzZXRDYW1lcmEiLCJzZXRDYW1lcmFMb29rQXQiLCJjaGFuZ2VDb2xvciIsInBhcnQiLCJjb2xvckNvZGUiLCJpbmRleCIsImZpbmRJbmRleCIsIm0iLCJuYW1lIiwiY2hhbm5lbHMiLCJBbGJlZG9QQlIiLCJjb2xvciIsImNvbnZlcnRSR0J0b0xpbmVhciIsInIiLCJnIiwiYiIsInNldE1hdGVyaWFsIiwiZmFzdENoYW5nZU1haW5Db2xvciIsImFkZFRleHR1cmUiLCJiYXNlNjQiLCJQcm9taXNlIiwicmVzb2x2ZSIsInJlamVjdCIsImlkIiwic2V0VGV4dHVyZSIsInRleHR1cmVVaWQiLCJ0ZXh0dXJlIiwidWlkIiwiZmFjdG9yIiwic2V0QnVtcE1hcCIsIk5vcm1hbE1hcCIsImVuYWJsZSIsInNldFVWc2NhbGUiLCJzZXRVVlNjYWxlIiwidG9nZ2xlTm9kZSIsIm5vZGUiLCJhY3Rpb24iLCJpbnN0YW5jZUlEIiwiZmlsdGVyIiwic2hvdyIsImhpZGUiLCJjb252ZXJ0Q29sb3IiLCJnZW5lcmF0ZVNjcmVlbnNob3QiLCJzY3JlZW5zaG90IiwibWFrZVNjcmVlbnNob3QiLCJnZXRTY3JlZW5TaG90IiwiZXJyb3IiLCJyZXN1bHQiLCJiYXNlNjRXaXRob3V0SGVhZGVyIiwic3Vic3RyaW5nIiwiaW5kZXhPZiIsInZhbHVlIiwic2V0TWV0YWxsaWMiLCJtYXRlcmlhbCIsIk1ldGFsbmVzc1BCUiIsIlJvdWdobmVzc1BCUiIsImVtaXNzaW9uQW5pbWF0aW9uIiwiY2hhbmdlRW1pdEZhY3RvciIsImkiLCJFbWl0Q29sb3IiLCJudW1iZXIiLCJpbmNyZW1lbnQiLCJhbmltYXRlTnVtYmVyIiwic2V0VGltZW91dCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./utils/sketchfab.ts\n");
-
-/***/ }),
-
-/***/ "next/config":
-/*!******************************!*\
-  !*** external "next/config" ***!
-  \******************************/
+/***/ 4558:
 /***/ ((module) => {
 
 module.exports = require("next/config");
 
 /***/ }),
 
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
+/***/ 968:
 /***/ ((module) => {
 
 module.exports = require("next/head");
 
 /***/ }),
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
+/***/ 1853:
 /***/ ((module) => {
 
 module.exports = require("next/router");
 
 /***/ }),
 
-/***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
+/***/ 6689:
 /***/ ((module) => {
 
 module.exports = require("react");
 
 /***/ }),
 
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
+/***/ 997:
 /***/ ((module) => {
 
-module.exports = require("react/jsx-dev-runtime");
+module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
-/***/ "axios":
-/*!************************!*\
-  !*** external "axios" ***!
-  \************************/
+/***/ 9648:
 /***/ ((module) => {
 
 module.exports = import("axios");;
 
 /***/ }),
 
-/***/ "zustand":
-/*!**************************!*\
-  !*** external "zustand" ***!
-  \**************************/
+/***/ 6912:
 /***/ ((module) => {
 
 module.exports = import("zustand");;
@@ -230,7 +6981,7 @@ module.exports = import("zustand");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/index.tsx"));
+var __webpack_exports__ = (__webpack_exec__(4186));
 module.exports = __webpack_exports__;
 
 })();

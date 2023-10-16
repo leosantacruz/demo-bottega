@@ -4,6 +4,7 @@ import {
   addTexture,
   setTexture,
   setBumpMap,
+  getMaterials,
 } from "@/utils/sketchfab";
 
 interface Props {
@@ -21,16 +22,21 @@ const Sidebar = (props: Props) => {
     { name: "green", r: 25, g: 61, b: 50 },
     { name: "red", r: 83, g: 32, b: 44 },
   ];
+  const defaultTextureUid =
+    getMaterials().filter((r) => {
+      return r.name == "Leather_001";
+    })[0]?.channels.NormalMap.texture.uid || "";
 
   const updateColor = async (name: string, r: number, g: number, b: number) => {
-    let textureUID = "";
+    //let textureUID = "";
+    let bumpMapUID = defaultTextureUid;
 
-    let bumpMapUID = "35a4a84d4a504f9eb94d2b89ce4e7e8f";
     if (name == "green") {
       bumpMapUID = await addTexture("https://i.imgur.com/Tn2UYDu.jpg");
       //textureUID = await addTexture("https://i.imgur.com/wHFrCPy.jpg");
     }
     //setTexture("Leather_001", textureUID);
+    console.log(bumpMapUID);
     setBumpMap("Leather_001", bumpMapUID);
     changeColor("Leather_001", { r, g, b });
     changeColor("Leather_002", { r, g, b });
