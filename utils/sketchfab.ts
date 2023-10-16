@@ -7,7 +7,7 @@ const initService = (apiRef: any, materialList: any[], nodeList: any[]) => {
   api = apiRef;
   materials = materialList;
   nodes = nodeList;
-  changeColor("Leather_001", { r: 235, g: 241, b: 237 });
+  console.log(materials);
 };
 
 const getMaterials = () => {
@@ -75,8 +75,25 @@ const setTexture = (part: string, textureUid: string) => {
     return m.name === part;
   });
 
-  materials[index].channels.AlbedoPBR = { texture: { uid: textureUid } };
-  materials[index].channels.AlbedoPBR.factor = 1;
+  if (textureUid) {
+    materials[index].channels.AlbedoPBR = { texture: { uid: textureUid } };
+    materials[index].channels.AlbedoPBR.factor = 1;
+  } else {
+    materials[index].channels.AlbedoPBR = { texture: "" };
+  }
+  api.setMaterial(materials[index], () => {});
+};
+
+const setBumpMap = (part: string, textureUid: string) => {
+  let index = materials.findIndex((m) => {
+    return m.name === part;
+  });
+
+  materials[index].channels.NormalMap = {
+    enable: true,
+    factor: 1,
+    texture: { uid: textureUid },
+  };
 
   api.setMaterial(materials[index], () => {});
 };
@@ -197,4 +214,5 @@ export {
   emissionAnimation,
   getCamera,
   setCamera,
+  setBumpMap,
 };
