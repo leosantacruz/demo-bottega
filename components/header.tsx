@@ -1,7 +1,9 @@
 const logo = () => {
   return (
     <header className="header">
-      <img src="/images/ibisdev-logo.svg" width="140px" />
+      <a href="https://www.ibisdev.tech">
+        <img src="/images/ibisdev-logo.svg" width="140px" />
+      </a>
     </header>
   );
 };

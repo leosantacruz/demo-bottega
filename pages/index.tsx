@@ -78,7 +78,7 @@ export default function Home({ data }: any) {
     <>
       <div className="w-full grid grid-cols-[1fr,550px]">
         <Head>
-          <title>Bottega Veneta | Configurateur</title>
+          <title>Ibisdev - Configurator</title>
         </Head>
         <PleaseRotate />
         <Header />

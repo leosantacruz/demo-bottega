@@ -183,7 +183,7 @@ input {
       position: relative;
       overflow: hidden;
       &:before {
-        content: '';
+        content: "";
         width: 100%;
         height: 100%;
         position: absolute;
@@ -388,8 +388,6 @@ input {
 }
 
 .header {
-  justify-content: center;
-  align-items: center;
   grid-column: 1/3;
   height: 100px;
   background-color: white;
@@ -588,7 +586,7 @@ input {
     }
 
     .first:after {
-      content: '';
+      content: "";
       border-bottom: dotted 1px rgb(117, 117, 117);
       flex: 1;
       margin-left: 5px;
@@ -942,5 +940,3 @@ input {
     }
   }
 }
-
-

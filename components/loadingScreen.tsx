@@ -4,11 +4,11 @@ const loadingScreen = () => {
     <>
       <div id="loadingScreen">
         <div>
-          <img src="/images/bottega.svg" width="300px" />
+          <img src="/images/ibisdev-logo.svg" width="200px" />
           <br />
           <br />
           <Preloader width={"50px"} height={"50px"} />
-          <div>Chargement de la scène...</div>
+          <div>Loading model...</div>
         </div>
       </div>
     </>
