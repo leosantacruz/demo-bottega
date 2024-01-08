@@ -45,17 +45,21 @@ const Sidebar = (props: Props) => {
   return (
     <>
       <aside className="flex flex-col text-left p-10 ">
-        <h1 className="text-4xl mt-10">Sardine</h1>
+        <div className="mt-10 opacity-60">Women's bag</div>
+        <h1 className="text-4xl mb-10 text-[#19355e]">Sardine</h1>
 
-        <h2 className="text-2xl mt-3">3500 €</h2>
+        <h2 className="text-2xl mt-5 text-[#19355e]">3500 €</h2>
 
-        <p className="my-10 text-xl">
+        <p className="mt-10 text-lg">
           Bag made from supple lambskin leather using Intrecciato Craftsmanship
-          featuring sculptural Read more
+          featuring sculptural
         </p>
+        <a href="https://ibisdev.tech/" className="block underline text-md">
+          <strong className="text-[#00bf9e]">Read more</strong>
+        </a>
 
-        <p className="font-bold text-xl">
-          Colors:
+        <p className="text-lg mt-10">
+          Available colors
           <div className="flex flex-wrap gap-5 my-4">
             {colors.map(({ name, r, g, b }) => {
               return (
@@ -71,10 +75,10 @@ const Sidebar = (props: Props) => {
           </div>
         </p>
         <div className="w-[300px] flex flex-col mt-10">
-          <button className="p-3 border border-2 border-solid border-black">
-            Add to bag
+          <button className="p-3 border border-2 border-solid border-[#19355e]">
+            Add to cart
           </button>
-          <button className="p-3 mt-5 bg-black text-white border border-2 border-solid border-black">
+          <button className="p-3 mt-5 bg-[#19355e] text-white border border-2 border-solid border-[#19355e]">
             Check in-store availability
           </button>
         </div>

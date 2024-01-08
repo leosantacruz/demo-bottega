@@ -1,7 +1,7 @@
 const logo = () => {
   return (
     <header className="header">
-      <img src="/images/bottega.svg" width="240px" />
+      <img src="/images/ibisdev-logo.svg" width="140px" />
     </header>
   );
 };
