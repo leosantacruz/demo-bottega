@@ -7,11 +7,7 @@ import {
   getMaterials,
 } from "@/utils/sketchfab";
 
-interface Props {
-  changeScenario: (val: string) => void;
-}
-
-const Sidebar = (props: Props) => {
+const Sidebar = (props: any) => {
   const emissionHoveranimation = (part: string) => {
     emissionAnimation(part);
   };
@@ -22,14 +18,12 @@ const Sidebar = (props: Props) => {
     { name: "green", r: 25, g: 61, b: 50 },
     { name: "red", r: 83, g: 32, b: 44 },
   ];
-  const defaultTextureUid =
-    getMaterials().filter((r) => {
-      return r.name == "Leather_001";
-    })[0]?.channels.NormalMap.texture.uid || "";
+
+  console.log({ ccc: props.defaultTextureId });
 
   const updateColor = async (name: string, r: number, g: number, b: number) => {
     //let textureUID = "";
-    let bumpMapUID = defaultTextureUid;
+    let bumpMapUID = props.defaultTextureId;
 
     if (name == "green") {
       bumpMapUID = await addTexture("https://i.imgur.com/Tn2UYDu.jpg");

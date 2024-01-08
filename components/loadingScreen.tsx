@@ -1,3 +1,4 @@
+// @ts-ignore
 import Preloader from "@/components/elements/preloader";
 const loadingScreen = () => {
   return (

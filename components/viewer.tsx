@@ -5,13 +5,13 @@ declare global {
 }
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Debug from "../components/debug";
 import { changeColor } from "@/utils/sketchfab";
 interface ViewerInterface {
   apiRef: any;
   modelId: string;
   setIsModelLoaded: (value: boolean) => void;
   setMaterials: (value: any[]) => void;
+  setShowLoading: (value: false) => void;
   setNodes: (value: { instanceID: string; name: string }[]) => void;
 }
 const Viewer = ({
@@ -20,6 +20,7 @@ const Viewer = ({
   setIsModelLoaded,
   setMaterials,
   setNodes,
+  setShowLoading,
 }: ViewerInterface) => {
   const router = useRouter();
 
@@ -44,6 +45,7 @@ const Viewer = ({
           apiRef.current.getNodeMap((err: any, nodes: any) => {
             if (!err) {
               let nodeList = Object.values(nodes).map((item: any) => {
+                setShowLoading(false);
                 return { instanceID: item.instanceID, name: item.name };
               });
               setNodes(nodeList);
@@ -63,7 +65,6 @@ const Viewer = ({
   return (
     <>
       <div id="viewer">
-        {router.query.debug && <Debug />}
         <div id="numbers">
           <canvas width="400" height="400" id="numberCanvas"></canvas>
         </div>
