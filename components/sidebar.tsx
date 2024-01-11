@@ -19,8 +19,6 @@ const Sidebar = (props: any) => {
     { name: "red", r: 83, g: 32, b: 44 },
   ];
 
-  console.log({ ccc: props.defaultTextureId });
-
   const updateColor = async (name: string, r: number, g: number, b: number) => {
     //let textureUID = "";
     let bumpMapUID = props.defaultTextureId;
