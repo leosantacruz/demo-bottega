@@ -1,15 +1,13 @@
 // @ts-ignore
-import Preloader from "@/components/elements/preloader";
 const loadingScreen = () => {
   return (
     <>
       <div id="loadingScreen">
         <div>
-          <img src="/images/ibisdev-logo.svg" width="200px" />
+          <img src="https://www.deckar.com.ar/img/logo.jpg" width="200px" />
           <br />
           <br />
-          <Preloader width={"50px"} height={"50px"} />
-          <div>Loading model...</div>
+          <div>Cargando escena...</div>
         </div>
       </div>
     </>

@@ -55,10 +55,6 @@ const Viewer = ({
           apiRef.current.getMaterialList(function (err: any, materials: any) {
             if (!err) {
               setMaterials(materials);
-              materials[1].channels.AlbedoPBR.color = [0, 0, 0];
-              materials[2].channels.AlbedoPBR.color = [0, 0, 0];
-              apiRef.current.setMaterial(materials[1]);
-              apiRef.current.setMaterial(materials[2]);
             }
           });
         });

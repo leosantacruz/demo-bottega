@@ -18,21 +18,14 @@ const { publicRuntimeConfig } = getConfig();
 
 export default function Home({ data }: any) {
   const apiRef: any = useRef(null);
-  const [modelId, setModelId] = useState("24523f1bb77c4b20b39d12d906938ec5");
+  const [modelId, setModelId] = useState("25a08d1b0f5c453ca4a17c77eec63475");
   const [isModelLoaded, setIsModelLoaded] = useState(false);
   const [showLoading, setShowLoading] = useState(true);
   const [materials, setMaterials] = useState<any>([]);
   const [nodes, setNodes] = useState<any>([]);
-  const [defaultTextureId, setDefaultTextureId] = useState<any>(null);
   useEffect(() => {
     if (materials[0] && nodes[0]) {
       initService(apiRef.current, materials, nodes);
-
-      let defaultId = materials.filter((r: any) => {
-        return r.name == "Leather_001";
-      })[0]?.channels.NormalMap.texture.uid;
-      console.log({ defaultId });
-      setDefaultTextureId(defaultId);
     }
   }, [materials, nodes]);
   return (
@@ -52,9 +45,7 @@ export default function Home({ data }: any) {
           setNodes={setNodes}
           setShowLoading={setShowLoading}
         />
-        {materials.length > 0 && (
-          <Sidebar defaultTextureId={defaultTextureId}></Sidebar>
-        )}
+        {materials.length > 0 && <Sidebar></Sidebar>}
       </div>
     </>
   );
