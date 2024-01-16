@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 import Head from "next/head";
 
 import Header from "@/components/header";
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/sidebar2";
 import Viewer from "@/components/viewer";
 import LoadingScreen from "@/components/loadingScreen";
 import PleaseRotate from "@/components/pleaseRotate";
@@ -32,7 +32,7 @@ export default function Home({ data }: any) {
     <>
       <div className="w-full grid grid-cols-[1fr,550px]">
         <Head>
-          <title>Ibisdev - Configurator</title>
+          <title>Deckar Arroyo Seco</title>
         </Head>
         <PleaseRotate />
         <Header />
